@@ -237,18 +237,41 @@ int spiA0Write(unsigned char *data, unsigned int len, unsigned int commID)
  *
  * 	\retval	-1		USCI A0 Module Busy
  * 	\retval	1		Receive successfully started
+ *
+ * 	\sideeffect		Reset the UCA0 RX size and data pointer
  ******************************************************************************/
 int spiA0Read(unsigned int len, unsigned int commID)
 {
 	if(usciStat[UCA0_INDEX] != OPEN) return -1;		// Busy
 	confUCA0(commID);
-	// Clear RX Size and copy length
-	uca0RxSize = 0;
+	// Clear RX Size/Buff and copy length
+	uca0RxSize = 0;									// Reset the rx size
+	uca0RxPtr = dev[commID].rxPtr;					// Reset the rx pointer
 	spiA0RxSize = len-1;
 	// Start of RX
 	UCA0TXBUF = 0xFF;								// Start TX
 	usciStat[UCA0_INDEX] = RX;
 	return 1;
+}
+/**************************************************************************//**
+ * \brief	Byte Swap method for USCI A0 SPI operation
+ *
+ * This blocking method allows the user to transmit a byte and receive the
+ * response simultaneously clocked back in. TX and RX buffer sizes/content
+ * are unaffected.
+ *
+ * \param	byte	The byte to be sent via SPI
+ * \param 	commID	Communication ID number of the application
+ *
+ * \return	The byte shifted in from the SPI
+ *************************************************************************/
+unsigned char spiA0Swap(unsigned char byte, unsigned int commID)
+{
+	if(usciStat[UCA0_INDEX] != OPEN) return -1;		// Busy
+	confUCA0(commID);
+	UCA0TXBUF = byte;
+	while(UCA0STATW & UCBUSY);						// Wait for TX complete
+	return UCA0RXBUF;
 }
 #endif //USE_UCA0_SPI
 /**********************************************************************//**
@@ -493,18 +516,42 @@ int spiA1Write(unsigned char *data, unsigned int len, unsigned int commID)
  *
  * 	\retval	-1		USCI A1 Module Busy
  * 	\retval	1		Receive successfully started
+ *
+ * 	\sideeffect		Reset the UCA1 RX size and data pointer
  ******************************************************************************/
 int spiA1Read(unsigned int len, unsigned int commID)
 {
 	if(usciStat[UCA1_INDEX] != OPEN) return -1;		// Busy
 	confUCA1(commID);
 	// Clear RX Size and copy length
-	uca1RxSize = 0;
+	uca1RxSize = 0;									// Reset RX size
+	uca1RxPtr = dev[commID].rxPtr;					// Reset RX pointer
 	spiA1RxSize = len-1;
 	// Start of RX
 	UCA1TXBUF = 0xFF;								// Start TX
 	usciStat[UCA1_INDEX] = RX;
 	return 1;
+}
+
+/**************************************************************************//**
+ * \brief	Byte Swap method for USCI A1 SPI operation
+ *
+ * This blocking method allows the user to transmit a byte and receive the
+ * response simultaneously clocked back in. TX and RX buffer sizes/content
+ * are unaffected.
+ *
+ * \param	byte	The byte to be sent via SPI
+ * \param 	commID	Communication ID number of the application
+ *
+ * \return	The byte shifted in from the SPI
+ *************************************************************************/
+unsigned char spiA1Swap(unsigned char byte, unsigned int commID)
+{
+	if(usciStat[UCA1_INDEX] != OPEN) return -1;		// Busy
+	confUCA1(commID);
+	UCA1TXBUF = byte;
+	while(UCA1STATW & UCBUSY);						// Wait for TX complete
+	return UCA1RXBUF;
 }
 #endif //USE_UCA1_SPI
 
@@ -688,18 +735,42 @@ int spiB0Write(unsigned char *data, unsigned int len, unsigned int commID)
  *
  * 	\retval	-1		USCI B0 Module Busy
  * 	\retval	1		Receive successfully started
+ *
+ * 	\sideeffect		Reset the UCB0 RX size and data pointer
  ******************************************************************************/
 int spiB0Read(unsigned int len, unsigned int commID)
 {
 	if(usciStat[UCB0_INDEX] != OPEN) return -1;		// Busy
 	confUCB0(commID);
 	// Clear RX Size and copy length
-	ucb0RxSize = 0;
+	ucb0RxSize = 0;									// Reset the rx size
+	ucb0RxPtr = dev[commID].rxPtr;					// Reset the rx pointer
 	spiB0RxSize = len-1;
 	// Start of RX
 	UCB0TXBUF = 0xFF;								// Start TX
 	usciStat[UCB0_INDEX] = RX;
 	return 1;
+}
+
+/**************************************************************************//**
+ * \brief	Byte Swap method for USCI B0 SPI operation
+ *
+ * This blocking method allows the user to transmit a byte and receive the
+ * response simultaneously clocked back in. TX and RX buffer sizes/content
+ * are unaffected.
+ *
+ * \param	byte	The byte to be sent via SPI
+ * \param 	commID	Communication ID number of the application
+ *
+ * \return	The byte shifted in from the SPI
+ *************************************************************************/
+unsigned char spiB0Swap(unsigned char byte, unsigned int commID)
+{
+	if(usciStat[UCB0_INDEX] != OPEN) return -1;		// Busy
+	confUCB0(commID);
+	UCB0TXBUF = byte;
+	while(UCB0STATW & UCBUSY);						// Wait for TX complete
+	return UCB0RXBUF;
 }
 #endif //USE_UCB0_SPI
 /***********************************************************
