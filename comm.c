@@ -186,6 +186,9 @@ int uartA0Write(unsigned char *data, unsigned int len, unsigned int commID)
  ******************************************************************************/
 int uartA0Read(unsigned int len, unsigned int commID)
 {
+	if(dev[commID].rAddr != UCA0_UART) return -2;	// Check that the commID is affiliated with UCA0 in UART mode (no address)
+	if(usciStat[UCA0_INDEX] != OPEN) return -1;		// Check that the USCI is available
+
 	confUCA0(commID);
 	if(len > uca0RxSize) {
 		len = uca0RxSize;
@@ -466,6 +469,9 @@ int uartA1Write(unsigned char *data, unsigned int len, unsigned int commID)
  ******************************************************************************/
 int uartA1Read(unsigned int len, unsigned int commID)
 {
+	if(dev[commID].rAddr != UCA1_UART) return -2;	// Check that the commID is affiliated with UCA0 in UART mode (no address)
+	if(usciStat[UCA1_INDEX] != OPEN) return -1;		// Check that the USCI is available
+
 	confUCA1(commID);
 	if(len > uca1RxSize) {
 		len = uca1RxSize;
