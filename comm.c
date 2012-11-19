@@ -191,6 +191,7 @@ int uartA0Read(unsigned int len, unsigned int commID)
 		len = uca0RxSize;
 	}
 	uca0RxSize -= len;
+	uca0RxPtr -= len;
 	return len;
 }
 #endif // USE_UCA0_UART
@@ -288,7 +289,7 @@ __interrupt void usciA0Isr(void)
 	// Transmit Interrupt Flag Set
 	if(UCA0IFG & UCTXIFG){
 		if(uca0TxSize > 0){
-			UCA0TXBUF = *(uca0TxPtr++);				// Transmit the next outgoing byte
+			UCA0TXBUF = *(++uca0TxPtr);				// Transmit the next outgoing byte
 			uca0TxSize--;
 		}
 		else{

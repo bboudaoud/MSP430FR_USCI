@@ -1,16 +1,16 @@
 #ifndef COMM_H_
 #define COMM_H_
 #include "msp430fr5739.h"	// Includes USCI Control Register names for USCI config
-#include "timing.h"			// Includes system clock macros for baud rate generation
-#include "useful.h"
+#include "timing.h"			// Includes system clock macros for baud rate generation (used in UBR_DIV macro)
+#include "useful.h"			// Includes bitwise access structure and macros (used in CS logic)
 #include "hal.h"
 
 #define MAX_DEVS	32			///< Maximum number of devices to be registered
-
+#define DUMMY_CHAR	0xFF		///< Universal SPI dummy character (hold SIMO line high)
 // USCI Library Conditional Compilation Macros
 // NOTE: Only define at most 1 config for each USCI module, otherwise a Multiple Serial Endpoint error will be created on compilation
-//#define USE_UCA0_UART			///< USCI A0 UART Mode Conditional Compilation Flag
-#define USE_UCA0_SPI			///< USCI A0 SPI Mode Conditional Compilation Flag
+#define USE_UCA0_UART			///< USCI A0 UART Mode Conditional Compilation Flag
+//#define USE_UCA0_SPI			///< USCI A0 SPI Mode Conditional Compilation Flag
 //#define USE_UCA1_UART			///< USCI A1 UART Mode Conditional Compilation Flag
 //#define USE_UCA1_SPI			///< USCI A1 SPI Mode Conditional Compilation Flag
 //#define USE_UCB0_SPI			///< USCI B0 SPI Mode Conditional Compilation Flag
@@ -70,7 +70,6 @@ typedef struct uconf
 #define I2C_10SMR	UCA10 + UCSLA10 + UCMST + UCMODE_3 + UCSSEL1 + UCSYNC			///< UCTLW0: 10 bit addressed I2C (master and slave), single master mode, receiver w/ baud from SMCLK
 #define I2C_7SMT	UCMST + UCMODE_3 + UCSYNC + UCSSEL1 + UCTR						///< UCTLW0: 7 bit addressed I2C (master and slave), single master mode, transmitter w/ baud from SMCLK
 #define I2C_7SMR	UCMST + UCMODE_3 + UCSYNC + UCSSEL1								///< UCTLW0: 7 bit addressed I2C (master and slave), single master mode, receiver w/ baud from SMCLK
-
 // USCI CTL Work 1 Defaults
 #define DEF_CTLW1	0x0003	///< CTLW1: 200ns deglitch time
 // USCI Baud Rate Defaults
@@ -132,7 +131,7 @@ int spiA0Read(unsigned int len, unsigned int commID);
 #ifdef USE_UCA0_UART
 #error Multiple Serial Endpoint Configuration on USCI A0
 #endif // USE_UCA0_UART AND USE_UCA0_SPI
-#define UCA0_IO_CONF(x)	P2SEL1 |= BIT0 + BIT1; P2SEL0 &= ~(BIT0 + BIT1); P1SEL1 |= BIT5; P1SEL0 &= ~(BIT5); CSA0(x)	///< USCI A0 SPI I/O Configuration
+#define UCA0_IO_CONF(x)	P2SEL1 |= BIT0 + BIT1; P2SEL0 &= ~(BIT0 + BIT1); P1SEL1 |= BIT5; P1SEL0 &= ~(BIT5); //CSA0(x)	///< USCI A0 SPI I/O Configuration
 inline void CSA0_CLEAR(void){	///< USCI A0 Chip Select Clear Function
 	CSA0_PIN1 = 1;
 	CSA0_PIN2 = 1;
@@ -188,7 +187,7 @@ int spiA1Read(unsigned int len, unsigned int commID);
 #ifdef USE_UCA1_UART
 #error Multiple Serial Endpoint Configuration on USCI A1
 #endif // USE_UCA1_UART and USE_UCA1_SPI
-#define UCA1_IO_CONF(x)	P2SEL1 |= BIT5 + BIT6; P2SEL0 &= ~(BIT5 + BIT6); CSA1(x)	///< USCI A1 SPI I/O Configuration
+#define UCA1_IO_CONF(x)	P2SEL1 |= BIT5 + BIT6; P2SEL0 &= ~(BIT5 + BIT6);// CSA1(x)	///< USCI A1 SPI I/O Configuration
 #define CSA1(x)		CSA1_CLEAR();\	///< USCI A1 Chip Selection Macro
 	if(x == 1) CSA1_PIN1 = 0;\
 	else if(x == 2) CSA1_PIN2 = 0;\
@@ -218,7 +217,7 @@ int spiB0Read(unsigned int len, unsigned int commID);
 #ifdef USE_UCB0_I2C
 #error Mulitple Serial Endpoint Configuration on USCI B0
 #endif // USE_UCB0_SPI and USE_UCB0_I2C
-#define UCB0_IO_CONF(x)	P1SEL1 |= BIT6 + BIT7; P1SEL0 &= ~(BIT6 + BIT7); CSB0(x)	///< USCI B0 SPI I/O Configuration
+#define UCB0_IO_CONF(x)	P1SEL1 |= BIT6 + BIT7; P1SEL0 &= ~(BIT6 + BIT7); //CSB0(x)	///< USCI B0 SPI I/O Configuration
 #define CSB0(x)		CSB0_CLEAR();\													///< USCI B0 Chip Selection Macro
 	if(x == 1) CSB0_PIN1 = 0;\
 	else if(x == 2) CSB0_PIN2 = 0;\
