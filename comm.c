@@ -1,5 +1,6 @@
 #include "comm.h"
 
+// TODO: Change dev buffer to hold pointers to register comm structures instead of structures themselves to limit stack size
 usciConfig dev[MAX_DEVS];										///< Device config buffer (indexed by comm ID always non-zero)
 unsigned int devIndex = 0;										///< Device config buffer index
 unsigned int devConf[4] = {0,0,0,0};							///< Currently applied configs buffer [A0, A1, B0, B1]
@@ -49,18 +50,19 @@ unsigned int spiA0RxSize = 0;			///< USCI A0 To-RX Size (used for SPI RX)
  *
  * \param	commID	The communication ID for the registered app
  ******************************************************************************/
-inline void confUCA0(unsigned int commID)
+void confUCA0(unsigned int commID)
 {
 	if(devConf[UCA0_INDEX] == commID) return;	// Check if device is already configured
 
-	UCA0CTL1 |= UCSWRST;							// Pause operation
-	UCA0_IO_CONF(dev[commID].rAddr & ADDR_MASK);	// Port set up
+	UCA0CTL1 |= UCSWRST;	// Pause operation
 
 	// Configure key control words
-	UCA0CTLW0 = dev[commID].usciCtlW0;
-	UCA0CTLW1 = dev[commID].usciCtlW1;
-	UCA0BRW = dev[commID].baudDiv;
-	uca0RxPtr = dev[commID].rxPtr;
+	UCA0CTLW0 = dev[commID].usciCtlW0 | UCSWRST;	// Initialize control word 0 (maintain software reset flag)
+	UCA0CTLW1 = dev[commID].usciCtlW1;				// Initialize control word 1 for UART operation
+	UCA0BRW = dev[commID].baudDiv;					// Initialize baud rate divisor control word
+	uca0RxPtr = dev[commID].rxPtr;					// Set the RX write back pointer
+
+	UCA0_IO_CONF();									// Set up device I/O for the interface
 
 	// Clear buffer sizes
 	uca0RxSize = 0;
@@ -69,8 +71,8 @@ inline void confUCA0(unsigned int commID)
 	spiA0RxSize = 0;
 #endif //USE_UCA0_SPI
 
-	UCA0IE |= UCRXIE + UCTXIE;					// Enable Interrupts
 	UCA0CTL1 &= ~UCSWRST;						// Resume operation
+	UCA0IE |= UCRXIE + UCTXIE;					// Enable Interrupts
 
 	devConf[UCA0_INDEX] = commID;				// Store config
 }
@@ -186,15 +188,11 @@ int uartA0Write(unsigned char *data, unsigned int len, unsigned int commID)
  ******************************************************************************/
 int uartA0Read(unsigned int len, unsigned int commID)
 {
-	if(dev[commID].rAddr != UCA0_UART) return -2;	// Check that the commID is affiliated with UCA0 in UART mode (no address)
-	if(usciStat[UCA0_INDEX] != OPEN) return -1;		// Check that the USCI is available
-
 	confUCA0(commID);
 	if(len > uca0RxSize) {
 		len = uca0RxSize;
 	}
 	uca0RxSize -= len;
-	uca0RxPtr -= len;
 	return len;
 }
 #endif // USE_UCA0_UART
@@ -292,7 +290,7 @@ __interrupt void usciA0Isr(void)
 	// Transmit Interrupt Flag Set
 	if(UCA0IFG & UCTXIFG){
 		if(uca0TxSize > 0){
-			UCA0TXBUF = *(++uca0TxPtr);				// Transmit the next outgoing byte
+			UCA0TXBUF = *(uca0TxPtr++);				// Transmit the next outgoing byte
 			uca0TxSize--;
 		}
 		else{
@@ -303,21 +301,23 @@ __interrupt void usciA0Isr(void)
 
 	// Receive Interrupt Flag Set
 	if(UCA0IFG & UCRXIFG){
+		if(UCA0STATW & UCRXERR) dummy = UCA0RXBUF;	// RX ERROR: Do a dummy read to clear interrupt flag
+		else 										// Otherwise write the value to the RX pointer
 #ifdef USE_UCA0_SPI
 		if(usciStat[UCA0_INDEX] == RX)				// Check we are in RX mode for SPI
 #endif // USE_UCA0_SPI
-		if(UCA0STATW & UCRXERR) dummy = UCA0RXBUF;	// RX ERROR: Do a dummy read to clear interrupt flag
-		else {										// Otherwise write the value to the RX pointer
+		{
 			*(uca0RxPtr++) = UCA0RXBUF;
 			uca0RxSize++;							// RX Size decrement in read function
 #ifdef USE_UCA0_SPI
-			if(usciStat[UCA0_INDEX] == RX && uca0RxSize < spiA0RxSize) UCA0TXBUF = dummy; // Perform another dummy write
+			if(uca0RxSize < spiA0RxSize) UCA0TXBUF = dummy; // Perform another dummy write
 			else
 #endif
 			usciStat[UCA0_INDEX] = OPEN;
 
 		}
 	}
+	else UCA0IV &= ~UCIVRXIFG;
 }
 #endif // USE_UCA0
 
@@ -346,18 +346,19 @@ unsigned int spiA1RxSize = 0;					///< USCI A1 To-RX Size (used for SPI RX)
  *
  * \param	commID	The communication ID for the registered app
  ******************************************************************************/
-inline void confUCA1(unsigned int commID)
+void confUCA1(unsigned int commID)
 {
 	if(devConf[UCA1_INDEX] == commID) return;	// Check if device is already configured
 
-	UCA1CTL1 |= UCSWRST;							// Pause operation
-	UCA1_IO_CONF(dev[commID].rAddr & ADDR_MASK);	// Port set up
+	UCA1CTL1 |= UCSWRST;	// Pause operation
 
 	// Configure key control words
-	UCA1CTLW0 = dev[commID].usciCtlW0;
-	UCA1CTLW1 = dev[commID].usciCtlW1;
-	UCA1BRW = dev[commID].baudDiv;
-	uca1RxPtr = dev[commID].rxPtr;
+	UCA1CTLW0 = dev[commID].usciCtlW0 | UCSWRST;	// Initialize control word 0 (maintaining software reset flag)
+	UCA1CTLW1 = dev[commID].usciCtlW1;				// Initialize control word 1 for UART operation
+	UCA1BRW = dev[commID].baudDiv;					// Initialize baud rate divisor control word
+	uca1RxPtr = dev[commID].rxPtr;					// Set the RX write back pointer
+
+	UCA1_IO_CONF();									// Set up device I/O for the interface
 
 	// Clear buffer sizes
 	uca1RxSize = 0;
@@ -366,8 +367,8 @@ inline void confUCA1(unsigned int commID)
 	spiA1RxSize = 0;
 #endif //USE_UCA1_SPI
 
-	UCA1IE |= UCRXIE + UCTXIE;					// Enable Interrupts
 	UCA1CTL1 &= ~UCSWRST;						// Resume operation
+	UCA1IE |= UCRXIE + UCTXIE;					// Enable Interrupts
 
 	devConf[UCA1_INDEX] = commID;				// Store config
 }
@@ -415,6 +416,21 @@ unsigned int getUCA1RxSize(commID){
  ******************************************************************************/
 unsigned char getUCA1Stat(void){
 	return usciStat[UCA1_INDEX];
+}
+
+/*************************************************************************//**
+ * \brief	Set method for USCI A1 Baud Rate Divisor
+ *
+ * Sets the baud rate divisor of the USCI module, this divisor is generally
+ * performed relative to the SMCLK rate of the system.
+ *
+ * \param 	baudDiv	The new divisor to apply
+ * \param	commID	The communications ID number of the application
+ *****************************************************************************/
+void setUCA1Baud(unsigned int baudDiv, unsigned int commID){
+	dev[commID].baudDiv = baudDiv;		// Replace the baud divisor in memory
+	devConf[UCA1_INDEX] = 0;			// Reset the device config storage (config will be performed on next read/write)
+	return;
 }
 /***************************************************************
 * UCA1 UART HANDLERS
@@ -469,9 +485,6 @@ int uartA1Write(unsigned char *data, unsigned int len, unsigned int commID)
  ******************************************************************************/
 int uartA1Read(unsigned int len, unsigned int commID)
 {
-	if(dev[commID].rAddr != UCA1_UART) return -2;	// Check that the commID is affiliated with UCA0 in UART mode (no address)
-	if(usciStat[UCA1_INDEX] != OPEN) return -1;		// Check that the USCI is available
-
 	confUCA1(commID);
 	if(len > uca1RxSize) {
 		len = uca1RxSize;
@@ -587,21 +600,23 @@ __interrupt void usciA1Isr(void)
 
 	// Receive Interrupt Flag Set
 	if(UCA1IFG & UCRXIFG){
+		if(UCA1STATW & UCRXERR) dummy = UCA1RXBUF;	// RX ERROR: Do a dummy read to clear interrupt flag
+		else 										// Otherwise write the value to the RX pointer
 #ifdef USE_UCA1_SPI
 		if(usciStat[UCA1_INDEX] == RX)				// Check we are in RX mode for SPI
-#endif // USE_UCA1_SPI
-		if(UCA1STATW & UCRXERR) dummy = UCA1RXBUF;	// RX ERROR: Do a dummy read to clear interrupt flag
-		else {										// Otherwise write the value to the RX pointer
+#endif // USE_UCA0_SPI
+		{
 			*(uca1RxPtr++) = UCA1RXBUF;
 			uca1RxSize++;							// RX Size decrement in read function
 #ifdef USE_UCA1_SPI
-			if(usciStat[UCA1_INDEX] == RX && uca1RxSize < spiA1RxSize) UCA1TXBUF = dummy; // Perform another dummy write
+			if(uca1RxSize < spiA1RxSize) UCA1TXBUF = dummy; // Perform another dummy write
 			else
 #endif
 			usciStat[UCA1_INDEX] = OPEN;
 
 		}
 	}
+	else UCA1IV &= ~UCIVRXIFG;
 }
 #endif // USE_UCA1
 
@@ -629,18 +644,18 @@ unsigned int spiB0RxSize = 0;			///< USCI B0 to-RX Size
  *
  * \param	commID	The communication ID for the registered app
  ******************************************************************************/
-inline void confUCB0(unsigned int commID)
+void confUCB0(unsigned int commID)
 {
 	if(devConf[UCB0_INDEX] == commID) return;	// Check if device is already configured
 
-	UCB0CTL1 |= UCSWRST;							// Pause operation
-	UCB0_IO_CONF(dev[commID].rAddr & ADDR_MASK);	// Port set up
-
+	UCB0CTL1 |= UCSWRST;	// Pause operation
 	// Configure key control words
-	UCB0CTLW0 = dev[commID].usciCtlW0;
-	UCB0CTLW1 = dev[commID].usciCtlW1;
-	UCB0BRW = dev[commID].baudDiv;
-	ucb0RxPtr = dev[commID].rxPtr;
+	UCB0CTLW0 = dev[commID].usciCtlW0 | UCSWRST;	// Initialize control word 0 (maintaining software reset)
+	UCB0CTLW1 = dev[commID].usciCtlW1;				// Initialize control word 1 for I2C operation
+	UCB0BRW = dev[commID].baudDiv;					// Initialize baud rate divisor control word
+	ucb0RxPtr = dev[commID].rxPtr;					// Set RX write back pointer
+
+	UCB0_IO_CONF();									// Set up device I/O pins for the interface
 
 	// Clear buffer sizes
 	ucb0RxSize = 0;
@@ -649,8 +664,8 @@ inline void confUCB0(unsigned int commID)
 	spiB0RxSize = 0;
 #endif //USE_UCB0_SPI
 
-	UCB0IE |= UCRXIE + UCTXIE;					// Enable Interrupts
 	UCB0CTL1 &= ~UCSWRST;						// Resume operation
+	UCB0IE |= UCRXIE + UCTXIE;					// Enable Interrupts
 
 	devConf[UCB0_INDEX] = commID;				// Store config
 }
@@ -697,6 +712,21 @@ unsigned int getUCB0RxSize(commID){
  ******************************************************************************/
 unsigned char getUCB0Stat(void){
 	return usciStat[UCB0_INDEX];
+}
+
+/*************************************************************************//**
+ * \brief	Set method for USCI B0 Baud Rate Divisor
+ *
+ * Sets the baud rate divisor of the USCI module, this divisor is generally
+ * performed relative to the SMCLK rate of the system.
+ *
+ * \param 	baudDiv	The new divisor to apply
+ * \param	commID	The communications ID number of the application
+ *****************************************************************************/
+void setUCB0Baud(unsigned int baudDiv, unsigned int commID){
+	dev[commID].baudDiv = baudDiv;		// Replace the baud divisor in memory
+	devConf[UCB0_INDEX] = 0;			// Reset the device config storage (config will be performed on next read/write)
+	return;
 }
 
 /***********************************************************
@@ -820,20 +850,20 @@ __interrupt void usciB0Isr(void)
 
 	// Receive Interrupt Flag Set
 	if(UCB0IFG & UCRXIFG){
-#ifdef USE_UCB0_SPI
-		if(usciStat[UCB0_INDEX] == RX)				// Check we are in RX mode for SPI
-#endif // USE_UCB0_SPI
 		if(UCB0STATW & UCRXERR) dummy = UCB0RXBUF;	// RX ERROR: Do a dummy read to clear interrupt flag
-		else {										// Otherwise write the value to the RX pointer
+		else 										// Otherwise write the value to the RX pointer
+#ifdef USE_UCB0_SPI if(usciStat[UCB0_INDEX] == RX) 			// Check we are in RX mode for SPI
+#endif
+		{
 			*(ucb0RxPtr++) = UCB0RXBUF;
 			ucb0RxSize++;							// RX Size decrement in read function
 #ifdef USE_UCB0_SPI
-			if(usciStat[UCB0_INDEX] == RX && ucb0RxSize < spiB0RxSize) UCB0TXBUF = dummy; // Perform another dummy write
+			if(ucb0RxSize < spiB0RxSize) UCB0TXBUF = dummy; // Perform another dummy write
 			else
 #endif
 			usciStat[UCB0_INDEX] = OPEN;
-
 		}
 	}
+	else UCB0IV &= ~UCIVRXIFG;
 }
 #endif // USE_UCB0

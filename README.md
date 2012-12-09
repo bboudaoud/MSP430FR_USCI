@@ -21,10 +21,15 @@ General (Power User) USCI Lib (comm2.c/h):
   - Same core ISR based functionality for multi-byte read/write
 
 Current TODO List:
-  - Add a single byte, blocking exchange TX/RX SPI function (shift out a byte and return contents of TXBUF)
   - Decide what to do regarding CS management (should leave control to application developer)
   - Complete and test basic I2C ISR functionality (what to do on multi-byte transfer)
 
 In addition to the items above it is worth noting that other seasoned developers may have suggestions for additional/altnerative generic serial input APIs. Additional development/collaboration is both desired and encouraged. Ideally this library will work with any MSP430 device using the current e_USCI peripheral architecture, meaning this library has much broader applications than the inital system it is being developed for.
+
+CHANGE LOG:
+12/9/2012: Explicit testing SPI write routines in single and multi-byte modes
+			- Did reordering to prevent spurious transmit from occuring during config (no longer an inline)
+			- Restructured SPI macros in unified ISRs to eliminate multi-byte TX bug
+			- Implemented single byte (blocking) SPI swap function for simultaneous TX/RX
 
 
