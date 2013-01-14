@@ -104,7 +104,7 @@ void resetUCA0(unsigned int commID){
  *	\param commID	Comm ID of app. (not used)
  *	\return			The number of valid bytes following the rxPtr.
  ******************************************************************************/
-unsigned int getUCA0RxSize(commID){
+unsigned int getUCA0RxSize(unsigned int commID){
 	return uca0RxSize;
 }
 /**************************************************************************//**
@@ -400,7 +400,7 @@ void resetUCA1(unsigned int commID){
  *	\param commID	Comm ID of app. (not used)
  *	\return	The number of valid bytes following the rxPtr.
  ******************************************************************************/
-unsigned int getUCA1RxSize(commID){
+unsigned int getUCA1RxSize(unsigned int commID){
 	return uca1RxSize;
 }
 /**************************************************************************//**
@@ -696,7 +696,7 @@ void resetUCB0(unsigned int commID){
  *	\param commID	Comm ID of app. (not used)
  *	\return			The number of valid bytes following the rxPtr.
  ******************************************************************************/
-unsigned int getUCB0RxSize(commID){
+unsigned int getUCB0RxSize(unsigned int commID){
 	return ucb0RxSize;
 }
 /**************************************************************************//**

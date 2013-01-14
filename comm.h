@@ -106,6 +106,11 @@ inline void confUCA0(unsigned int commID);
 /************************* UCA0 UART MODE ********************************/
 #ifdef USE_UCA0_UART
 // Function prototypes
+inline void confUCA0(usciConfig conf);
+void resetUCA0(unsigned int commID);
+unsigned int getUCA0RxSize(unsigned int commID);
+unsigned char getUCA0Stat(void);
+void setUCA0Baud(unsigned int baudDiv, unsigned int commID);
 int uartA0Write(unsigned char* data, unsigned int len, unsigned int commID);
 int uartA0Read(unsigned int len, unsigned int commID);
 // Other useful macros
@@ -120,8 +125,14 @@ int uartA0Read(unsigned int len, unsigned int commID);
 /************************* UCA0 SPI MODE ********************************/
 #ifdef USE_UCA0_SPI
 // Function prototypes
+inline void confUCA0(usciConfig conf);
+void resetUCA0(unsigned int commID);
+unsigned int getUCA0RxSize(unsigned int commID);
+unsigned char getUCA0Stat(void);
+void setUCA0Baud(unsigned int baudDiv, unsigned int commID);
 int spiA0Write(unsigned char* data, unsigned int len, unsigned int commID);
 int spiA0Read(unsigned int len, unsigned int commID);
+unsigned char spiA0Swap(unsigned char byte, unsigned int commID);
 // Other useful Macros
 #define USE_UCA0																///< USCI A0 Active Definition
 #ifdef USE_UCA0_UART
@@ -138,6 +149,11 @@ int spiA0Read(unsigned int len, unsigned int commID);
 /************************* UCA1 UART MODE ********************************/
 #ifdef USE_UCA1_UART
 // Function prototypes
+inline void confUCA1(usciConfig conf);
+void resetUCA1(unsigned int commID);
+unsigned int getUCA1RxSize(unsigned int commID);
+unsigned char getUCA1Stat(void);
+void setUCA1Baud(unsigned int baudDiv, unsigned int commID);
 int uartA1Write(unsigned char* data, unsigned int len, unsigned int commID);
 int uartA1Read(unsigned int len, unsigned int commID);
 // Other useful macros
@@ -152,8 +168,14 @@ int uartA1Read(unsigned int len, unsigned int commID);
 /*************************** UCA1 SPI MODE *******************************/
 #ifdef USE_UCA1_SPI
 // Function prototypes
+inline void confUCA1(usciConfig conf);
+void resetUCA1(unsigned int commID);
+unsigned int getUCA1RxSize(unsigned int commID);
+unsigned char getUCA1Stat(void);
+void setUCA1Baud(unsigned int baudDiv, unsigned int commID);
 int spiA1Write(unsigned char* data, unsigned int len, unsigned int commID);
 int spiA1Read(unsigned int len, unsigned int commID);
+unsigned char spiA1Swap(unsigned char byte, unsigned int commID);
 // Other useful macros
 #define USE_UCA1																			///< USCI A1 Active Definition
 #define UCA1_IO_CONF(x)	P2SEL1 |= BIT4 + BIT5 + BIT6; P2SEL0 &= ~(BIT4 + BIT5 + BIT6); 		///< USCI A1 SPI I/O Configuration
@@ -171,8 +193,14 @@ int spiA1Read(unsigned int len, unsigned int commID);
 /************************* UCB0 SPI MODE *********************************/
 #ifdef USE_UCB0_SPI
 // Function prototypes
+inline void confUCB0(unsigned int commID);
+void resetUCB0(unsigned int commID);
+unsigned int getUCB0RxSize(unsigned int commID);
+unsigned char getUCB0Stat(void);
+void setUCB0Baud(unsigned int baudDiv, unsigned int commID);
 int spiB0Write(unsigned char* data, unsigned int len, unsigned int commID);
 int spiB0Read(unsigned int len, unsigned int commID);
+unsigned char spiB0Swap(unsigned char byte, unsigned int commID);
 // Other useful macros
 #define USE_UCB0		///< USCI B0 Active Definition
 #define UCB0_IO_CONF(x)	P1SEL1 |= BIT6 + BIT7; P1SEL0 &= ~(BIT6 + BIT7); P2SEL1 |= BIT2; P2SEL0 &= ~BIT2		///< USCI B0 SPI I/O Configuration
@@ -185,6 +213,11 @@ int spiB0Read(unsigned int len, unsigned int commID);
 /************************* UCB0 I2C MODE *********************************/
 #ifdef USE_UCB0_I2C
 // Function prototypes
+inline void confUCB0(usciConfig conf);
+void resetUCB0(unsigned int commID);
+unsigned int getUCB0RxSize(unsigned int commID);
+unsigned char getUCB0Stat(void);
+void setUCB0Baud(unsigned int baudDiv, unsigned int commID);
 int i2cB0Write(unsigned char* data, unsigned int len, unsigned int commID);
 int i2cB0Read(unsigned int len, unsigned int commID);
 // Other useful macros
@@ -197,4 +230,6 @@ int i2cB0Read(unsigned int len, unsigned int commID);
 #error Multiple Serial Endpoint Configuration on USCI B0
 #endif // USE_UCB0_SPI and USE_UCB0_I2C
 #endif // USE_UCB0_I2C
+// Function prototype for USCI registration
+int registerComm(usciConfig conf);
 #endif /* COMM_H_ */
