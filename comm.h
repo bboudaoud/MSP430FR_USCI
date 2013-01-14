@@ -57,14 +57,22 @@ typedef struct uconf
 #define UART_8N1	UCSSEL1										///< UCTLW0: 8 bit UART (no parity, 1 stop bit) w/ baud from SMCLK
 #define	UART_7N1	UCSSEL1 + UC7BIT							///< UCTLW0: 7 bit UART (no parity, 1 stop bit) w/ baud from SMCLK
 // SPI MODE
-#define SPI_8M0		UCSYNC + UCSSEL1 + UCMST					///< UCTLW0: 8 bit Mode 0 SPI Master w/ baud from SMCLK
-#define SPI_8M1		UCSYNC + UCSSEL1 + UCCKPH + UCMST			///< UCTLW0: 8 bit Mode 1 SPI Master w/ baud from SMCLK
-#define SPI_8M2		UCSYNC + UCSSEL1 + UCCKPL + UCMST			///< UCTLW0: 8 bit Mode 2 SPI Master w/ baud from SMCLK
-#define SPI_8M3		UCSYNC + UCSSEL1 + UCCKPH + UCCKPL + UCMST	///< UCTLW0: 8 Bit Mode 3 SPI Master w/ baud from SMCLK
-#define	SPI_S8M0	UCSYNC										///< UCTLW0: 8 Bit Mode 0 SPI Slave
-#define SPI_S8M1	UCSYNC + UCCKPH								///< UCTLW0: 8 Bit Mode 1 SPI Slave
-#define SPI_S8M2	UCSYNC + UCCKPL								///< UCTLW0: 8 Bit Mode 2 SPI Slave
-#define SPI_S8M3	UCSYNC + UCCKPH + UCCKPL					///< UCTLW0: 8 Bit Mode 3 SPI Slave
+#define SPI_8M0_LE		UCSYNC + UCSSEL1 + UCMST							///< UCTLW0: 8 bit Mode 0 SPI Master LSB first w/ baud from SMCLK
+#define SPI_8M0_BE		UCSYNC + UCSSEL1 + UCMST + UCMSB					///< UCTLW0: 8 bit Mode 0 SPI Master MSB first w/ baud from SMCLK
+#define SPI_8M1_LE		UCSYNC + UCSSEL1 + UCCKPH + UCMST					///< UCTLW0: 8 bit Mode 1 SPI Master LSB first w/ baud from SMCLK
+#define SPI_8M1_BE		UCSYNC + UCSSEL1 + UCCKPH + UCMST + UCMSB			///< UCTLW0: 8 bit Mode 1 SPI Master MSB first w/ baud from SMCLK
+#define SPI_8M2_LE		UCSYNC + UCSSEL1 + UCCKPL + UCMST					///< UCTLW0: 8 bit Mode 2 SPI Master LSB first w/ baud from SMCLK
+#define SPI_8M2_BE		UCSYNC + UCSSEL1 + UCCKPL + UCMST + UCMSB			///< UCTLw0: 8 bit Mode 2 SPI Master MSB first w/ baud from SMCLK
+#define SPI_8M3_LE		UCSYNC + UCSSEL1 + UCCKPH + UCCKPL + UCMST			///< UCTLW0: 8 Bit Mode 3 SPI Master LSB first w/ baud from SMCLK
+#define SPI_8M3_BE		UCSYNC + UCSSEL1 + UCCKPH + UCCKPL + UCMST + UCMSB	///< UCTLW0: 8 bit Mode 3 SPI Master MSB first w/ baud from SMCLK
+#define	SPI_S8M0_LE		UCSYNC 												///< UCTLW0: 8 bit Mode 0 SPI Slave LSB first
+#define SPI_S8M0_BE		UCSYNC + UCMSB										///< UCTLW0: 8 bit Mode 0 SPI Slave MSB first
+#define SPI_S8M1_LE		UCSYNC + UCCKPH										///< UCTLW0: 8 bit Mode 1 SPI Slave LSB first
+#define SPI_S8M1_BE		UCSYNC + UCCKPH + UCMSB								///< UCTLW0: 8 bit Mode 1 SPI Slave MSB first
+#define SPI_S8M2_LE		UCSYNC + UCCKPL										///< UCTLW0: 8 bit Mode 2 SPI Slave LSB first
+#define SPI_28M2_BE		UCSYNC + UCCKPL + UCMSB								///< UCTLw0: 8 bit Mode 2 SPI Slave MSB first
+#define SPI_S8M3_LE		UCSYNC + UCCKPH + UCCKPL							///< UCTLW0: 8 bit Mode 3 SPI Slave LSB first
+#define SPI_S8M3_BE		UCSYNC + UCCKPH + UCCKPL + UCMSB					///< UCTLW0: 8 bit Mode 3 SPI Slave MSB first
 // I2C MODE
 #define I2C_10SMT	UCA10 + UCSLA10 + UCMST + UCMODE_3 + UCSSEL1 + UCTR + UCSYNC	///< UCTLW0: 10 bit addressed I2C (master and slave), single master mode, transmitter w/ baud from SMCLK
 #define I2C_10SMR	UCA10 + UCSLA10 + UCMST + UCMODE_3 + UCSSEL1 + UCSYNC			///< UCTLW0: 10 bit addressed I2C (master and slave), single master mode, receiver w/ baud from SMCLK
