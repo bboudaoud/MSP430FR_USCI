@@ -54,25 +54,17 @@ typedef struct uconf
  **********************************************************/
 // USCI CTL Word 0 Defaults
 // UART MODE
-#define UART_8N1	UCSSEL1													///< UCTLW0: 8 bit UART (no parity, 1 stop bit) w/ baud from SMCLK
-#define	UART_7N1	UCSSEL1 + UC7BIT										///< UCTLW0: 7 bit UART (no parity, 1 stop bit) w/ baud from SMCLK
+#define UART_8N1	UCSSEL1										///< UCTLW0: 8 bit UART (no parity, 1 stop bit) w/ baud from SMCLK
+#define	UART_7N1	UCSSEL1 + UC7BIT							///< UCTLW0: 7 bit UART (no parity, 1 stop bit) w/ baud from SMCLK
 // SPI MODE
-#define SPI_8M0_LE		UCSYNC + UCSSEL1 + UCMST							///< UCTLW0: 8 bit Mode 0 SPI Master LSB first w/ baud from SMCLK
-#define SPI_8M0_BE		UCSYNC + UCSSEL1 + UCMST + UCMSB					///< UCTLW0: 8 bit Mode 0 SPI Master MSB first w/ baud from SMCLK
-#define SPI_8M1_LE		UCSYNC + UCSSEL1 + UCCKPH + UCMST					///< UCTLW0: 8 bit Mode 1 SPI Master LSB first w/ baud from SMCLK
-#define SPI_8M1_BE		UCSYNC + UCSSEL1 + UCCKPH + UCMST + UCMSB			///< UCTLW0: 8 bit Mode 1 SPI Master MSB first w/ baud from SMCLK
-#define SPI_8M2_LE		UCSYNC + UCSSEL1 + UCCKPL + UCMST					///< UCTLW0: 8 bit Mode 2 SPI Master LSB first w/ baud from SMCLK
-#define SPI_8M2_BE		UCSYNC + UCSSEL1 + UCCKPL + UCMST + UCMSB			///< UCTLw0: 8 bit Mode 2 SPI Master MSB first w/ baud from SMCLK
-#define SPI_8M3_LE		UCSYNC + UCSSEL1 + UCCKPH + UCCKPL + UCMST			///< UCTLW0: 8 Bit Mode 3 SPI Master LSB first w/ baud from SMCLK
-#define SPI_8M3_BE		UCSYNC + UCSSEL1 + UCCKPH + UCCKPL + UCMST + UCMSB	///< UCTLW0: 8 bit Mode 3 SPI Master MSB first w/ baud from SMCLK
-#define	SPI_S8M0_LE		UCSYNC 												///< UCTLW0: 8 bit Mode 0 SPI Slave LSB first
-#define SPI_S8M0_BE		UCSYNC + UCMSB										///< UCTLW0: 8 bit Mode 0 SPI Slave MSB first
-#define SPI_S8M1_LE		UCSYNC + UCCKPH										///< UCTLW0: 8 bit Mode 1 SPI Slave LSB first
-#define SPI_S8M1_BE		UCSYNC + UCCKPH + UCMSB								///< UCTLW0: 8 bit Mode 1 SPI Slave MSB first
-#define SPI_S8M2_LE		UCSYNC + UCCKPL										///< UCTLW0: 8 bit Mode 2 SPI Slave LSB first
-#define SPI_28M2_BE		UCSYNC + UCCKPL + UCMSB								///< UCTLw0: 8 bit Mode 2 SPI Slave MSB first
-#define SPI_S8M3_LE		UCSYNC + UCCKPH + UCCKPL							///< UCTLW0: 8 bit Mode 3 SPI Slave LSB first
-#define SPI_S8M3_BE		UCSYNC + UCCKPH + UCCKPL + UCMSB					///< UCTLW0: 8 bit Mode 3 SPI Slave MSB first
+#define SPI_8M0		UCSYNC + UCSSEL1 + UCMST					///< UCTLW0: 8 bit Mode 0 SPI Master w/ baud from SMCLK
+#define SPI_8M1		UCSYNC + UCSSEL1 + UCCKPH + UCMST			///< UCTLW0: 8 bit Mode 1 SPI Master w/ baud from SMCLK
+#define SPI_8M2		UCSYNC + UCSSEL1 + UCCKPL + UCMST			///< UCTLW0: 8 bit Mode 2 SPI Master w/ baud from SMCLK
+#define SPI_8M3		UCSYNC + UCSSEL1 + UCCKPH + UCCKPL + UCMST	///< UCTLW0: 8 Bit Mode 3 SPI Master w/ baud from SMCLK
+#define	SPI_S8M0	UCSYNC										///< UCTLW0: 8 Bit Mode 0 SPI Slave
+#define SPI_S8M1	UCSYNC + UCCKPH								///< UCTLW0: 8 Bit Mode 1 SPI Slave
+#define SPI_S8M2	UCSYNC + UCCKPL								///< UCTLW0: 8 Bit Mode 2 SPI Slave
+#define SPI_S8M3	UCSYNC + UCCKPH + UCCKPL					///< UCTLW0: 8 Bit Mode 3 SPI Slave
 // I2C MODE
 #define I2C_10SMT	UCA10 + UCSLA10 + UCMST + UCMODE_3 + UCSSEL1 + UCTR + UCSYNC	///< UCTLW0: 10 bit addressed I2C (master and slave), single master mode, transmitter w/ baud from SMCLK
 #define I2C_10SMR	UCA10 + UCSLA10 + UCMST + UCMODE_3 + UCSSEL1 + UCSYNC			///< UCTLW0: 10 bit addressed I2C (master and slave), single master mode, receiver w/ baud from SMCLK
@@ -104,34 +96,42 @@ typedef struct uconf
 
 // App. registration function prototype
 int registerComm(usciConfig conf);
-/*********************************************************************
+
+
+/*************************************************************************
  * UCA0 Macro Logic
- *********************************************************************/
+ ************************************************************************/
 // Config function prototype
 inline void confUCA0(unsigned int commID);
-//************************* UART MODE ********************************
+/************************* UCA0 UART MODE ********************************/
 #ifdef USE_UCA0_UART
 // Function prototypes
 int uartA0Write(unsigned char* data, unsigned int len, unsigned int commID);
 int uartA0Read(unsigned int len, unsigned int commID);
-#define USE_UCA0															///< UCA0 Active Definition
-#define UCA0_IO_CONF()	P2SEL1 |= BIT0 + BIT1; P2SEL0 &= ~(BIT0 + BIT1)		///< USCI A0 UART I/O Configuration
+// Other useful macros
+#define USE_UCA0																///< UCA0 Active Definition
+#define UCA0_IO_CONF(x)	P2SEL1 |= BIT0 + BIT1; P2SEL0 &= ~(BIT0 + BIT1)			///< USCI A0 UART I/O Configuration
+#define	UCA0_IO_CLEAR()	P2SEL1 &= ~(BIT0 + BIT1); P2SEL0 &= ~(BIT0 + BIT1)		///< USCI A0 UART I/O Clear
+// Multiple endpoint config detection
 #ifdef USE_UCA0_SPI
 #error Multiple Serial Endpoint Configuration on USCI A0
 #endif // USE_UCA0_UART and USE_UCA0_SPI
 #endif
-//************************ SPI MODE ***********************************
+/************************* UCA0 SPI MODE ********************************/
 #ifdef USE_UCA0_SPI
 // Function prototypes
 int spiA0Write(unsigned char* data, unsigned int len, unsigned int commID);
 int spiA0Read(unsigned int len, unsigned int commID);
 // Other useful Macros
-#define USE_UCA0						///< USCI A0 Active Definition
+#define USE_UCA0																///< USCI A0 Active Definition
 #ifdef USE_UCA0_UART
 #error Multiple Serial Endpoint Configuration on USCI A0
 #endif // USE_UCA0_UART AND USE_UCA0_SPI
-#define UCA0_IO_CONF()	P2SEL1 |= BIT0 + BIT1; P2SEL0 &= ~(BIT0 + BIT1); P1SEL1 |= BIT5; P1SEL0 &= ~(BIT5)
+#define UCA0_IO_CONF(x)	P2SEL1 |= BIT0 + BIT1; P2SEL0 &= ~(BIT0 + BIT1); P1SEL1 |= BIT5; P1SEL0 &= ~(BIT5)		///< USCI A0 SPI I/O Configuration
+#define	UCA0_IO_CLEAR()	P2SEL1 &= ~(BIT0 + BIT1); P2SEL0 &= ~(BIT0 + BIT1); P1SEL1 &= ~BIT5; P1SEL0 &= ~BIT5	///< USCI A0 SPI I/O Clear
 #endif // USE_UCA0_SPI
+
+
 /**************************************************************************
  * UCA1 Macro Logic
  *************************************************************************/
@@ -140,8 +140,11 @@ int spiA0Read(unsigned int len, unsigned int commID);
 // Function prototypes
 int uartA1Write(unsigned char* data, unsigned int len, unsigned int commID);
 int uartA1Read(unsigned int len, unsigned int commID);
+// Other useful macros
 #define USE_UCA1															///< USCI A1 Active Definition
-#define UCA1_IO_CONF()	P2SEL1 |= BIT5 + BIT6; P2SEL0 &= ~(BIT5 + BIT6)		///< USCI A1 UART I/O Configuration
+#define UCA1_IO_CONF(x)	P2SEL1 |= BIT5 + BIT6; P2SEL0 &= ~(BIT5 + BIT6)		///< USCI A1 UART I/O Configuration
+#define UCA1_IO_CLEAR()	P2SEL1 &= ~(BIT5 + BIT6); P2SEL0 &= ~(BIT5 + BIT6)	///< USCI A1 UART I/O Clear
+// Multiple endpoint config detection
 #ifdef USE_UCA1_SPI
 #error Multiple Serial Endpoint Configuration on USCI A1
 #endif // USE_UCA1_UART and USE_UCA1_SPI
@@ -152,34 +155,46 @@ int uartA1Read(unsigned int len, unsigned int commID);
 int spiA1Write(unsigned char* data, unsigned int len, unsigned int commID);
 int spiA1Read(unsigned int len, unsigned int commID);
 // Other useful macros
-#define USE_UCA1	///< USCI A1 Active Definition
+#define USE_UCA1																			///< USCI A1 Active Definition
+#define UCA1_IO_CONF(x)	P2SEL1 |= BIT4 + BIT5 + BIT6; P2SEL0 &= ~(BIT4 + BIT5 + BIT6); 		///< USCI A1 SPI I/O Configuration
+#define	UCA1_IO_CLEAR()	P2SEL1 &= ~(BIT4 + BIT5 + BIT6); P2SEL0 &= ~(BIT4 + BIT5 + BIT6);	///< USCI A1 SPI I/O Clear
+// Multiple endpoint config detection
 #ifdef USE_UCA1_UART
 #error Multiple Serial Endpoint Configuration on USCI A1
 #endif // USE_UCA1_UART and USE_UCA1_SPI
-#define UCA1_IO_CONF()	P2SEL1 |= BIT5 + BIT6; P2SEL0 &= ~(BIT5 + BIT6)	///< USCI A1 SPI I/O Configuration
 #endif // USE_UCA1_SPI
-// UCB0 Macro Logic
+
+
+/**************************************************************************
+ * UCB0 Macro Logic
+ *************************************************************************/
+/************************* UCB0 SPI MODE *********************************/
 #ifdef USE_UCB0_SPI
 // Function prototypes
 int spiB0Write(unsigned char* data, unsigned int len, unsigned int commID);
 int spiB0Read(unsigned int len, unsigned int commID);
-// Other useul macros
+// Other useful macros
 #define USE_UCB0		///< USCI B0 Active Definition
+#define UCB0_IO_CONF(x)	P1SEL1 |= BIT6 + BIT7; P1SEL0 &= ~(BIT6 + BIT7); P2SEL1 |= BIT2; P2SEL0 &= ~BIT2		///< USCI B0 SPI I/O Configuration
+#define UCB0_IO_CLEAR()	P1SEL1 &= ~(BIT6 + BIT7); P1SEL0 &= ~(BIT6 + BIT7); P2SEL1 &= ~BIT2; P2SEL0 &= ~BIT2 	///< USCI B0 SPI I/O Clear
+// Multiple endpoint config detection
 #ifdef USE_UCB0_I2C
 #error Mulitple Serial Endpoint Configuration on USCI B0
 #endif // USE_UCB0_SPI and USE_UCB0_I2C
-#define UCB0_IO_CONF()	P1SEL1 |= BIT6 + BIT7; P1SEL0 &= ~(BIT6 + BIT7); P2SEL1 |= BIT2; P2SEL0 &= ~BIT2	///< USCI B0 SPI I/O Configuration
 #endif // USE_UCB0_SPI
+/************************* UCB0 I2C MODE *********************************/
 #ifdef USE_UCB0_I2C
 // Function prototypes
 int i2cB0Write(unsigned char* data, unsigned int len, unsigned int commID);
-int i2cB1Read(unsigned int len, unsigned int commID);
-// Could define some slave addresses here...
-#define USE_UCB0
+int i2cB0Read(unsigned int len, unsigned int commID);
+// Other useful macros
+#define USE_UCB0																	///< USCI B0 Active Definition
+#define UCB0_IO_CONF(x)	P1SEL1 |= BIT6 + BIT7; P1SEL0 &= ~(BIT6 + BIT7); P2SEL1 |= BIT2; P2SEL0 &= ~BIT2 //; I2C_ADDR(x)	///< USCI B0 I2C I/O Configuration
+#define UCB0_IO_CLEAR()	P1SEL1 &= ~(BIT6 + BIT7); P1SEL0 &= ~(BIT6 + BIT7); P2SEL1 &= ~BIT2; P2SEL0 &= ~BIT2
+#define I2C_ADDR(x)	UCB0I2CSA = x
+/// Muleiple endpoint config detection
 #ifdef USE_UCB0_SPI
 #error Multiple Serial Endpoint Configuration on USCI B0
 #endif // USE_UCB0_SPI and USE_UCB0_I2C
-#define UCB0_IO_CONF()	P1SEL1 |= BIT6 + BIT7; P1SEL0 &= ~(BIT6 + BIT7); P2SEL1 |= BIT2; P2SEL0 &= ~BIT2
-#define I2C_ADDR(x)	UCB0I2CSA = x
 #endif // USE_UCB0_I2C
 #endif /* COMM_H_ */
