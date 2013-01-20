@@ -290,11 +290,11 @@ __interrupt void usciA0Isr(void)
 	// Transmit Interrupt Flag Set
 	if(UCA0IFG & UCTXIFG){
 		if(uca0TxSize > 0){
-			UCA0TXBUF = *(uca0TxPtr++);				// Transmit the next outgoing byte
+			UCA0TXBUF = *(++uca0TxPtr);				// Transmit the next outgoing byte
 			uca0TxSize--;
 		}
 		else{
-			UCA0IV &= ~UCIVTXIFG;					// Clear TX interrupt flag from vector on end of TX
+			UCA0IFG &= ~UCTXIFG;					// Clear TX interrupt flag from vector on end of TX
 			usciStat[UCA0_INDEX] = OPEN; 			// Set status open if done with transmit
 		}
 	}
@@ -316,6 +316,7 @@ __interrupt void usciA0Isr(void)
 
 		}
 	}
+	UCA0IFG &= ~UCRXIFG;					// Clear RX interrupt flag from vector on end of RX
 }
 #endif // USE_UCA0
 
@@ -588,11 +589,11 @@ __interrupt void usciA1Isr(void)
 	// Transmit Interrupt Flag Set
 	if(UCA1IFG & UCTXIFG){
 		if(uca1TxSize > 0){
-			UCA1TXBUF = *(uca1TxPtr++);				// Transmit the next outgoing byte
+			UCA1TXBUF = *(++uca1TxPtr);				// Transmit the next outgoing byte
 			uca1TxSize--;
 		}
 		else{
-			UCA1IV &= ~UCIVTXIFG;					// Clear TX interrupt flag from vector on end of TX
+			UCA1IFG &= ~UCTXIFG;					// Clear TX interrupt flag from vector on end of TX
 			usciStat[UCA1_INDEX] = OPEN; 			// Set status open if done with transmit
 		}
 	}
@@ -614,6 +615,7 @@ __interrupt void usciA1Isr(void)
 
 		}
 	}
+	UCA1IFG &= ~UCRXIFG;					// Clear RX interrupt flag from vector on end of RX
 }
 #endif // USE_UCA1
 
@@ -849,7 +851,7 @@ __interrupt void usciB0Isr(void)
 	}
 
 	// Receive Interrupt Flag Set
-	if((UCB0IFG & UCRXIFG) && usciStat[UCB0_INDEX] == RX){	// Check for interrupt flag and RX mode
+	if(UCB0IFG & UCRXIFG){	// Check for interrupt flag and RX mode
 #ifdef USE_UCB0_SPI
 		if(usciStat[UCB0_INDEX] == RX)				// Check we are in RX mode for SPI
 #endif // USE_UCB0_SPI
@@ -866,6 +868,6 @@ __interrupt void usciB0Isr(void)
 		}
 	}
 
-	UCB0IFG &= ~UCRXIFG;					// Clear TX interrupt flag from vector on end of TX
+	UCB0IFG &= ~UCRXIFG;					// Clear RX interrupt flag from vector on end of RX
 }
 #endif // USE_UCB0
