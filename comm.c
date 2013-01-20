@@ -804,6 +804,7 @@ unsigned char spiB0Swap(unsigned char byte, unsigned int commID)
 {
 	if(usciStat[UCB0_INDEX] != OPEN) return -1;		// Busy
 	confUCB0(commID);
+	ucb0TxSize = 0;
 	UCB0TXBUF = byte;
 	while(UCB0STATW & UCBUSY);						// Wait for TX complete
 	return UCB0RXBUF;
@@ -838,17 +839,17 @@ __interrupt void usciB0Isr(void)
 	// Transmit Interrupt Flag Set
 	if(UCB0IFG & UCTXIFG){
 		if(ucb0TxSize > 0){
-			UCB0TXBUF = *(ucb0TxPtr++);				// Transmit the next outgoing byte
+			UCB0TXBUF = *(++ucb0TxPtr);				// Transmit the next outgoing byte
 			ucb0TxSize--;
 		}
 		else{
-			UCB0IV &= ~UCIVTXIFG;					// Clear TX interrupt flag from vector on end of TX
 			usciStat[UCB0_INDEX] = OPEN; 			// Set status open if done with transmit
+			UCB0IFG &= ~UCTXIFG;					// Clear TX interrupt flag from vector on end of TX
 		}
 	}
 
 	// Receive Interrupt Flag Set
-	if(UCB0IFG & UCRXIFG){
+	if((UCB0IFG & UCRXIFG) && usciStat[UCB0_INDEX] == RX){	// Check for interrupt flag and RX mode
 #ifdef USE_UCB0_SPI
 		if(usciStat[UCB0_INDEX] == RX)				// Check we are in RX mode for SPI
 #endif // USE_UCB0_SPI
@@ -865,6 +866,6 @@ __interrupt void usciB0Isr(void)
 		}
 	}
 
-	UCB0IV &= ~UCIVRXIFG;					// Clear TX interrupt flag from vector on end of TX
+	UCB0IFG &= ~UCRXIFG;					// Clear TX interrupt flag from vector on end of TX
 }
 #endif // USE_UCB0
