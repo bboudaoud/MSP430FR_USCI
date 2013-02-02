@@ -10,6 +10,9 @@
 
 // If we are using the MSP430FR5739 (FRAM series)
 #ifdef MSP430FR5739_COMM_LIB
+#ifdef USE_UCB1
+#error No USCI B1 Module Available in the MSP430FR5739
+#endif //USE_UCB1
 // MSP430FR5739 EUSCI Module Pinouts
 //*********** UCA0 **************//
 // UCA0TXD/SIMO	= P2.0 (Pin 21)

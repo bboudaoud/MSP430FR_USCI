@@ -1,0 +1,5 @@
+<map id="confUCB0" name="confUCB0">
+<area shape="rect" id="node3" href="$comm_8h.html#acac01b5fff8d81782043a7510da979dc" title="Transmit method for USCI B0 SPI operation." alt="" coords="134,5,221,32"/>
+<area shape="rect" id="node5" href="$comm_8h.html#ad8e558a330d8319d9e422473dcc6d5f6" title="Receive method for USCI B0 SPI operation." alt="" coords="135,56,220,83"/>
+<area shape="rect" id="node7" href="$comm_8h.html#aeeab84d98e251811b3da247add841c45" title="Byte Swap method for USCI B0 SPI operation." alt="" coords="134,107,221,133"/>
+</map>

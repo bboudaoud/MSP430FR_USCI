@@ -1,11 +1,12 @@
 #ifndef COMM_H_
 #define COMM_H_
-#include "msp430fr5739.h"	// Includes USCI Control Register names for USCI config
+#include "msp430fr5739.h"		// Includes USCI Control Register names for USCI config
+#include "comm_hal.h"
 #include "timing.h"			// Includes system clock macros for baud rate generation (used in UBR_DIV macro)
 #include "useful.h"			// Includes bitwise access structure and macros (used in CS logic)
 
 
-#define MAX_DEVS	8			///< Maximum number of devices to be registered
+#define MAX_DEVS	8		///< Maximum number of devices to be registered
 
 // USCI Library Conditional Compilation Macros
 // NOTE: Only define at most 1 config for each USCI module, otherwise a Multiple Serial Endpoint error will be created on compilation
@@ -15,6 +16,8 @@
 //#define USE_UCA1_SPI			///< USCI A1 SPI Mode Conditional Compilation Flag
 #define USE_UCB0_SPI			///< USCI B0 SPI Mode Conditional Compilation Flag
 //#define USE_UCB0_I2C			///< USCI B0 I2C Mode Conditional Compilation Flag
+//#define USE_UCB1_SPI			///< USCI B1 SPI Mode Conditional Compilation Flag
+//#define USE_UCB1_I2C			///< USCI B1 I2C Mode Conditional Compilation Flag
 
 /// USCI Configuration Data Structure
 typedef struct uconf
@@ -35,19 +38,22 @@ typedef struct uconf
 #define	UMODE_MASK		0xF000	///< USCI name/mode mask for resource address code
 #define	ADDR_MASK		0x0FFF	///< USCI address mask for resource address code
 // Resource Codes
-#define UCA0_RCODE		0x4000	///< USCI A0 resource code
-#define	UCA1_RCODE		0x8000	///< USCI A1 resource code
-#define UCB0_RCODE		0xC000	///< USCI B0 resource code
+#define UCA0_RCODE		0x0000	///< USCI A0 resource code
+#define	UCA1_RCODE		0x4000	///< USCI A1 resource code
+#define UCB0_RCODE		0x8000	///< USCI B0 resource code
+#define UCB1_RCODE		0xC000	///< USCI B1 resource code
 #define UART_MODE		0x1000	///< UART mode code
 #define SPI_MODE		0x2000	///< SPI mode code
 #define I2C_MODE		0x3000	///< I2C mode code
 // Resource and Mode combo codes
-#define UCA0_UART		UCA0_RCODE + UART_MODE
-#define UCA0_SPI		UCA0_RCODE + SPI_MODE
-#define UCA1_UART		UCA1_RCODE + UART_MODE
-#define UCA1_SPI		UCA1_RCODE + SPI_MODE
-#define UCB0_SPI		UCB0_RCODE + SPI_MODE
-#define UCB0_I2C		UCB0_RCODE + I2C_MODE
+#define UCA0_UART		UCA0_RCODE + UART_MODE	///< Combined UCA0 UART Mode Resource Code
+#define UCA0_SPI		UCA0_RCODE + SPI_MODE	///< Combined UCA0 SPI Mode Resource Code
+#define UCA1_UART		UCA1_RCODE + UART_MODE	///< Combined UCA1 UART Mode Resource Code
+#define UCA1_SPI		UCA1_RCODE + SPI_MODE	///< Combined UCA1 SPI Mode Resource Code
+#define UCB0_SPI		UCB0_RCODE + SPI_MODE	///< Combined UCB0 SPI Mode Resource Code
+#define UCB0_I2C		UCB0_RCODE + I2C_MODE	///< Combined UCB0 I2C Mode Resource Code
+#define UCB1_SPI		UCB1_RCODE + SPI_MODE	///< Combined UCB1 SPI Mode Resource Code
+#define UCB1_I2C		UCB1_RCODE + I2C_MODE	///< Combined UCB1 I2C Mode Resource Code
 
 /**********************************************************
  * USCI Register Values
@@ -79,31 +85,27 @@ typedef struct uconf
 #define I2C_7SMT		UCMST + UCMODE_3 + UCSYNC + UCSSEL1 + UCTR			///< UCTLW0: 7 bit addressed I2C (master and slave), single master mode, transmitter w/ baud from SMCLK
 #define I2C_7SMR		UCMST + UCMODE_3 + UCSYNC + UCSSEL1				///< UCTLW0: 7 bit addressed I2C (master and slave), single master mode, receiver w/ baud from SMCLK
 // USCI CTL Work 1 Defaults
-#define DEF_CTLW1			0x0003			///< CTLW1: 200ns deglitch time
+#define DEF_CTLW1		0x0003			///< CTLW1: 200ns deglitch time
 // USCI Baud Rate Defaults
-#define UCLK_FREQ			SMCLK_FREQ		///< USCI Clock Rate [use SMCLK to source our UART (from timing.h)]
-#define UBR_DIV(x)			UCLK_FREQ/x		///< Baud rate frequency to divisor macro (uses timing.h)
-// USCI Interrupt Vector values
-#define UCIVTXIFG			0x04			///< USCI Transmit Interrupt Flag Mask
-#define UCIVRXIFG			0x02			///< USCI Receive Interrupt Flag Mask
+#define UCLK_FREQ		SMCLK_FREQ		///< USCI Clock Rate [use SMCLK to source our UART (from timing.h)]
+#define UBR_DIV(x)		UCLK_FREQ/x		///< Baud rate frequency to divisor macro (uses timing.h)
 
 // Resource config buffer index
-#define UCA0_INDEX			0			///< USCI A0 shared buffer index
-#define UCA1_INDEX 			1			///< USCI A1 shared buffer index
-#define UCB0_INDEX			2			///< USCI B0 shared buffer index
-
+#define UCA0_INDEX		0			///< USCI A0 shared buffer index
+#define UCA1_INDEX 		1			///< USCI A1 shared buffer index
+#define UCB0_INDEX		2			///< USCI B0 shared buffer index
+#define UCB1_INDEX		3			///< USCI B1 shared buffer index
 // USCI Status Codes
-#define 	OPEN			0			///< USCI OPEN Status code
-#define		TX			1			///< USCI TX Status code
-#define		RX			2			///< USCI RX Status code
-
+#define OPEN			0			///< USCI OPEN Status code
+#define	TX			1			///< USCI TX Status code
+#define	RX			2			///< USCI RX Status code
 // Read/Write Routine Return Codes
-#define 	USCI_CONF_ERROR		-2			///< USCI configuration error return code
-#define		USCI_BUSY_ERROR		-1			///< USCI busy error return code
-#define		USCI_SUCCESS		1			///< TX/RX success return code
+#define USCI_CONF_ERROR		-2			///< USCI configuration error return code
+#define	USCI_BUSY_ERROR		-1			///< USCI busy error return code
+#define	USCI_SUCCESS		1			///< TX/RX success return code
 
 // App. registration function prototype
-int registerComm(usciConfig conf);
+int registerComm(usciConfig *conf);
 /*************************************************************************
  * UCA0 Macro Logic
  ************************************************************************/
@@ -120,7 +122,7 @@ void setUCA0Baud(unsigned int baudDiv, unsigned int commID);
 int uartA0Write(unsigned char* data, unsigned int len, unsigned int commID);
 int uartA0Read(unsigned int len, unsigned int commID);
 // Other useful macros
-#define USE_UCA0																///< UCA0 Active Definition
+#define USE_UCA0	///< UCA0 Active Definition
 // Multiple endpoint config detection
 #ifdef USE_UCA0_SPI
 #error Multiple Serial Endpoint Configuration on USCI A0
@@ -138,7 +140,7 @@ int spiA0Write(unsigned char* data, unsigned int len, unsigned int commID);
 int spiA0Read(unsigned int len, unsigned int commID);
 unsigned char spiA0Swap(unsigned char byte, unsigned int commID);
 // Multiple Endpoint Config Compiler Error
-#define USE_UCA0																///< USCI A0 Active Definition
+#define USE_UCA0	///< USCI A0 Active Definition
 #ifdef USE_UCA0_UART
 #error Multiple Serial Endpoint Configuration on USCI A0
 #endif // USE_UCA0_UART AND USE_UCA0_SPI
@@ -158,7 +160,7 @@ void setUCA1Baud(unsigned int baudDiv, unsigned int commID);
 int uartA1Write(unsigned char* data, unsigned int len, unsigned int commID);
 int uartA1Read(unsigned int len, unsigned int commID);
 // Other useful macros
-#define USE_UCA1															///< USCI A1 Active Definition
+#define USE_UCA1	///< USCI A1 Active Definition
 // Multiple endpoint config detection
 #ifdef USE_UCA1_SPI
 #error Multiple Serial Endpoint Configuration on USCI A1
@@ -176,9 +178,7 @@ int spiA1Write(unsigned char* data, unsigned int len, unsigned int commID);
 int spiA1Read(unsigned int len, unsigned int commID);
 unsigned char spiA1Swap(unsigned char byte, unsigned int commID);
 // Other useful macros
-#define USE_UCA1																			///< USCI A1 Active Definition
-#define UCA1_IO_CONF(x)	P2SEL1 |= BIT4 + BIT5 + BIT6; P2SEL0 &= ~(BIT4 + BIT5 + BIT6); 		///< USCI A1 SPI I/O Configuration
-#define	UCA1_IO_CLEAR()	P2SEL1 &= ~(BIT4 + BIT5 + BIT6); P2SEL0 &= ~(BIT4 + BIT5 + BIT6);	///< USCI A1 SPI I/O Clear
+#define USE_UCA1	///< USCI A1 Active Definition
 // Multiple endpoint config detection
 #ifdef USE_UCA1_UART
 #error Multiple Serial Endpoint Configuration on USCI A1
@@ -200,7 +200,7 @@ int spiB0Write(unsigned char* data, unsigned int len, unsigned int commID);
 int spiB0Read(unsigned int len, unsigned int commID);
 unsigned char spiB0Swap(unsigned char byte, unsigned int commID);
 // Other useful macros
-#define USE_UCB0		///< USCI B0 Active Definition
+#define USE_UCB0	///< USCI B0 Active Definition
 // Multiple endpoint config detection
 #ifdef USE_UCB0_I2C
 #error Mulitple Serial Endpoint Configuration on USCI B0
@@ -217,12 +217,49 @@ void setUCB0Baud(unsigned int baudDiv, unsigned int commID);
 int i2cB0Write(unsigned char* data, unsigned int len, unsigned int commID);
 int i2cB0Read(unsigned int len, unsigned int commID);
 // Other useful macros
-#define USE_UCB0																	///< USCI B0 Active Definition
+#define USE_UCB0	///< USCI B0 Active Definition
 /// Muleiple endpoint config detection
 #ifdef USE_UCB0_SPI
 #error Multiple Serial Endpoint Configuration on USCI B0
 #endif // USE_UCB0_SPI and USE_UCB0_I2C
 #endif // USE_UCB0_I2C
-// Function prototype for USCI registration
-int registerComm(usciConfig conf);
+
+/**************************************************************************
+ * UCB1 Macro Logic
+ *************************************************************************/
+/************************* UCB1 SPI MODE *********************************/
+#ifdef USE_UCB0_SPI
+// Function prototypes
+inline void confUCB1(unsigned int commID);
+void resetUCB1(unsigned int commID);
+unsigned int getUCB1RxSize(unsigned int commID);
+unsigned char getUCB1Stat(void);
+void setUCB1Baud(unsigned int baudDiv, unsigned int commID);
+int spiB1Write(unsigned char* data, unsigned int len, unsigned int commID);
+int spiB1Read(unsigned int len, unsigned int commID);
+unsigned char spiB1Swap(unsigned char byte, unsigned int commID);
+// Other useful macros
+#define USE_UCB1	///< USCI B1 Active Definition
+// Multiple endpoint config detection
+#ifdef USE_UCB1_I2C
+#error Mulitple Serial Endpoint Configuration on USCI B1
+#endif // USE_UCB1_SPI and USE_UCB1_I2C
+#endif // USE_UCB1_SPI
+/************************* UCB0 I2C MODE *********************************/
+#ifdef USE_UCB1_I2C
+// Function prototypes
+inline void confUCB1(usciConfig conf);
+void resetUCB1(unsigned int commID);
+unsigned int getUCB1RxSize(unsigned int commID);
+unsigned char getUCB1Stat(void);
+void setUCB1Baud(unsigned int baudDiv, unsigned int commID);
+int i2cB1Write(unsigned char* data, unsigned int len, unsigned int commID);
+int i2cB1Read(unsigned int len, unsigned int commID);
+// Other useful macros
+#define USE_UCB1	///< USCI B1 Active Definition
+/// Muleiple endpoint config detection
+#ifdef USE_UCB1_SPI
+#error Multiple Serial Endpoint Configuration on USCI B1
+#endif // USE_UCB1_SPI and USE_UCB1_I2C
+#endif // USE_UCB1_I2C
 #endif /* COMM_H_ */
