@@ -91,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;msp430fr5739.h&quot;</code><br/>
-<code>#include &quot;<a class="el" href="comm__hal_8h_source.html">comm_hal.h</a>&quot;</code><br/>
+<code>#include &quot;comm_hal.h&quot;</code><br/>
 <code>#include &quot;<a class="el" href="timing_8h_source.html">timing.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="useful_8h_source.html">useful.h</a>&quot;</code><br/>
 </div><div class="textblock"><div class="dynheader">
@@ -99,7 +99,7 @@ Include dependency graph for comm.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="comm_8h__incl.png" border="0" usemap="#comm_8h" alt=""/></div>
 <map name="comm_8h" id="comm_8h">
-<area shape="rect" id="node5" href="comm__hal_8h.html" title="comm_hal.h" alt="" coords="163,80,256,107"/><area shape="rect" id="node7" href="useful_8h.html" title="useful.h" alt="" coords="217,155,284,181"/><area shape="rect" id="node9" href="timing_8h.html" title="timing.h" alt="" coords="70,80,137,107"/></map>
+<area shape="rect" id="node7" href="timing_8h.html" title="timing.h" alt="" coords="140,80,208,107"/><area shape="rect" id="node10" href="useful_8h.html" title="useful.h" alt="" coords="233,80,300,107"/></map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
@@ -159,20 +159,28 @@ Macros</h2></td></tr>
 <tr class="memdesc:a5cd01756030509b764d43a2b8c94fce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C mode code.  <a href="#a5cd01756030509b764d43a2b8c94fce8">More...</a><br/></td></tr>
 <tr class="separator:a5cd01756030509b764d43a2b8c94fce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af06a413b28dbf0ca2aa98d76dccc3d60"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#af06a413b28dbf0ca2aa98d76dccc3d60">UCA0_UART</a>&#160;&#160;&#160;<a class="el" href="comm_8h.html#ab3f7b8765174ed6547c23feab6ab139e">UCA0_RCODE</a> + <a class="el" href="comm_8h.html#ab2b881cf2de94fa3dc22df0f07300b87">UART_MODE</a></td></tr>
+<tr class="memdesc:af06a413b28dbf0ca2aa98d76dccc3d60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combined UCA0 UART Mode Resource Code.  <a href="#af06a413b28dbf0ca2aa98d76dccc3d60">More...</a><br/></td></tr>
 <tr class="separator:af06a413b28dbf0ca2aa98d76dccc3d60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc86e7a0d882692903e7d9015516e267"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#adc86e7a0d882692903e7d9015516e267">UCA0_SPI</a>&#160;&#160;&#160;<a class="el" href="comm_8h.html#ab3f7b8765174ed6547c23feab6ab139e">UCA0_RCODE</a> + <a class="el" href="comm_8h.html#ab1dcc9464e3fcb94922386e8a7f53f21">SPI_MODE</a></td></tr>
+<tr class="memdesc:adc86e7a0d882692903e7d9015516e267"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combined UCA0 SPI Mode Resource Code.  <a href="#adc86e7a0d882692903e7d9015516e267">More...</a><br/></td></tr>
 <tr class="separator:adc86e7a0d882692903e7d9015516e267"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e39427b3617c6d67fa01b86db760254"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a1e39427b3617c6d67fa01b86db760254">UCA1_UART</a>&#160;&#160;&#160;<a class="el" href="comm_8h.html#a04cbf79dc60bb59565394441e0f53bc1">UCA1_RCODE</a> + <a class="el" href="comm_8h.html#ab2b881cf2de94fa3dc22df0f07300b87">UART_MODE</a></td></tr>
+<tr class="memdesc:a1e39427b3617c6d67fa01b86db760254"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combined UCA1 UART Mode Resource Code.  <a href="#a1e39427b3617c6d67fa01b86db760254">More...</a><br/></td></tr>
 <tr class="separator:a1e39427b3617c6d67fa01b86db760254"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c4a00ba71392c346e16cb3583477635"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a0c4a00ba71392c346e16cb3583477635">UCA1_SPI</a>&#160;&#160;&#160;<a class="el" href="comm_8h.html#a04cbf79dc60bb59565394441e0f53bc1">UCA1_RCODE</a> + <a class="el" href="comm_8h.html#ab1dcc9464e3fcb94922386e8a7f53f21">SPI_MODE</a></td></tr>
+<tr class="memdesc:a0c4a00ba71392c346e16cb3583477635"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combined UCA1 SPI Mode Resource Code.  <a href="#a0c4a00ba71392c346e16cb3583477635">More...</a><br/></td></tr>
 <tr class="separator:a0c4a00ba71392c346e16cb3583477635"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21163b307bc831f478d41be6618af314"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a21163b307bc831f478d41be6618af314">UCB0_SPI</a>&#160;&#160;&#160;<a class="el" href="comm_8h.html#ad9f19b9c209e8552588fe3905ccfa486">UCB0_RCODE</a> + <a class="el" href="comm_8h.html#ab1dcc9464e3fcb94922386e8a7f53f21">SPI_MODE</a></td></tr>
+<tr class="memdesc:a21163b307bc831f478d41be6618af314"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combined UCB0 SPI Mode Resource Code.  <a href="#a21163b307bc831f478d41be6618af314">More...</a><br/></td></tr>
 <tr class="separator:a21163b307bc831f478d41be6618af314"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87abfe9b6b7ddfa7f0d8d79ed62621ea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a87abfe9b6b7ddfa7f0d8d79ed62621ea">UCB0_I2C</a>&#160;&#160;&#160;<a class="el" href="comm_8h.html#ad9f19b9c209e8552588fe3905ccfa486">UCB0_RCODE</a> + <a class="el" href="comm_8h.html#a5cd01756030509b764d43a2b8c94fce8">I2C_MODE</a></td></tr>
+<tr class="memdesc:a87abfe9b6b7ddfa7f0d8d79ed62621ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combined UCB0 I2C Mode Resource Code.  <a href="#a87abfe9b6b7ddfa7f0d8d79ed62621ea">More...</a><br/></td></tr>
 <tr class="separator:a87abfe9b6b7ddfa7f0d8d79ed62621ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1f91096176664b70d2d15833e46095a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#aa1f91096176664b70d2d15833e46095a">UCB1_SPI</a>&#160;&#160;&#160;<a class="el" href="comm_8h.html#a077f9e7a269fe818a4cf89d51ab54f77">UCB1_RCODE</a> + <a class="el" href="comm_8h.html#ab1dcc9464e3fcb94922386e8a7f53f21">SPI_MODE</a></td></tr>
+<tr class="memdesc:aa1f91096176664b70d2d15833e46095a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combined UCB1 SPI Mode Resource Code.  <a href="#aa1f91096176664b70d2d15833e46095a">More...</a><br/></td></tr>
 <tr class="separator:aa1f91096176664b70d2d15833e46095a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae497f665d6228fcb261b0e1229f04a89"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#ae497f665d6228fcb261b0e1229f04a89">UCB1_I2C</a>&#160;&#160;&#160;<a class="el" href="comm_8h.html#a077f9e7a269fe818a4cf89d51ab54f77">UCB1_RCODE</a> + <a class="el" href="comm_8h.html#a5cd01756030509b764d43a2b8c94fce8">I2C_MODE</a></td></tr>
+<tr class="memdesc:ae497f665d6228fcb261b0e1229f04a89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combined UCB1 I2C Mode Resource Code.  <a href="#ae497f665d6228fcb261b0e1229f04a89">More...</a><br/></td></tr>
 <tr class="separator:ae497f665d6228fcb261b0e1229f04a89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0abf707a5045920e43f71c36761c1951"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a0abf707a5045920e43f71c36761c1951">UART_8N1</a>&#160;&#160;&#160;UCSSEL1</td></tr>
 <tr class="memdesc:a0abf707a5045920e43f71c36761c1951"><td class="mdescLeft">&#160;</td><td class="mdescRight">UCTLW0: 8 bit UART (no parity, 1 stop bit) w/ baud from SMCLK.  <a href="#a0abf707a5045920e43f71c36761c1951">More...</a><br/></td></tr>
@@ -920,6 +928,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Combined UCA0 SPI Mode Resource Code. </p>
+
 <p>Definition at line <a class="el" href="comm_8h_source.html#l00050">50</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
@@ -933,6 +943,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Combined UCA0 UART Mode Resource Code. </p>
 
 <p>Definition at line <a class="el" href="comm_8h_source.html#l00049">49</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
@@ -980,6 +992,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Combined UCA1 SPI Mode Resource Code. </p>
+
 <p>Definition at line <a class="el" href="comm_8h_source.html#l00052">52</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
@@ -994,6 +1008,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Combined UCA1 UART Mode Resource Code. </p>
+
 <p>Definition at line <a class="el" href="comm_8h_source.html#l00051">51</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
@@ -1007,6 +1023,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Combined UCB0 I2C Mode Resource Code. </p>
 
 <p>Definition at line <a class="el" href="comm_8h_source.html#l00054">54</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
@@ -1054,6 +1072,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Combined UCB0 SPI Mode Resource Code. </p>
+
 <p>Definition at line <a class="el" href="comm_8h_source.html#l00053">53</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
@@ -1067,6 +1087,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Combined UCB1 I2C Mode Resource Code. </p>
 
 <p>Definition at line <a class="el" href="comm_8h_source.html#l00056">56</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
@@ -1113,6 +1135,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Combined UCB1 SPI Mode Resource Code. </p>
 
 <p>Definition at line <a class="el" href="comm_8h_source.html#l00055">55</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
@@ -1461,9 +1485,8 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Get method for USCI B1 RX buffer size. </p>
-<pre class="fragment"> Returns the number of bytes which have been written
- to the RX pointer (since the last read performed).
-</pre><dl class="params"><dt>Parameters</dt><dd>
+<p>Returns the number of bytes which have been written to the RX pointer (since the last read performed).</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">commID</td><td>Comm ID of app. (not used) </td></tr>
   </table>
@@ -1915,7 +1938,7 @@ Here is the call graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Feb 2 2013 15:47:02 for MSP430 eUSCI Driver Library by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Feb 12 2013 15:18:59 for MSP430 eUSCI Driver Library by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

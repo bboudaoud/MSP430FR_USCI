@@ -82,9 +82,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">useful.h File Reference</div>  </div>
 </div><!--header-->
@@ -94,45 +94,58 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="useful_8h__dep__incl.png" border="0" usemap="#useful_8hdep" alt=""/></div>
 <map name="useful_8hdep" id="useful_8hdep">
-<area shape="rect" id="node3" href="comm__hal_8h.html" title="comm_hal.h" alt="" coords="65,80,159,107"/><area shape="rect" id="node5" href="comm_8h.html" title="comm.h" alt="" coords="5,155,75,181"/><area shape="rect" id="node11" href="msp__fr__exp__hal_8h.html" title="msp_fr_exp_hal.h" alt="" coords="183,80,307,107"/><area shape="rect" id="node7" href="comm_8c.html" title="comm.c" alt="" coords="41,229,111,256"/></map>
+<area shape="rect" id="node3" href="comm_8h.html" title="comm.h" alt="" coords="5,80,75,107"/><area shape="rect" id="node7" href="msp__fr__exp__hal_8h.html" title="msp_fr_exp_hal.h" alt="" coords="99,80,223,107"/><area shape="rect" id="node5" href="comm_8c.html" title="comm.c" alt="" coords="5,155,75,181"/></map>
 </div>
 </div>
 <p><a href="useful_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_bits8.html">Bits8</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:aeca3ec775a64f14c1795472f6ac55ab5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="useful_8h.html#aeca3ec775a64f14c1795472f6ac55ab5">enter_critical</a>(SR_state)</td></tr>
+<tr class="memitem:aeca3ec775a64f14c1795472f6ac55ab5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="useful_8h.html#aeca3ec775a64f14c1795472f6ac55ab5">enter_critical</a>(<a class="el" href="useful_8h.html#a28e3bf2aa15e1afc67aa54c777a0173b">SR_state</a>)&#160;&#160;&#160;do {\</td></tr>
 <tr class="separator:aeca3ec775a64f14c1795472f6ac55ab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ae131c620f634279196948955012a5e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="useful_8h.html#a1ae131c620f634279196948955012a5e">exit_critical</a>(SR_state)&#160;&#160;&#160;_bis_SR_register(SR_state)</td></tr>
+<tr class="memitem:a1ae131c620f634279196948955012a5e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="useful_8h.html#a1ae131c620f634279196948955012a5e">exit_critical</a>(<a class="el" href="useful_8h.html#a28e3bf2aa15e1afc67aa54c777a0173b">SR_state</a>)&#160;&#160;&#160;_bis_SR_register(<a class="el" href="useful_8h.html#a28e3bf2aa15e1afc67aa54c777a0173b">SR_state</a>)</td></tr>
 <tr class="separator:a1ae131c620f634279196948955012a5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2de6ec3aaa018aeec989cb721b49ab84"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="useful_8h.html#a2de6ec3aaa018aeec989cb721b49ab84">systemReset</a>()</td></tr>
 <tr class="separator:a2de6ec3aaa018aeec989cb721b49ab84"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2796a59d07019ade14487c3b3ae7ee4c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="useful_8h.html#a2796a59d07019ade14487c3b3ae7ee4c">B8_0</a>(x)&#160;&#160;&#160;(((<a class="el" href="useful_8h.html#a9794d25d6eca973863ae1d3e0d3f805d">Bits</a> *) (x))-&gt;Bitx0)</td></tr>
+<tr class="memitem:a2796a59d07019ade14487c3b3ae7ee4c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="useful_8h.html#a2796a59d07019ade14487c3b3ae7ee4c">B8_0</a>(x)&#160;&#160;&#160;(((<a class="el" href="useful_8h.html#a6b914383be24f0a2ec12fed41b566a67">Bits</a> *) (x))-&gt;Bitx0)</td></tr>
+<tr class="memdesc:a2796a59d07019ade14487c3b3ae7ee4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit 0 (LSB) Access Macro.  <a href="#a2796a59d07019ade14487c3b3ae7ee4c">More...</a><br/></td></tr>
 <tr class="separator:a2796a59d07019ade14487c3b3ae7ee4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a40029e16c130ada53224eda966637d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="useful_8h.html#a9a40029e16c130ada53224eda966637d">B8_1</a>(x)&#160;&#160;&#160;(((<a class="el" href="useful_8h.html#a9794d25d6eca973863ae1d3e0d3f805d">Bits</a> *) (x))-&gt;Bitx1)</td></tr>
+<tr class="memitem:a9a40029e16c130ada53224eda966637d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="useful_8h.html#a9a40029e16c130ada53224eda966637d">B8_1</a>(x)&#160;&#160;&#160;(((<a class="el" href="useful_8h.html#a6b914383be24f0a2ec12fed41b566a67">Bits</a> *) (x))-&gt;Bitx1)</td></tr>
+<tr class="memdesc:a9a40029e16c130ada53224eda966637d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit 1 Access Macro.  <a href="#a9a40029e16c130ada53224eda966637d">More...</a><br/></td></tr>
 <tr class="separator:a9a40029e16c130ada53224eda966637d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad64147674688c844626cafbad7f7f479"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="useful_8h.html#ad64147674688c844626cafbad7f7f479">B8_2</a>(x)&#160;&#160;&#160;(((<a class="el" href="useful_8h.html#a9794d25d6eca973863ae1d3e0d3f805d">Bits</a> *) (x))-&gt;Bitx2)</td></tr>
+<tr class="memitem:ad64147674688c844626cafbad7f7f479"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="useful_8h.html#ad64147674688c844626cafbad7f7f479">B8_2</a>(x)&#160;&#160;&#160;(((<a class="el" href="useful_8h.html#a6b914383be24f0a2ec12fed41b566a67">Bits</a> *) (x))-&gt;Bitx2)</td></tr>
+<tr class="memdesc:ad64147674688c844626cafbad7f7f479"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit 2 Access Macro.  <a href="#ad64147674688c844626cafbad7f7f479">More...</a><br/></td></tr>
 <tr class="separator:ad64147674688c844626cafbad7f7f479"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af769c3bb2836c4b668f2d31fcf8daaca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="useful_8h.html#af769c3bb2836c4b668f2d31fcf8daaca">B8_3</a>(x)&#160;&#160;&#160;(((<a class="el" href="useful_8h.html#a9794d25d6eca973863ae1d3e0d3f805d">Bits</a> *) (x))-&gt;Bitx3)</td></tr>
+<tr class="memitem:af769c3bb2836c4b668f2d31fcf8daaca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="useful_8h.html#af769c3bb2836c4b668f2d31fcf8daaca">B8_3</a>(x)&#160;&#160;&#160;(((<a class="el" href="useful_8h.html#a6b914383be24f0a2ec12fed41b566a67">Bits</a> *) (x))-&gt;Bitx3)</td></tr>
+<tr class="memdesc:af769c3bb2836c4b668f2d31fcf8daaca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit 3 Access Macro.  <a href="#af769c3bb2836c4b668f2d31fcf8daaca">More...</a><br/></td></tr>
 <tr class="separator:af769c3bb2836c4b668f2d31fcf8daaca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53159762e46bec15c8f65a81325f13e9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="useful_8h.html#a53159762e46bec15c8f65a81325f13e9">B8_4</a>(x)&#160;&#160;&#160;(((<a class="el" href="useful_8h.html#a9794d25d6eca973863ae1d3e0d3f805d">Bits</a> *) (x))-&gt;Bitx4)</td></tr>
+<tr class="memitem:a53159762e46bec15c8f65a81325f13e9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="useful_8h.html#a53159762e46bec15c8f65a81325f13e9">B8_4</a>(x)&#160;&#160;&#160;(((<a class="el" href="useful_8h.html#a6b914383be24f0a2ec12fed41b566a67">Bits</a> *) (x))-&gt;Bitx4)</td></tr>
+<tr class="memdesc:a53159762e46bec15c8f65a81325f13e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit 4 Access Macro.  <a href="#a53159762e46bec15c8f65a81325f13e9">More...</a><br/></td></tr>
 <tr class="separator:a53159762e46bec15c8f65a81325f13e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a125cc382f54f024ad9ee9e72bb9cf9a5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="useful_8h.html#a125cc382f54f024ad9ee9e72bb9cf9a5">B8_5</a>(x)&#160;&#160;&#160;(((<a class="el" href="useful_8h.html#a9794d25d6eca973863ae1d3e0d3f805d">Bits</a> *) (x))-&gt;Bitx5)</td></tr>
+<tr class="memitem:a125cc382f54f024ad9ee9e72bb9cf9a5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="useful_8h.html#a125cc382f54f024ad9ee9e72bb9cf9a5">B8_5</a>(x)&#160;&#160;&#160;(((<a class="el" href="useful_8h.html#a6b914383be24f0a2ec12fed41b566a67">Bits</a> *) (x))-&gt;Bitx5)</td></tr>
+<tr class="memdesc:a125cc382f54f024ad9ee9e72bb9cf9a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit 5 Access Macro.  <a href="#a125cc382f54f024ad9ee9e72bb9cf9a5">More...</a><br/></td></tr>
 <tr class="separator:a125cc382f54f024ad9ee9e72bb9cf9a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57c47a1ab3b4313ed58719cb951137d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="useful_8h.html#a57c47a1ab3b4313ed58719cb951137d4">B8_6</a>(x)&#160;&#160;&#160;(((<a class="el" href="useful_8h.html#a9794d25d6eca973863ae1d3e0d3f805d">Bits</a> *) (x))-&gt;Bitx6)</td></tr>
+<tr class="memitem:a57c47a1ab3b4313ed58719cb951137d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="useful_8h.html#a57c47a1ab3b4313ed58719cb951137d4">B8_6</a>(x)&#160;&#160;&#160;(((<a class="el" href="useful_8h.html#a6b914383be24f0a2ec12fed41b566a67">Bits</a> *) (x))-&gt;Bitx6)</td></tr>
+<tr class="memdesc:a57c47a1ab3b4313ed58719cb951137d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit 6 Access Macro.  <a href="#a57c47a1ab3b4313ed58719cb951137d4">More...</a><br/></td></tr>
 <tr class="separator:a57c47a1ab3b4313ed58719cb951137d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30e31753e288abb8f483aea9c0c7570e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="useful_8h.html#a30e31753e288abb8f483aea9c0c7570e">B8_7</a>(x)&#160;&#160;&#160;(((<a class="el" href="useful_8h.html#a9794d25d6eca973863ae1d3e0d3f805d">Bits</a> *) (x))-&gt;Bitx7)</td></tr>
+<tr class="memitem:a30e31753e288abb8f483aea9c0c7570e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="useful_8h.html#a30e31753e288abb8f483aea9c0c7570e">B8_7</a>(x)&#160;&#160;&#160;(((<a class="el" href="useful_8h.html#a6b914383be24f0a2ec12fed41b566a67">Bits</a> *) (x))-&gt;Bitx7)</td></tr>
+<tr class="memdesc:a30e31753e288abb8f483aea9c0c7570e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit 7 (MSB) Access Macro.  <a href="#a30e31753e288abb8f483aea9c0c7570e">More...</a><br/></td></tr>
 <tr class="separator:a30e31753e288abb8f483aea9c0c7570e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a9794d25d6eca973863ae1d3e0d3f805d"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_bits8.html">Bits8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="useful_8h.html#a9794d25d6eca973863ae1d3e0d3f805d">Bits</a></td></tr>
-<tr class="separator:a9794d25d6eca973863ae1d3e0d3f805d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a0e789c0f0060cbb260b4a824f83d3008"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="useful_8h.html#a0e789c0f0060cbb260b4a824f83d3008">_disable_interrupts</a> ()</td></tr>
+<tr class="separator:a0e789c0f0060cbb260b4a824f83d3008"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a21e6390a6b0c0d1c1f026c0100d15f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="useful_8h.html#a5a21e6390a6b0c0d1c1f026c0100d15f">while</a> (0) typedef struct Bits8</td></tr>
+<tr class="memdesc:a5a21e6390a6b0c0d1c1f026c0100d15f"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; Software-based (WDT Violation) System Reset Macro  <a href="#a5a21e6390a6b0c0d1c1f026c0100d15f">More...</a><br/></td></tr>
+<tr class="separator:a5a21e6390a6b0c0d1c1f026c0100d15f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a28e3bf2aa15e1afc67aa54c777a0173b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="useful_8h.html#a28e3bf2aa15e1afc67aa54c777a0173b">SR_state</a> = (_get_SR_register() &amp; 0x08)</td></tr>
+<tr class="separator:a28e3bf2aa15e1afc67aa54c777a0173b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b914383be24f0a2ec12fed41b566a67"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="useful_8h.html#a6b914383be24f0a2ec12fed41b566a67">Bits</a></td></tr>
+<tr class="separator:a6b914383be24f0a2ec12fed41b566a67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="a2796a59d07019ade14487c3b3ae7ee4c"></a>
@@ -144,10 +157,12 @@ Typedefs</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;(((<a class="el" href="useful_8h.html#a9794d25d6eca973863ae1d3e0d3f805d">Bits</a> *) (x))-&gt;Bitx0)</td>
+          <td>&#160;&#160;&#160;(((<a class="el" href="useful_8h.html#a6b914383be24f0a2ec12fed41b566a67">Bits</a> *) (x))-&gt;Bitx0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Bit 0 (LSB) Access Macro. </p>
 
 <p>Definition at line <a class="el" href="useful_8h_source.html#l00036">36</a> of file <a class="el" href="useful_8h_source.html">useful.h</a>.</p>
 
@@ -162,10 +177,12 @@ Typedefs</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;(((<a class="el" href="useful_8h.html#a9794d25d6eca973863ae1d3e0d3f805d">Bits</a> *) (x))-&gt;Bitx1)</td>
+          <td>&#160;&#160;&#160;(((<a class="el" href="useful_8h.html#a6b914383be24f0a2ec12fed41b566a67">Bits</a> *) (x))-&gt;Bitx1)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Bit 1 Access Macro. </p>
 
 <p>Definition at line <a class="el" href="useful_8h_source.html#l00037">37</a> of file <a class="el" href="useful_8h_source.html">useful.h</a>.</p>
 
@@ -180,10 +197,12 @@ Typedefs</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;(((<a class="el" href="useful_8h.html#a9794d25d6eca973863ae1d3e0d3f805d">Bits</a> *) (x))-&gt;Bitx2)</td>
+          <td>&#160;&#160;&#160;(((<a class="el" href="useful_8h.html#a6b914383be24f0a2ec12fed41b566a67">Bits</a> *) (x))-&gt;Bitx2)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Bit 2 Access Macro. </p>
 
 <p>Definition at line <a class="el" href="useful_8h_source.html#l00038">38</a> of file <a class="el" href="useful_8h_source.html">useful.h</a>.</p>
 
@@ -198,10 +217,12 @@ Typedefs</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;(((<a class="el" href="useful_8h.html#a9794d25d6eca973863ae1d3e0d3f805d">Bits</a> *) (x))-&gt;Bitx3)</td>
+          <td>&#160;&#160;&#160;(((<a class="el" href="useful_8h.html#a6b914383be24f0a2ec12fed41b566a67">Bits</a> *) (x))-&gt;Bitx3)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Bit 3 Access Macro. </p>
 
 <p>Definition at line <a class="el" href="useful_8h_source.html#l00039">39</a> of file <a class="el" href="useful_8h_source.html">useful.h</a>.</p>
 
@@ -216,10 +237,12 @@ Typedefs</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;(((<a class="el" href="useful_8h.html#a9794d25d6eca973863ae1d3e0d3f805d">Bits</a> *) (x))-&gt;Bitx4)</td>
+          <td>&#160;&#160;&#160;(((<a class="el" href="useful_8h.html#a6b914383be24f0a2ec12fed41b566a67">Bits</a> *) (x))-&gt;Bitx4)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Bit 4 Access Macro. </p>
 
 <p>Definition at line <a class="el" href="useful_8h_source.html#l00040">40</a> of file <a class="el" href="useful_8h_source.html">useful.h</a>.</p>
 
@@ -234,10 +257,12 @@ Typedefs</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;(((<a class="el" href="useful_8h.html#a9794d25d6eca973863ae1d3e0d3f805d">Bits</a> *) (x))-&gt;Bitx5)</td>
+          <td>&#160;&#160;&#160;(((<a class="el" href="useful_8h.html#a6b914383be24f0a2ec12fed41b566a67">Bits</a> *) (x))-&gt;Bitx5)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Bit 5 Access Macro. </p>
 
 <p>Definition at line <a class="el" href="useful_8h_source.html#l00041">41</a> of file <a class="el" href="useful_8h_source.html">useful.h</a>.</p>
 
@@ -252,10 +277,12 @@ Typedefs</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;(((<a class="el" href="useful_8h.html#a9794d25d6eca973863ae1d3e0d3f805d">Bits</a> *) (x))-&gt;Bitx6)</td>
+          <td>&#160;&#160;&#160;(((<a class="el" href="useful_8h.html#a6b914383be24f0a2ec12fed41b566a67">Bits</a> *) (x))-&gt;Bitx6)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Bit 6 Access Macro. </p>
 
 <p>Definition at line <a class="el" href="useful_8h_source.html#l00042">42</a> of file <a class="el" href="useful_8h_source.html">useful.h</a>.</p>
 
@@ -270,10 +297,12 @@ Typedefs</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;(((<a class="el" href="useful_8h.html#a9794d25d6eca973863ae1d3e0d3f805d">Bits</a> *) (x))-&gt;Bitx7)</td>
+          <td>&#160;&#160;&#160;(((<a class="el" href="useful_8h.html#a6b914383be24f0a2ec12fed41b566a67">Bits</a> *) (x))-&gt;Bitx7)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Bit 7 (MSB) Access Macro. </p>
 
 <p>Definition at line <a class="el" href="useful_8h_source.html#l00043">43</a> of file <a class="el" href="useful_8h_source.html">useful.h</a>.</p>
 
@@ -287,16 +316,12 @@ Typedefs</h2></td></tr>
           <td class="memname">#define enter_critical</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">SR_state</td><td>)</td>
-          <td></td>
+          <td class="paramname"><a class="el" href="useful_8h.html#a28e3bf2aa15e1afc67aa54c777a0173b">SR_state</a></td><td>)</td>
+          <td>&#160;&#160;&#160;do {\</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> { \</div>
-<div class="line">  (SR_state) = (_get_SR_register() &amp; 0x08); \</div>
-<div class="line">  _disable_interrupts(); \</div>
-<div class="line">} <span class="keywordflow">while</span> (0)</div>
-</div><!-- fragment -->
+
 <p>Definition at line <a class="el" href="useful_8h_source.html#l00006">6</a> of file <a class="el" href="useful_8h_source.html">useful.h</a>.</p>
 
 </div>
@@ -309,13 +334,11 @@ Typedefs</h2></td></tr>
           <td class="memname">#define exit_critical</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">SR_state</td><td>)</td>
-          <td>&#160;&#160;&#160;_bis_SR_register(SR_state)</td>
+          <td class="paramname"><a class="el" href="useful_8h.html#a28e3bf2aa15e1afc67aa54c777a0173b">SR_state</a></td><td>)</td>
+          <td>&#160;&#160;&#160;_bis_SR_register(<a class="el" href="useful_8h.html#a28e3bf2aa15e1afc67aa54c777a0173b">SR_state</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="useful_8h_source.html#l00011">11</a> of file <a class="el" href="useful_8h_source.html">useful.h</a>.</p>
 
 </div>
 </div>
@@ -339,27 +362,78 @@ Typedefs</h2></td></tr>
 <div class="line">    _c_int00(); \</div>
 <div class="line">} <span class="keywordflow">while</span> (0)</div>
 </div><!-- fragment -->
-<p>Definition at line <a class="el" href="useful_8h_source.html#l00014">14</a> of file <a class="el" href="useful_8h_source.html">useful.h</a>.</p>
-
 </div>
 </div>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a class="anchor" id="a9794d25d6eca973863ae1d3e0d3f805d"></a>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a0e789c0f0060cbb260b4a824f83d3008"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef struct <a class="el" href="struct_bits8.html">Bits8</a>  <a class="el" href="useful_8h.html#a9794d25d6eca973863ae1d3e0d3f805d">Bits</a></td>
+          <td class="memname">_disable_interrupts </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
+<a class="anchor" id="a5a21e6390a6b0c0d1c1f026c0100d15f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">while </td>
+          <td>(</td>
+          <td class="paramtype">0&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>&lt; Software-based (WDT Violation) System Reset Macro </p>
+<p>&lt; Bitwise access structure for a single byte </p>
+
+<p>Definition at line <a class="el" href="useful_8h_source.html#l00009">9</a> of file <a class="el" href="useful_8h_source.html">useful.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="a6b914383be24f0a2ec12fed41b566a67"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Bits</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="useful_8h_source.html#l00033">33</a> of file <a class="el" href="useful_8h_source.html">useful.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a28e3bf2aa15e1afc67aa54c777a0173b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SR_state = (_get_SR_register() &amp; 0x08)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="useful_8h_source.html#l00007">7</a> of file <a class="el" href="useful_8h_source.html">useful.h</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Feb 2 2013 15:47:02 for MSP430 eUSCI Driver Library by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Feb 12 2013 15:18:59 for MSP430 eUSCI Driver Library by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

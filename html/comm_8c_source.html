@@ -86,7 +86,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <a href="comm_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="comm_8h.html">comm.h</a>&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="comm__hal_8h.html">comm_hal.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;comm_hal.h&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
 <div class="line"><a name="l00004"></a><span class="lineno"><a class="code" href="comm_8c.html#a03bdcd65a2fb660df0a574f7019cb152">    4</a></span>&#160;<a class="code" href="structuconf.html" title="USCI Configuration Data Structure.">usciConfig</a> *<a class="code" href="comm_8c.html#a03bdcd65a2fb660df0a574f7019cb152" title="Device config buffer (indexed by comm ID always non-zero)">dev</a>[<a class="code" href="comm_8h.html#a00cb63c6de93dec9cb1ea7136e5d8f0a" title="Maximum number of devices to be registered.">MAX_DEVS</a>];                                      </div>
 <div class="line"><a name="l00005"></a><span class="lineno"><a class="code" href="comm_8c.html#a509f58c8f2dbbf31573b955b69406e8f">    5</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="comm_8c.html#a509f58c8f2dbbf31573b955b69406e8f" title="Device config buffer index.">devIndex</a> = 0;                                      </div>
@@ -143,9 +143,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor"></span>        spiA0RxSize = 0;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif //USE_UCA0_SPI</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        UCA0IE |= UCRXIE + UCTXIE;                              <span class="comment">// Enable Interrupts</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        UCA0_IO_CONF(dev[commID]-&gt;rAddr &amp; <a class="code" href="comm_8h.html#a15b16c1073c60f0be255caf0a60251be" title="USCI address mask for resource address code.">ADDR_MASK</a>);           <span class="comment">// Port set up</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        UCA0CTL1 &amp;= ~UCSWRST;                                   <span class="comment">// Resume operation (clear software reset)</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        UCA0_IO_CONF(dev[commID]-&gt;rAddr &amp; <a class="code" href="comm_8h.html#a15b16c1073c60f0be255caf0a60251be" title="USCI address mask for resource address code.">ADDR_MASK</a>);           <span class="comment">// Port set up</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        UCA0CTL1 &amp;= ~UCSWRST;                                   <span class="comment">// Resume operation (clear software reset)</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        UCA0IE |= UCRXIE + UCTXIE;                              <span class="comment">// Enable Interrupts    </span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <a class="code" href="comm_8c.html#aef5ac597de460882e417744d99336fa8" title="Currently applied configs buffer [A0, A1, B0, B1].">devConf</a>[<a class="code" href="comm_8h.html#a6a2c33571f078461976cec06b5760ebc" title="USCI A0 shared buffer index.">UCA0_INDEX</a>] = commID;                           <span class="comment">// Store config</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="useful_8h.html#a1ae131c620f634279196948955012a5e">exit_critical</a>(status);                                  <span class="comment">// End critical section</span></div>
@@ -334,9 +334,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;<span class="preprocessor"></span>        spiA1RxSize = 0;</div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;<span class="preprocessor">#endif //USE_UCA1_SPI</span></div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        UCA1IE |= UCRXIE + UCTXIE;                              <span class="comment">// Enable Interrupts</span></div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        UCA1_IO_CONF(dev[commID]-&gt;rAddr &amp; <a class="code" href="comm_8h.html#a15b16c1073c60f0be255caf0a60251be" title="USCI address mask for resource address code.">ADDR_MASK</a>);           <span class="comment">// Port set up</span></div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        UCA1CTL1 &amp;= ~UCSWRST;                                   <span class="comment">// Resume operation</span></div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        UCA1_IO_CONF(dev[commID]-&gt;rAddr &amp; <a class="code" href="comm_8h.html#a15b16c1073c60f0be255caf0a60251be" title="USCI address mask for resource address code.">ADDR_MASK</a>);           <span class="comment">// Port set up</span></div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        UCA1CTL1 &amp;= ~UCSWRST;                                   <span class="comment">// Resume operation</span></div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        UCA1IE |= UCRXIE + UCTXIE;                              <span class="comment">// Enable Interrupts    </span></div>
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;</div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        <a class="code" href="comm_8c.html#aef5ac597de460882e417744d99336fa8" title="Currently applied configs buffer [A0, A1, B0, B1].">devConf</a>[<a class="code" href="comm_8h.html#a2770ce2a2d5b9beef18366d05a739164" title="USCI A1 shared buffer index.">UCA1_INDEX</a>] = commID;                           <span class="comment">// Store config</span></div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        <a class="code" href="useful_8h.html#a1ae131c620f634279196948955012a5e">exit_critical</a>(status);                                  <span class="comment">// End critical section</span></div>
@@ -524,9 +524,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;<span class="preprocessor"></span>        spiB0RxSize = 0;</div>
 <div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;<span class="preprocessor">#endif //USE_UCB0_SPI</span></div>
 <div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;        UCB0IE |= UCRXIE + UCTXIE;                      <span class="comment">// Enable Interrupts</span></div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;        UCB0_IO_CONF(dev[commID]-&gt;rAddr &amp; <a class="code" href="comm_8h.html#a15b16c1073c60f0be255caf0a60251be" title="USCI address mask for resource address code.">ADDR_MASK</a>);   <span class="comment">// Port set up</span></div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;        UCB0CTL1 &amp;= ~UCSWRST;                           <span class="comment">// Resume operation</span></div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;        UCB0_IO_CONF(dev[commID]-&gt;rAddr &amp; <a class="code" href="comm_8h.html#a15b16c1073c60f0be255caf0a60251be" title="USCI address mask for resource address code.">ADDR_MASK</a>);   <span class="comment">// Port set up</span></div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;        UCB0CTL1 &amp;= ~UCSWRST;                           <span class="comment">// Resume operation</span></div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;        UCB0IE |= UCRXIE + UCTXIE;                      <span class="comment">// Enable Interrupts    </span></div>
 <div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;</div>
 <div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;        <a class="code" href="comm_8c.html#aef5ac597de460882e417744d99336fa8" title="Currently applied configs buffer [A0, A1, B0, B1].">devConf</a>[<a class="code" href="comm_8h.html#ac377bcb3fa8d45d1b6d0338cb784c78e" title="USCI B0 shared buffer index.">UCB0_INDEX</a>] = commID;                   <span class="comment">// Store config</span></div>
 <div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;        <a class="code" href="useful_8h.html#a1ae131c620f634279196948955012a5e">exit_critical</a>(status);                          <span class="comment">// End critical section</span></div>
@@ -700,9 +700,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00958"></a><span class="lineno">  958</span>&#160;<span class="preprocessor"></span>        spiB1RxSize = 0;</div>
 <div class="line"><a name="l00959"></a><span class="lineno">  959</span>&#160;<span class="preprocessor">#endif //USE_UCB1_SPI</span></div>
 <div class="line"><a name="l00960"></a><span class="lineno">  960</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00961"></a><span class="lineno">  961</span>&#160;        UCB1IE |= UCRXIE + UCTXIE;                      <span class="comment">// Enable Interrupts</span></div>
-<div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160;        UCB1_IO_CONF(dev[commID]-&gt;rAddr &amp; <a class="code" href="comm_8h.html#a15b16c1073c60f0be255caf0a60251be" title="USCI address mask for resource address code.">ADDR_MASK</a>);   <span class="comment">// Port set up</span></div>
-<div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;        UCB1CTL1 &amp;= ~UCSWRST;                           <span class="comment">// Resume operation</span></div>
+<div class="line"><a name="l00961"></a><span class="lineno">  961</span>&#160;        UCB1_IO_CONF(dev[commID]-&gt;rAddr &amp; <a class="code" href="comm_8h.html#a15b16c1073c60f0be255caf0a60251be" title="USCI address mask for resource address code.">ADDR_MASK</a>);   <span class="comment">// Port set up</span></div>
+<div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160;        UCB1CTL1 &amp;= ~UCSWRST;                           <span class="comment">// Resume operation</span></div>
+<div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;        UCB1IE |= UCRXIE + UCTXIE;                      <span class="comment">// Enable Interrupts    </span></div>
 <div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;</div>
 <div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;        <a class="code" href="comm_8c.html#aef5ac597de460882e417744d99336fa8" title="Currently applied configs buffer [A0, A1, B0, B1].">devConf</a>[<a class="code" href="comm_8h.html#aadaac724a3f6439ddf04eda1ad30d3a2" title="USCI B1 shared buffer index.">UCB1_INDEX</a>] = commID;                   <span class="comment">// Store config</span></div>
 <div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160;        <a class="code" href="useful_8h.html#a1ae131c620f634279196948955012a5e">exit_critical</a>(status);                          <span class="comment">// End critical section</span></div>
@@ -841,7 +841,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Feb 2 2013 15:47:02 for MSP430 eUSCI Driver Library by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Feb 12 2013 15:18:59 for MSP430 eUSCI Driver Library by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

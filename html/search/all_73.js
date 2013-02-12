@@ -28,6 +28,7 @@ var searchData=
   ['spib1rxsize',['spiB1RxSize',['../comm_8c.html#a51cfaa388356a0f5f60e1959907a9b93',1,'comm.c']]],
   ['spib1swap',['spiB1Swap',['../comm_8h.html#a88cf7f351cfa6db251ed28176a2250bc',1,'comm.h']]],
   ['spib1write',['spiB1Write',['../comm_8h.html#aa59490b39fe62594d3e10e4be14f32a8',1,'comm.h']]],
+  ['sr_5fstate',['SR_state',['../useful_8h.html#a28e3bf2aa15e1afc67aa54c777a0173b',1,'useful.h']]],
   ['sw_5f1_5fopen',['SW_1_OPEN',['../msp__fr__exp__hal_8h.html#ada77329ebb5438d2e7363c496c7bf1d0',1,'msp_fr_exp_hal.h']]],
   ['sw_5f2_5fopen',['SW_2_OPEN',['../msp__fr__exp__hal_8h.html#ac0223c6aa72bc7afa4b26d7d78d594ae',1,'msp_fr_exp_hal.h']]],
   ['sw_5fconf',['SW_CONF',['../msp__fr__exp__hal_8h.html#a13e584061c02e901acc725d1facada29',1,'msp_fr_exp_hal.h']]],

@@ -1,16 +1,6 @@
 <toc label="MSP430 eUSCI Driver Library" topic="index.html">
   <topic label="Data Structures">
     <topic label="Data Structures" href="annotated.html">
-      <topic label="Bits8" href="struct_bits8.html">
-        <topic label="Bitx0" href="struct_bits8.html#a7d07ef5ba1c95b27a389545ba4d02e10"/>
-        <topic label="Bitx1" href="struct_bits8.html#a451e4ff0a9cc8829f51866032c0b81dd"/>
-        <topic label="Bitx2" href="struct_bits8.html#a35ed30f33408b5144220a3e38388fbaa"/>
-        <topic label="Bitx3" href="struct_bits8.html#af62e73bf10fab51d478f91e8acb2ebc9"/>
-        <topic label="Bitx4" href="struct_bits8.html#a173c4a5e10052bae580fda3a7e0e851c"/>
-        <topic label="Bitx5" href="struct_bits8.html#a515b2cbd02cdd4a724304a8b182ee427"/>
-        <topic label="Bitx6" href="struct_bits8.html#a173ce215a766fcd353bd56ace999f3f2"/>
-        <topic label="Bitx7" href="struct_bits8.html#a82fd9b4c88b7212c5feb1d80f21e0191"/>
-      </topic>
       <topic label="uconf" href="structuconf.html">
         <topic label="baudDiv" href="structuconf.html#a8c7319cf9673e0d7eee4e92cdd88e396"/>
         <topic label="rAddr" href="structuconf.html#aa1c18222d10f45abe79f443a8b957c54"/>
@@ -145,7 +135,11 @@
         <topic label="spiB1Swap" href="comm_8h.html#a88cf7f351cfa6db251ed28176a2250bc"/>
         <topic label="spiB1Write" href="comm_8h.html#aa59490b39fe62594d3e10e4be14f32a8"/>
       </topic>
-      <topic label="comm_hal.h" href="comm__hal_8h.html"/>
+      <topic label="comm_hal_5342.h" href="comm__hal__5342_8h.html">
+        <topic label="COMM_HAL_5342_H_" href="comm__hal__5342_8h.html#afbdfe21906df17dcd9a05543dd1f9caa"/>
+      </topic>
+      <topic label="comm_hal_5510.h" href="comm__hal__5510_8h.html"/>
+      <topic label="comm_hal_5739.h" href="comm__hal__5739_8h.html"/>
       <topic label="msp_fr_exp_hal.h" href="msp__fr__exp__hal_8h.html">
         <topic label="LED1" href="msp__fr__exp__hal_8h.html#a8aa85ae9867fabf70ec72cd3bf6fb6b9"/>
         <topic label="LED2" href="msp__fr__exp__hal_8h.html#ad09fe5bf321b9a2de26bd5e5b9af6424"/>
@@ -176,16 +170,6 @@
         <topic label="clkInit" href="timing_8h.html#aaa21eda8a55ea2f4499770057a0963e7"/>
       </topic>
       <topic label="useful.h" href="useful_8h.html">
-        <topic label="Bits8" href="struct_bits8.html">
-          <topic label="Bitx0" href="struct_bits8.html#a7d07ef5ba1c95b27a389545ba4d02e10"/>
-          <topic label="Bitx1" href="struct_bits8.html#a451e4ff0a9cc8829f51866032c0b81dd"/>
-          <topic label="Bitx2" href="struct_bits8.html#a35ed30f33408b5144220a3e38388fbaa"/>
-          <topic label="Bitx3" href="struct_bits8.html#af62e73bf10fab51d478f91e8acb2ebc9"/>
-          <topic label="Bitx4" href="struct_bits8.html#a173c4a5e10052bae580fda3a7e0e851c"/>
-          <topic label="Bitx5" href="struct_bits8.html#a515b2cbd02cdd4a724304a8b182ee427"/>
-          <topic label="Bitx6" href="struct_bits8.html#a173ce215a766fcd353bd56ace999f3f2"/>
-          <topic label="Bitx7" href="struct_bits8.html#a82fd9b4c88b7212c5feb1d80f21e0191"/>
-        </topic>
         <topic label="B8_0" href="useful_8h.html#a2796a59d07019ade14487c3b3ae7ee4c"/>
         <topic label="B8_1" href="useful_8h.html#a9a40029e16c130ada53224eda966637d"/>
         <topic label="B8_2" href="useful_8h.html#ad64147674688c844626cafbad7f7f479"/>
@@ -197,7 +181,10 @@
         <topic label="enter_critical" href="useful_8h.html#aeca3ec775a64f14c1795472f6ac55ab5"/>
         <topic label="exit_critical" href="useful_8h.html#a1ae131c620f634279196948955012a5e"/>
         <topic label="systemReset" href="useful_8h.html#a2de6ec3aaa018aeec989cb721b49ab84"/>
-        <topic label="Bits" href="useful_8h.html#a9794d25d6eca973863ae1d3e0d3f805d"/>
+        <topic label="_disable_interrupts" href="useful_8h.html#a0e789c0f0060cbb260b4a824f83d3008"/>
+        <topic label="while" href="useful_8h.html#a5a21e6390a6b0c0d1c1f026c0100d15f"/>
+        <topic label="Bits" href="useful_8h.html#a6b914383be24f0a2ec12fed41b566a67"/>
+        <topic label="SR_state" href="useful_8h.html#a28e3bf2aa15e1afc67aa54c777a0173b"/>
       </topic>
     </topic>
     <topic label="Globals" href="globals.html">
