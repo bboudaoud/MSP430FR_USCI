@@ -76,9 +76,9 @@ void confUCA0(unsigned int commID)
 	spiA0RxSize = 0;
 #endif //USE_UCA0_SPI
 
-	UCA0IE |= UCRXIE + UCTXIE;				// Enable Interrupts
 	UCA0_IO_CONF(dev[commID]->rAddr & ADDR_MASK);		// Port set up
 	UCA0CTL1 &= ~UCSWRST;					// Resume operation (clear software reset)
+	UCA0IE |= UCRXIE + UCTXIE;				// Enable Interrupts	
 
 	devConf[UCA0_INDEX] = commID;				// Store config
 	exit_critical(status);					// End critical section
@@ -386,9 +386,9 @@ void confUCA1(unsigned int commID)
 	spiA1RxSize = 0;
 #endif //USE_UCA1_SPI
 
-	UCA1IE |= UCRXIE + UCTXIE;				// Enable Interrupts
 	UCA1_IO_CONF(dev[commID]->rAddr & ADDR_MASK);		// Port set up
 	UCA1CTL1 &= ~UCSWRST;					// Resume operation
+	UCA1IE |= UCRXIE + UCTXIE;				// Enable Interrupts	
 
 	devConf[UCA1_INDEX] = commID;				// Store config
 	exit_critical(status);					// End critical section
@@ -695,9 +695,9 @@ void confUCB0(unsigned int commID)
 	spiB0RxSize = 0;
 #endif //USE_UCB0_SPI
 
-	UCB0IE |= UCRXIE + UCTXIE;			// Enable Interrupts
 	UCB0_IO_CONF(dev[commID]->rAddr & ADDR_MASK);	// Port set up
 	UCB0CTL1 &= ~UCSWRST;				// Resume operation
+	UCB0IE |= UCRXIE + UCTXIE;			// Enable Interrupts	
 
 	devConf[UCB0_INDEX] = commID;			// Store config
 	exit_critical(status);				// End critical section
@@ -958,9 +958,9 @@ void confUCB1(unsigned int commID)
 	spiB1RxSize = 0;
 #endif //USE_UCB1_SPI
 
-	UCB1IE |= UCRXIE + UCTXIE;			// Enable Interrupts
 	UCB1_IO_CONF(dev[commID]->rAddr & ADDR_MASK);	// Port set up
 	UCB1CTL1 &= ~UCSWRST;				// Resume operation
+	UCB1IE |= UCRXIE + UCTXIE;			// Enable Interrupts	
 
 	devConf[UCB1_INDEX] = commID;			// Store config
 	exit_critical(status);				// End critical section
