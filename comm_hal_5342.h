@@ -1,12 +1,12 @@
 /******************************************************************************
- * This file contains the pin input/output lists for the onboard eUSCI modules
- * it is seperated from remaining HAL documents for use with MSPs in many
- * different hardware contexts
+ * This file contains the pin input/output lists for the USCI modules in the
+ * MSP430F5342 Microcontroller from Texas Instruments each module need be
+ * provided a UCIO_CONF and UCIO_CLEAR macro
  ******************************************************************************/
-ifndef COMM_HAL_5342_H_
+#ifndef COMM_HAL_5342_H_
 #define COMM_HAL_5342_H_
-
 #include "msp430f5342.h"
+
 // MSP430F5342 EUSCI Module Pinouts
 //*********** UCA0 **************//
 // UCA0TXD/SIMO = P3.3 (Pin 25)
@@ -26,40 +26,53 @@ ifndef COMM_HAL_5342_H_
 // UCB1SCLK = P4.3 (Pin 30)
 //******************************//
 
-#ifdef USE_UCA0_UART // UCA0 UART Mode Defines
-	#define	UCA0_IO_CONF(x)	P3SEL |= (BIT3 + BIT4)					///< USCI A0 UART I/O Configuration
-	#define UCA0_IO_CLEAR()	P3SEL &= ~(BIT3 + BIT4)					///< USCI A0 UART I/O Clear
-#endif
-#ifdef USE_UCA0_SPI // UCA0 SPI Mode Defines
-	#define UCA0_IO_CONF(x) P3SEL |= (BIT3 + BIT4); P2SEL |= BIT7			///< USCI A0 SPI I/O Configuration
-	#define UCA0_IO_CLEAR()	P3SEL &= ~(BIT3 + BIT4); P2SEL &= ~BIT7			///< USCI A0 SPI I/O Clear
-#endif
-#ifdef USE_UCA1_UART	// UCA1 UART Mode Defines
-	#define	UCA1_IO_CONF(x)	P4SEL |= (BIT4 + BIT5)					///< USCI A1 UART I/O Configuration
-	#define UCA1_IO_CLEAR()	P4SEL &= ~(BIT4 + BIT5)					///< USCI A1 UART I/O Clear
-#endif
-#ifdef USE_UCA1_SPI	// UCA1 SPI Mode Defines
-	#define	UCA1_IO_CONF(x) P4SEL |= (BIT0 + BIT4 + BIT5)				///< USCI A1 SPI I/O Configuration
-	#define UCA1_IO_CLEAR()	P4SEL &= ~(BIT0 + BIT4 + BIT5)				///< USCI A1 SPI I/O Clear
-#endif
-#ifdef USE_UCB0_SPI // UCB0 SPI Mode Defines
-	#define UCB0_IO_CONF(x)	P3SEL |= (BIT0 + BIT1 + BIT2)				///< USCI B0 SPI I/O Configuration
-	#define	UCB0_IO_CLEAR()	P3SEL &= ~(BIT0 + BIT1 + BIT2)				///< USCI B0 SPI I/O Clear
-#endif
-#ifdef USE_UCB0_I2C // UCB0 I2C Mode Defines
-	#define	UCB0_IO_CONF(x) P3SEL |= (BIT0 + BIT1)//; I2C_ADDR(x)			///< USCI B0 I2C I/O Configuration
-	#define	UCB0_IO_CLEAR()	P3SEL &= ~(BIT0 + BIT1 + BIT2)				///< USCI B0 I2C I/O Clear
-#endif
-#ifdef USE_UCB1_SPI // UCB1 SPI Mode Defines
-	#define	UCB1_IO_CONF(x)	P4SEL |= (BIT1 + BIT2 + BIT3)				///< USCI B1 SPI I/O Configuration
-	#define UCB1_IO_CLEAR()	P4SEL &= ~(BIT1 + BIT2 + BIT3)				///< USCI B1 SPI I/O Clear
-#endif
-#ifdef USE_UCB1_I2C // UCB1 I2C Mode Defines
-	#define UCB1_IO_CONF(x) P4SEL |= (BIT1 + BIT2)//; I2C_ADDR(x)			///< USCI B1 I2C I/O Configuration
-	#define UCB1_IO_CLEAR()	P4SEL &= ~(BIT1 + BIT2)					///< USCI B1 I2C I/O Clear
+// UCA0 UART Mode Defines
+#ifdef USE_UCA0_UART 
+#define	UCA0_IO_CONF(x)	P3SEL |= (BIT3 + BIT4)				///< USCI A0 UART I/O Configuration
+#define UCA0_IO_CLEAR()	P3SEL &= ~(BIT3 + BIT4)				///< USCI A0 UART I/O Clear
 #endif
 
+// UCA0 SPI Mode Defines
+#ifdef USE_UCA0_SPI 
+#define UCA0_IO_CONF(x) P3SEL |= (BIT3 + BIT4); P2SEL |= BIT7		///< USCI A0 SPI I/O Configuration
+#define UCA0_IO_CLEAR()	P3SEL &= ~(BIT3 + BIT4); P2SEL &= ~BIT7		///< USCI A0 SPI I/O Clear
+#endif
 
+// UCA1 UART Mode Defines
+#ifdef USE_UCA1_UART
+#define	UCA1_IO_CONF(x)	P4SEL |= (BIT4 + BIT5)				///< USCI A1 UART I/O Configuration
+#define UCA1_IO_CLEAR()	P4SEL &= ~(BIT4 + BIT5)				///< USCI A1 UART I/O Clear
+#endif
 
+// UCA1 SPI Mode Defines
+#ifdef USE_UCA1_SPI	
+#define	UCA1_IO_CONF(x) P4SEL |= (BIT0 + BIT4 + BIT5)			///< USCI A1 SPI I/O Configuration
+#define UCA1_IO_CLEAR()	P4SEL &= ~(BIT0 + BIT4 + BIT5)			///< USCI A1 SPI I/O Clear
+#endif
 
+// UCB0 SPI Mode Defines
+#ifdef USE_UCB0_SPI 
+#define UCB0_IO_CONF(x)	P3SEL |= (BIT0 + BIT1 + BIT2)			///< USCI B0 SPI I/O Configuration
+#define	UCB0_IO_CLEAR()	P3SEL &= ~(BIT0 + BIT1 + BIT2)			///< USCI B0 SPI I/O Clear
+#endif
+
+// UCB0 I2C Mode Defines
+// NOTE: Need to add I2C addressing control here
+#ifdef USE_UCB0_I2C 
+	#define	UCB0_IO_CONF(x) P3SEL |= (BIT0 + BIT1)//; I2C_ADDR(x)	///< USCI B0 I2C I/O Configuration
+	#define	UCB0_IO_CLEAR()	P3SEL &= ~(BIT0 + BIT1 + BIT2)		///< USCI B0 I2C I/O Clear
+#endif
+
+// UCB1 SPI Mode Defines
+#ifdef USE_UCB1_SPI
+	#define	UCB1_IO_CONF(x)	P4SEL |= (BIT1 + BIT2 + BIT3)		///< USCI B1 SPI I/O Configuration
+	#define UCB1_IO_CLEAR()	P4SEL &= ~(BIT1 + BIT2 + BIT3)		///< USCI B1 SPI I/O Clear
+#endif
+
+// UCB1 I2C Mode Defines
+// // NOTE: Need to add I2C addressing control here
+#ifdef USE_UCB1_I2C
+	#define UCB1_IO_CONF(x) P4SEL |= (BIT1 + BIT2)//; I2C_ADDR(x)	///< USCI B1 I2C I/O Configuration
+	#define UCB1_IO_CLEAR()	P4SEL &= ~(BIT1 + BIT2)			///< USCI B1 I2C I/O Clear
+#endif
 #endif /* COMM_HAL_5342_H_ */

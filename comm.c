@@ -304,6 +304,9 @@ __interrupt void usciA0Isr(void)
 	unsigned int dummy = 0xFF;
 	// Transmit Interrupt Flag Set
 	if(UCA0IFG & UCTXIFG){
+#ifdef USE_UCA0_SPI
+		if(usciStat[UCA0_INDEX] == TX){
+#endif
 		if(uca0TxSize > 0){
 			UCA0TXBUF = *(++uca0TxPtr);		// Transmit the next outgoing byte
 			uca0TxSize--;
@@ -312,24 +315,29 @@ __interrupt void usciA0Isr(void)
 			UCA0IFG &= ~UCTXIFG;			// Clear TX interrupt flag from vector on end of TX
 			usciStat[UCA0_INDEX] = OPEN; 		// Set status open if done with transmit
 		}
+#ifdef USE_UCA0_SPI
+		}
+#endif
 	}
 
 	// Receive Interrupt Flag Set
 	if(UCA0IFG & UCRXIFG){
 #ifdef USE_UCA0_SPI
-		if(usciStat[UCA0_INDEX] == RX)			// Check we are in RX mode for SPI
+		if(usciStat[UCA0_INDEX] == RX){			// Check we are in RX mode for SPI
 #endif // USE_UCA0_SPI
 		if(UCA0STATW & UCRXERR) dummy = UCA0RXBUF;	// RX ERROR: Do a dummy read to clear interrupt flag
 		else {						// Otherwise write the value to the RX pointer
 			*(uca0RxPtr++) = UCA0RXBUF;
 			uca0RxSize++;				// RX Size decrement in read function
 #ifdef USE_UCA0_SPI
-			if(usciStat[UCA0_INDEX] == RX && uca0RxSize < spiA0RxSize) UCA0TXBUF = dummy; // Perform another dummy write
+			if(uca0RxSize < spiA0RxSize) UCA0TXBUF = dummy; // Perform another dummy write
 			else
 #endif
 			usciStat[UCA0_INDEX] = OPEN;
-
 		}
+#ifdef USE_UCA0_SPI
+		}
+#endif
 	}
 	UCA0IFG &= ~UCRXIFG;					// Clear RX interrupt flag from vector on end of RX
 }
@@ -616,6 +624,9 @@ __interrupt void usciA1Isr(void)
 	unsigned int dummy = 0xFF;
 	// Transmit Interrupt Flag Set
 	if(UCA1IFG & UCTXIFG){
+#ifdef USE_UCA1_SPI
+		if(usciStat[UCA1_INDEX] == TX) {
+#endif
 		if(uca1TxSize > 0){
 			UCA1TXBUF = *(++uca1TxPtr);		// Transmit the next outgoing byte
 			uca1TxSize--;
@@ -624,24 +635,29 @@ __interrupt void usciA1Isr(void)
 			UCA1IFG &= ~UCTXIFG;			// Clear TX interrupt flag from vector on end of TX
 			usciStat[UCA1_INDEX] = OPEN; 		// Set status open if done with transmit
 		}
+#ifdef USE_UCA1_SPI
+		}
+#endif
 	}
 
 	// Receive Interrupt Flag Set
 	if(UCA1IFG & UCRXIFG){
 #ifdef USE_UCA1_SPI
-		if(usciStat[UCA1_INDEX] == RX)			// Check we are in RX mode for SPI
+		if(usciStat[UCA1_INDEX] == RX){			// Check we are in RX mode for SPI
 #endif // USE_UCA1_SPI
 		if(UCA1STATW & UCRXERR) dummy = UCA1RXBUF;	// RX ERROR: Do a dummy read to clear interrupt flag
 		else {						// Otherwise write the value to the RX pointer
 			*(uca1RxPtr++) = UCA1RXBUF;
 			uca1RxSize++;				// RX Size decrement in read function
 #ifdef USE_UCA1_SPI
-			if(usciStat[UCA1_INDEX] == RX && uca1RxSize < spiA1RxSize) UCA1TXBUF = dummy; // Perform another dummy write
+			if(uca1RxSize < spiA1RxSize) UCA1TXBUF = dummy; // Perform another dummy write
 			else
 #endif
 			usciStat[UCA1_INDEX] = OPEN;
-
 		}
+#ifdef USE_UCA1_SPI
+		}
+#endif
 	}
 	UCA1IFG &= ~UCRXIFG;					// Clear RX interrupt flag from vector on end of RX
 }
@@ -878,6 +894,9 @@ __interrupt void usciB0Isr(void)
 	unsigned int dummy = 0xFF;
 	// Transmit Interrupt Flag Set
 	if(UCB0IFG & UCTXIFG){
+#ifdef USE_UCB0_SPI
+		if(usciStat[UCB0_INDEX] == TX) {
+#endif
 		if(ucb0TxSize > 0){
 			UCB0TXBUF = *(++ucb0TxPtr);			// Transmit the next outgoing byte
 			ucb0TxSize--;
@@ -886,26 +905,30 @@ __interrupt void usciB0Isr(void)
 			usciStat[UCB0_INDEX] = OPEN; 			// Set status open if done with transmit
 			UCB0IFG &= ~UCTXIFG;				// Clear TX interrupt flag from vector on end of TX
 		}
+#ifdef USE_UCB0_SPI
+		}
+#endif
 	}
 
 	// Receive Interrupt Flag Set
 	if(UCB0IFG & UCRXIFG){	// Check for interrupt flag and RX mode
 #ifdef USE_UCB0_SPI
-		if(usciStat[UCB0_INDEX] == RX)				// Check we are in RX mode for SPI
+		if(usciStat[UCB0_INDEX] == RX){				// Check we are in RX mode for SPI
 #endif // USE_UCB0_SPI
 		if(UCB0STATW & UCRXERR) dummy = UCB0RXBUF;		// RX ERROR: Do a dummy read to clear interrupt flag
 		else {							// Otherwise write the value to the RX pointer
 			*(ucb0RxPtr++) = UCB0RXBUF;
 			ucb0RxSize++;					// RX Size decrement in read function
 #ifdef USE_UCB0_SPI
-			if(usciStat[UCB0_INDEX] == RX && ucb0RxSize < spiB0RxSize) UCB0TXBUF = dummy; // Perform another dummy write
+			if(ucb0RxSize < spiB0RxSize) UCB0TXBUF = dummy; // Perform another dummy write
 			else
 #endif
 			usciStat[UCB0_INDEX] = OPEN;
-
 		}
+#ifdef USE_UCB0_SPI
+		}
+#endif
 	}
-
 	UCB0IFG &= ~UCRXIFG;						// Clear RX interrupt flag from vector on end of RX
 }
 #endif // USE_UCB0
@@ -1141,6 +1164,9 @@ __interrupt void usciB1Isr(void)
 	unsigned int dummy = 0xFF;
 	// Transmit Interrupt Flag Set
 	if(UCB1IFG & UCTXIFG){
+#ifdef USE_UCB1_SPI
+		if(usciStat[UCB1_INDEX] == TX) {
+#endif
 		if(ucb1TxSize > 0){
 			UCB1TXBUF = *(++ucb1TxPtr);			// Transmit the next outgoing byte
 			ucb1TxSize--;
@@ -1149,26 +1175,30 @@ __interrupt void usciB1Isr(void)
 			usciStat[UCB1_INDEX] = OPEN; 			// Set status open if done with transmit
 			UCB1IFG &= ~UCTXIFG;				// Clear TX interrupt flag from vector on end of TX
 		}
+#ifdef USE_UCB1_SPI
+		}
+#endif
 	}
 
 	// Receive Interrupt Flag Set
 	if(UCB1IFG & UCRXIFG){	// Check for interrupt flag and RX mode
 #ifdef USE_UCB1_SPI
-		if(usciStat[UCB1_INDEX] == RX)				// Check we are in RX mode for SPI
+		if(usciStat[UCB1_INDEX] == RX)	{			// Check we are in RX mode for SPI
 #endif // USE_UCB0_SPI
 		if(UCB1STATW & UCRXERR) dummy = UCB1RXBUF;		// RX ERROR: Do a dummy read to clear interrupt flag
 		else {							// Otherwise write the value to the RX pointer
 			*(ucb1RxPtr++) = UCB1RXBUF;
 			ucb1RxSize++;					// RX Size decrement in read function
 #ifdef USE_UCB1_SPI
-			if(usciStat[UCB1_INDEX] == RX && ucb1RxSize < spiB1RxSize) UCB1TXBUF = dummy; // Perform another dummy write
+			if(ucb1RxSize < spiB1RxSize) UCB1TXBUF = dummy; // Perform another dummy write
 			else
 #endif
 			usciStat[UCB1_INDEX] = OPEN;
-
 		}
+#ifdef USE_UCB1_SPI
+		}
+#endif
 	}
-
 	UCB1IFG &= ~UCRXIFG;						// Clear RX interrupt flag from vector on end of RX
 }
 #endif // USE_UCB1
