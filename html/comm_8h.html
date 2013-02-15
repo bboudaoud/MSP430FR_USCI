@@ -182,72 +182,60 @@ Macros</h2></td></tr>
 <tr class="memitem:ae497f665d6228fcb261b0e1229f04a89"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#ae497f665d6228fcb261b0e1229f04a89">UCB1_I2C</a>&#160;&#160;&#160;<a class="el" href="comm_8h.html#a077f9e7a269fe818a4cf89d51ab54f77">UCB1_RCODE</a> + <a class="el" href="comm_8h.html#a5cd01756030509b764d43a2b8c94fce8">I2C_MODE</a></td></tr>
 <tr class="memdesc:ae497f665d6228fcb261b0e1229f04a89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combined UCB1 I2C Mode Resource Code.  <a href="#ae497f665d6228fcb261b0e1229f04a89">More...</a><br/></td></tr>
 <tr class="separator:ae497f665d6228fcb261b0e1229f04a89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0abf707a5045920e43f71c36761c1951"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a0abf707a5045920e43f71c36761c1951">UART_8N1</a>&#160;&#160;&#160;UCSSEL1</td></tr>
+<tr class="memitem:a0abf707a5045920e43f71c36761c1951"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a0abf707a5045920e43f71c36761c1951">UART_8N1</a>&#160;&#160;&#160;UCSSEL__SMCLK</td></tr>
 <tr class="memdesc:a0abf707a5045920e43f71c36761c1951"><td class="mdescLeft">&#160;</td><td class="mdescRight">UCTLW0: 8 bit UART (no parity, 1 stop bit) w/ baud from SMCLK.  <a href="#a0abf707a5045920e43f71c36761c1951">More...</a><br/></td></tr>
 <tr class="separator:a0abf707a5045920e43f71c36761c1951"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9fda1c06de033256a894c932570d333"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#ab9fda1c06de033256a894c932570d333">UART_7N1</a>&#160;&#160;&#160;UCSSEL1 + UC7BIT</td></tr>
+<tr class="memitem:ab9fda1c06de033256a894c932570d333"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#ab9fda1c06de033256a894c932570d333">UART_7N1</a>&#160;&#160;&#160;(UC7BIT &lt;&lt; 8) + UCSSEL__SMCLK</td></tr>
 <tr class="memdesc:ab9fda1c06de033256a894c932570d333"><td class="mdescLeft">&#160;</td><td class="mdescRight">UCTLW0: 7 bit UART (no parity, 1 stop bit) w/ baud from SMCLK.  <a href="#ab9fda1c06de033256a894c932570d333">More...</a><br/></td></tr>
 <tr class="separator:ab9fda1c06de033256a894c932570d333"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae725781f08c71c578b16db33c301e501"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#ae725781f08c71c578b16db33c301e501">SPI_8M0_LE</a>&#160;&#160;&#160;UCSYNC + UCSSEL1 + UCMST</td></tr>
+<tr class="memitem:ae725781f08c71c578b16db33c301e501"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#ae725781f08c71c578b16db33c301e501">SPI_8M0_LE</a>&#160;&#160;&#160;((UCSYNC + UCMST) &lt;&lt; 8) + UCSSEL__SMCLK</td></tr>
 <tr class="memdesc:ae725781f08c71c578b16db33c301e501"><td class="mdescLeft">&#160;</td><td class="mdescRight">UCTLW0: 8 bit Mode 0 SPI Master LSB first w/ baud from SMCLK.  <a href="#ae725781f08c71c578b16db33c301e501">More...</a><br/></td></tr>
 <tr class="separator:ae725781f08c71c578b16db33c301e501"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac199e90e5f5979b61bbe4dde0cc20316"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#ac199e90e5f5979b61bbe4dde0cc20316">SPI_8M0_BE</a>&#160;&#160;&#160;UCSYNC + UCSSEL1 + UCMST + UCMSB</td></tr>
+<tr class="memitem:ac199e90e5f5979b61bbe4dde0cc20316"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#ac199e90e5f5979b61bbe4dde0cc20316">SPI_8M0_BE</a>&#160;&#160;&#160;((UCSYNC + UCMST + UCMSB) &lt;&lt; 8) + UCSSEL__SMCLK</td></tr>
 <tr class="memdesc:ac199e90e5f5979b61bbe4dde0cc20316"><td class="mdescLeft">&#160;</td><td class="mdescRight">UCTLW0: 8 bit Mode 0 SPI Master MSB first w/ baud from SMCLK.  <a href="#ac199e90e5f5979b61bbe4dde0cc20316">More...</a><br/></td></tr>
 <tr class="separator:ac199e90e5f5979b61bbe4dde0cc20316"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeba932e0e6fb1a2b260ef2af3f26e2cc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#aeba932e0e6fb1a2b260ef2af3f26e2cc">SPI_8M1_LE</a>&#160;&#160;&#160;UCSYNC + UCSSEL1 + UCCKPH + UCMST</td></tr>
+<tr class="memitem:aeba932e0e6fb1a2b260ef2af3f26e2cc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#aeba932e0e6fb1a2b260ef2af3f26e2cc">SPI_8M1_LE</a>&#160;&#160;&#160;((UCSYNC + UCMST + UCCKPH) &lt;&lt; 8) + UCSSEL__SMCLK</td></tr>
 <tr class="memdesc:aeba932e0e6fb1a2b260ef2af3f26e2cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">UCTLW0: 8 bit Mode 1 SPI Master LSB first w/ baud from SMCLK.  <a href="#aeba932e0e6fb1a2b260ef2af3f26e2cc">More...</a><br/></td></tr>
 <tr class="separator:aeba932e0e6fb1a2b260ef2af3f26e2cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6defd7e3393927248ed12cf41e2e32c2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a6defd7e3393927248ed12cf41e2e32c2">SPI_8M1_BE</a>&#160;&#160;&#160;UCSYNC + UCSSEL1 + UCCKPH + UCMST + UCMSB</td></tr>
+<tr class="memitem:a6defd7e3393927248ed12cf41e2e32c2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a6defd7e3393927248ed12cf41e2e32c2">SPI_8M1_BE</a>&#160;&#160;&#160;((UCSYNC + UCMST + UCCKPH + UCMSB) &lt;&lt; 8) + UCSSEL__SMCLK</td></tr>
 <tr class="memdesc:a6defd7e3393927248ed12cf41e2e32c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">UCTLW0: 8 bit Mode 1 SPI Master MSB first w/ baud from SMCLK.  <a href="#a6defd7e3393927248ed12cf41e2e32c2">More...</a><br/></td></tr>
 <tr class="separator:a6defd7e3393927248ed12cf41e2e32c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18e2cbb07833a95c237c5967e8ae5713"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a18e2cbb07833a95c237c5967e8ae5713">SPI_8M2_LE</a>&#160;&#160;&#160;UCSYNC + UCSSEL1 + UCCKPL + UCMST</td></tr>
+<tr class="memitem:a18e2cbb07833a95c237c5967e8ae5713"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a18e2cbb07833a95c237c5967e8ae5713">SPI_8M2_LE</a>&#160;&#160;&#160;((UCSYNC + UCMST + UCCKPL) &lt;&lt; 8) + UCSSEL__SMCLK</td></tr>
 <tr class="memdesc:a18e2cbb07833a95c237c5967e8ae5713"><td class="mdescLeft">&#160;</td><td class="mdescRight">UCTLW0: 8 bit Mode 2 SPI Master LSB first w/ baud from SMCLK.  <a href="#a18e2cbb07833a95c237c5967e8ae5713">More...</a><br/></td></tr>
 <tr class="separator:a18e2cbb07833a95c237c5967e8ae5713"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af38c7da63f325bf4b4ac4ad77e737354"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#af38c7da63f325bf4b4ac4ad77e737354">SPI_8M2_BE</a>&#160;&#160;&#160;UCSYNC + UCSSEL1 + UCCKPL + UCMST + UCMSB</td></tr>
+<tr class="memitem:af38c7da63f325bf4b4ac4ad77e737354"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#af38c7da63f325bf4b4ac4ad77e737354">SPI_8M2_BE</a>&#160;&#160;&#160;((UCSYNC + UCMST + UCCKPL + UCMSB) &lt;&lt; 8) + UCSSEL__SMCLK</td></tr>
 <tr class="memdesc:af38c7da63f325bf4b4ac4ad77e737354"><td class="mdescLeft">&#160;</td><td class="mdescRight">UCTLw0: 8 bit Mode 2 SPI Master MSB first w/ baud from SMCLK.  <a href="#af38c7da63f325bf4b4ac4ad77e737354">More...</a><br/></td></tr>
 <tr class="separator:af38c7da63f325bf4b4ac4ad77e737354"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0704740149cc735e33623812e6e82f5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#af0704740149cc735e33623812e6e82f5">SPI_8M3_LE</a>&#160;&#160;&#160;UCSYNC + UCSSEL1 + UCCKPH + UCCKPL + UCMST</td></tr>
+<tr class="memitem:af0704740149cc735e33623812e6e82f5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#af0704740149cc735e33623812e6e82f5">SPI_8M3_LE</a>&#160;&#160;&#160;((UCSYNC + UCMST + UCCKPH + UCCKPL) &lt;&lt; 8) + UCSSEL__SMCLK</td></tr>
 <tr class="memdesc:af0704740149cc735e33623812e6e82f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">UCTLW0: 8 Bit Mode 3 SPI Master LSB first w/ baud from SMCLK.  <a href="#af0704740149cc735e33623812e6e82f5">More...</a><br/></td></tr>
 <tr class="separator:af0704740149cc735e33623812e6e82f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1ffb441c82dbdc489cc60be6b6c351a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#ab1ffb441c82dbdc489cc60be6b6c351a">SPI_8M3_BE</a>&#160;&#160;&#160;UCSYNC + UCSSEL1 + UCCKPH + UCCKPL + UCMST + UCMSB</td></tr>
+<tr class="memitem:ab1ffb441c82dbdc489cc60be6b6c351a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#ab1ffb441c82dbdc489cc60be6b6c351a">SPI_8M3_BE</a>&#160;&#160;&#160;((UCSYNC + UCMST + UCCKPH + UCCKPL + UCMSB) &lt;&lt; 8) + UCSSEL__SMCLK</td></tr>
 <tr class="memdesc:ab1ffb441c82dbdc489cc60be6b6c351a"><td class="mdescLeft">&#160;</td><td class="mdescRight">UCTLW0: 8 bit Mode 3 SPI Master MSB first w/ baud from SMCLK.  <a href="#ab1ffb441c82dbdc489cc60be6b6c351a">More...</a><br/></td></tr>
 <tr class="separator:ab1ffb441c82dbdc489cc60be6b6c351a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9bb3d52b0997c1d361cab57a20edf7ea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a9bb3d52b0997c1d361cab57a20edf7ea">SPI_S8M0_LE</a>&#160;&#160;&#160;UCSYNC</td></tr>
+<tr class="memitem:a9bb3d52b0997c1d361cab57a20edf7ea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a9bb3d52b0997c1d361cab57a20edf7ea">SPI_S8M0_LE</a>&#160;&#160;&#160;UCSYNC &lt;&lt; 8</td></tr>
 <tr class="memdesc:a9bb3d52b0997c1d361cab57a20edf7ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">UCTLW0: 8 bit Mode 0 SPI Slave LSB first.  <a href="#a9bb3d52b0997c1d361cab57a20edf7ea">More...</a><br/></td></tr>
 <tr class="separator:a9bb3d52b0997c1d361cab57a20edf7ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76db2940b83024bf590abc0ad87dce21"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a76db2940b83024bf590abc0ad87dce21">SPI_S8M0_BE</a>&#160;&#160;&#160;UCSYNC + UCMSB</td></tr>
+<tr class="memitem:a76db2940b83024bf590abc0ad87dce21"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a76db2940b83024bf590abc0ad87dce21">SPI_S8M0_BE</a>&#160;&#160;&#160;((UCSYNC + UCMSB) &lt;&lt; 8 ) + UCSSEL__SMCLK</td></tr>
 <tr class="memdesc:a76db2940b83024bf590abc0ad87dce21"><td class="mdescLeft">&#160;</td><td class="mdescRight">UCTLW0: 8 bit Mode 0 SPI Slave MSB first.  <a href="#a76db2940b83024bf590abc0ad87dce21">More...</a><br/></td></tr>
 <tr class="separator:a76db2940b83024bf590abc0ad87dce21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc3454ce2fe030cd6cc5242f097535ca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#acc3454ce2fe030cd6cc5242f097535ca">SPI_S8M1_LE</a>&#160;&#160;&#160;UCSYNC + UCCKPH</td></tr>
+<tr class="memitem:acc3454ce2fe030cd6cc5242f097535ca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#acc3454ce2fe030cd6cc5242f097535ca">SPI_S8M1_LE</a>&#160;&#160;&#160;((UCSYNC + UCCKPH) &lt;&lt; 8) + UCSSEL__SMCLK</td></tr>
 <tr class="memdesc:acc3454ce2fe030cd6cc5242f097535ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">UCTLW0: 8 bit Mode 1 SPI Slave LSB first.  <a href="#acc3454ce2fe030cd6cc5242f097535ca">More...</a><br/></td></tr>
 <tr class="separator:acc3454ce2fe030cd6cc5242f097535ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a241fa0e6b26bfc215023f66bccd8dc69"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a241fa0e6b26bfc215023f66bccd8dc69">SPI_S8M1_BE</a>&#160;&#160;&#160;UCSYNC + UCCKPH + UCMSB</td></tr>
+<tr class="memitem:a241fa0e6b26bfc215023f66bccd8dc69"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a241fa0e6b26bfc215023f66bccd8dc69">SPI_S8M1_BE</a>&#160;&#160;&#160;((UCSYNC + UCCKPH + UCMSB) &lt;&lt; 8) + UCSSEL__SMCLK</td></tr>
 <tr class="memdesc:a241fa0e6b26bfc215023f66bccd8dc69"><td class="mdescLeft">&#160;</td><td class="mdescRight">UCTLW0: 8 bit Mode 1 SPI Slave MSB first.  <a href="#a241fa0e6b26bfc215023f66bccd8dc69">More...</a><br/></td></tr>
 <tr class="separator:a241fa0e6b26bfc215023f66bccd8dc69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5514545ff7ee99139aa0b9cdb8bf3bf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#ac5514545ff7ee99139aa0b9cdb8bf3bf">SPI_S8M2_LE</a>&#160;&#160;&#160;UCSYNC + UCCKPL</td></tr>
+<tr class="memitem:ac5514545ff7ee99139aa0b9cdb8bf3bf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#ac5514545ff7ee99139aa0b9cdb8bf3bf">SPI_S8M2_LE</a>&#160;&#160;&#160;((UCSYNC + UCCKPL) &lt;&lt; 8) + UCSSEL__SMCLK</td></tr>
 <tr class="memdesc:ac5514545ff7ee99139aa0b9cdb8bf3bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">UCTLW0: 8 bit Mode 2 SPI Slave LSB first.  <a href="#ac5514545ff7ee99139aa0b9cdb8bf3bf">More...</a><br/></td></tr>
 <tr class="separator:ac5514545ff7ee99139aa0b9cdb8bf3bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a6625925ccfe5b141887e63328b5454"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a6a6625925ccfe5b141887e63328b5454">SPI_28M2_BE</a>&#160;&#160;&#160;UCSYNC + UCCKPL + UCMSB</td></tr>
+<tr class="memitem:a6a6625925ccfe5b141887e63328b5454"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a6a6625925ccfe5b141887e63328b5454">SPI_28M2_BE</a>&#160;&#160;&#160;((UCSYNC + UCCKPL + UCMSB) &lt;&lt; 8) + UCSSEL__SMCLK</td></tr>
 <tr class="memdesc:a6a6625925ccfe5b141887e63328b5454"><td class="mdescLeft">&#160;</td><td class="mdescRight">UCTLw0: 8 bit Mode 2 SPI Slave MSB first.  <a href="#a6a6625925ccfe5b141887e63328b5454">More...</a><br/></td></tr>
 <tr class="separator:a6a6625925ccfe5b141887e63328b5454"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fc4e111eb97690de803657ea2aab7ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a6fc4e111eb97690de803657ea2aab7ef">SPI_S8M3_LE</a>&#160;&#160;&#160;UCSYNC + UCCKPH + UCCKPL</td></tr>
+<tr class="memitem:a6fc4e111eb97690de803657ea2aab7ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a6fc4e111eb97690de803657ea2aab7ef">SPI_S8M3_LE</a>&#160;&#160;&#160;((UCSYNC + UCCKPH + UCCKPL) &lt;&lt; 8) + UCSSEL__SMCLK</td></tr>
 <tr class="memdesc:a6fc4e111eb97690de803657ea2aab7ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">UCTLW0: 8 bit Mode 3 SPI Slave LSB first.  <a href="#a6fc4e111eb97690de803657ea2aab7ef">More...</a><br/></td></tr>
 <tr class="separator:a6fc4e111eb97690de803657ea2aab7ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21121457bba706d54870a77c98038dfc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a21121457bba706d54870a77c98038dfc">SPI_S8M3_BE</a>&#160;&#160;&#160;UCSYNC + UCCKPH + UCCKPL + UCMSB</td></tr>
+<tr class="memitem:a21121457bba706d54870a77c98038dfc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a21121457bba706d54870a77c98038dfc">SPI_S8M3_BE</a>&#160;&#160;&#160;((UCSYNC + UCCKPH + UCCKPL + UCMSB) &lt;&lt; 8 ) + UCSSEL__SMCLK</td></tr>
 <tr class="memdesc:a21121457bba706d54870a77c98038dfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">UCTLW0: 8 bit Mode 3 SPI Slave MSB first.  <a href="#a21121457bba706d54870a77c98038dfc">More...</a><br/></td></tr>
 <tr class="separator:a21121457bba706d54870a77c98038dfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e28d7af4190033e38fc6345c48e4578"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a8e28d7af4190033e38fc6345c48e4578">I2C_10SMT</a>&#160;&#160;&#160;UCA10 + UCSLA10 + UCMST + UCMODE_3 + UCSSEL1 + UCTR + UCSYNC</td></tr>
-<tr class="memdesc:a8e28d7af4190033e38fc6345c48e4578"><td class="mdescLeft">&#160;</td><td class="mdescRight">UCTLW0: 10 bit addressed I2C (master and slave), single master mode, transmitter w/ baud from SMCLK.  <a href="#a8e28d7af4190033e38fc6345c48e4578">More...</a><br/></td></tr>
-<tr class="separator:a8e28d7af4190033e38fc6345c48e4578"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7b9b4203bba304ff2b3d89fe1e2806c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#ab7b9b4203bba304ff2b3d89fe1e2806c">I2C_10SMR</a>&#160;&#160;&#160;UCA10 + UCSLA10 + UCMST + UCMODE_3 + UCSSEL1 + UCSYNC</td></tr>
-<tr class="memdesc:ab7b9b4203bba304ff2b3d89fe1e2806c"><td class="mdescLeft">&#160;</td><td class="mdescRight">UCTLW0: 10 bit addressed I2C (master and slave), single master mode, receiver w/ baud from SMCLK.  <a href="#ab7b9b4203bba304ff2b3d89fe1e2806c">More...</a><br/></td></tr>
-<tr class="separator:ab7b9b4203bba304ff2b3d89fe1e2806c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a401163f36cc49b11931b5d5823e6c965"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a401163f36cc49b11931b5d5823e6c965">I2C_7SMT</a>&#160;&#160;&#160;UCMST + UCMODE_3 + UCSYNC + UCSSEL1 + UCTR</td></tr>
-<tr class="memdesc:a401163f36cc49b11931b5d5823e6c965"><td class="mdescLeft">&#160;</td><td class="mdescRight">UCTLW0: 7 bit addressed I2C (master and slave), single master mode, transmitter w/ baud from SMCLK.  <a href="#a401163f36cc49b11931b5d5823e6c965">More...</a><br/></td></tr>
-<tr class="separator:a401163f36cc49b11931b5d5823e6c965"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50746dcbf062f976fba0abaeb370fe2d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a50746dcbf062f976fba0abaeb370fe2d">I2C_7SMR</a>&#160;&#160;&#160;UCMST + UCMODE_3 + UCSYNC + UCSSEL1</td></tr>
-<tr class="memdesc:a50746dcbf062f976fba0abaeb370fe2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">UCTLW0: 7 bit addressed I2C (master and slave), single master mode, receiver w/ baud from SMCLK.  <a href="#a50746dcbf062f976fba0abaeb370fe2d">More...</a><br/></td></tr>
-<tr class="separator:a50746dcbf062f976fba0abaeb370fe2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4db69953ccb058b5b643a374172f6c35"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a4db69953ccb058b5b643a374172f6c35">DEF_CTLW1</a>&#160;&#160;&#160;0x0003</td></tr>
 <tr class="memdesc:a4db69953ccb058b5b643a374172f6c35"><td class="mdescLeft">&#160;</td><td class="mdescRight">CTLW1: 200ns deglitch time.  <a href="#a4db69953ccb058b5b643a374172f6c35">More...</a><br/></td></tr>
 <tr class="separator:a4db69953ccb058b5b643a374172f6c35"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -382,71 +370,7 @@ Functions</h2></td></tr>
 
 <p>CTLW1: 200ns deglitch time. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00088">88</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ab7b9b4203bba304ff2b3d89fe1e2806c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define I2C_10SMR&#160;&#160;&#160;UCA10 + UCSLA10 + UCMST + UCMODE_3 + UCSSEL1 + UCSYNC</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>UCTLW0: 10 bit addressed I2C (master and slave), single master mode, receiver w/ baud from SMCLK. </p>
-
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00084">84</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a8e28d7af4190033e38fc6345c48e4578"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define I2C_10SMT&#160;&#160;&#160;UCA10 + UCSLA10 + UCMST + UCMODE_3 + UCSSEL1 + UCTR + UCSYNC</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>UCTLW0: 10 bit addressed I2C (master and slave), single master mode, transmitter w/ baud from SMCLK. </p>
-
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00083">83</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a50746dcbf062f976fba0abaeb370fe2d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define I2C_7SMR&#160;&#160;&#160;UCMST + UCMODE_3 + UCSYNC + UCSSEL1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>UCTLW0: 7 bit addressed I2C (master and slave), single master mode, receiver w/ baud from SMCLK. </p>
-
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00086">86</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a401163f36cc49b11931b5d5823e6c965"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define I2C_7SMT&#160;&#160;&#160;UCMST + UCMODE_3 + UCSYNC + UCSSEL1 + UCTR</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>UCTLW0: 7 bit addressed I2C (master and slave), single master mode, transmitter w/ baud from SMCLK. </p>
-
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00085">85</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00091">91</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -510,7 +434,7 @@ Functions</h2></td></tr>
 
 <p>USCI OPEN Status code. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00099">99</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00102">102</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -526,7 +450,7 @@ Functions</h2></td></tr>
 
 <p>USCI RX Status code. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00101">101</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00104">104</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -535,7 +459,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SPI_28M2_BE&#160;&#160;&#160;UCSYNC + UCCKPL + UCMSB</td>
+          <td class="memname">#define SPI_28M2_BE&#160;&#160;&#160;((UCSYNC + UCCKPL + UCMSB) &lt;&lt; 8) + UCSSEL__SMCLK</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -551,7 +475,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SPI_8M0_BE&#160;&#160;&#160;UCSYNC + UCSSEL1 + UCMST + UCMSB</td>
+          <td class="memname">#define SPI_8M0_BE&#160;&#160;&#160;((UCSYNC + UCMST + UCMSB) &lt;&lt; 8) + UCSSEL__SMCLK</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -567,7 +491,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SPI_8M0_LE&#160;&#160;&#160;UCSYNC + UCSSEL1 + UCMST</td>
+          <td class="memname">#define SPI_8M0_LE&#160;&#160;&#160;((UCSYNC + UCMST) &lt;&lt; 8) + UCSSEL__SMCLK</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -583,7 +507,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SPI_8M1_BE&#160;&#160;&#160;UCSYNC + UCSSEL1 + UCCKPH + UCMST + UCMSB</td>
+          <td class="memname">#define SPI_8M1_BE&#160;&#160;&#160;((UCSYNC + UCMST + UCCKPH + UCMSB) &lt;&lt; 8) + UCSSEL__SMCLK</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -599,7 +523,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SPI_8M1_LE&#160;&#160;&#160;UCSYNC + UCSSEL1 + UCCKPH + UCMST</td>
+          <td class="memname">#define SPI_8M1_LE&#160;&#160;&#160;((UCSYNC + UCMST + UCCKPH) &lt;&lt; 8) + UCSSEL__SMCLK</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -615,7 +539,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SPI_8M2_BE&#160;&#160;&#160;UCSYNC + UCSSEL1 + UCCKPL + UCMST + UCMSB</td>
+          <td class="memname">#define SPI_8M2_BE&#160;&#160;&#160;((UCSYNC + UCMST + UCCKPL + UCMSB) &lt;&lt; 8) + UCSSEL__SMCLK</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -631,7 +555,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SPI_8M2_LE&#160;&#160;&#160;UCSYNC + UCSSEL1 + UCCKPL + UCMST</td>
+          <td class="memname">#define SPI_8M2_LE&#160;&#160;&#160;((UCSYNC + UCMST + UCCKPL) &lt;&lt; 8) + UCSSEL__SMCLK</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -647,7 +571,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SPI_8M3_BE&#160;&#160;&#160;UCSYNC + UCSSEL1 + UCCKPH + UCCKPL + UCMST + UCMSB</td>
+          <td class="memname">#define SPI_8M3_BE&#160;&#160;&#160;((UCSYNC + UCMST + UCCKPH + UCCKPL + UCMSB) &lt;&lt; 8) + UCSSEL__SMCLK</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -663,7 +587,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SPI_8M3_LE&#160;&#160;&#160;UCSYNC + UCSSEL1 + UCCKPH + UCCKPL + UCMST</td>
+          <td class="memname">#define SPI_8M3_LE&#160;&#160;&#160;((UCSYNC + UCMST + UCCKPH + UCCKPL) &lt;&lt; 8) + UCSSEL__SMCLK</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -695,7 +619,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SPI_S8M0_BE&#160;&#160;&#160;UCSYNC + UCMSB</td>
+          <td class="memname">#define SPI_S8M0_BE&#160;&#160;&#160;((UCSYNC + UCMSB) &lt;&lt; 8 ) + UCSSEL__SMCLK</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -711,7 +635,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SPI_S8M0_LE&#160;&#160;&#160;UCSYNC</td>
+          <td class="memname">#define SPI_S8M0_LE&#160;&#160;&#160;UCSYNC &lt;&lt; 8</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -727,7 +651,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SPI_S8M1_BE&#160;&#160;&#160;UCSYNC + UCCKPH + UCMSB</td>
+          <td class="memname">#define SPI_S8M1_BE&#160;&#160;&#160;((UCSYNC + UCCKPH + UCMSB) &lt;&lt; 8) + UCSSEL__SMCLK</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -743,7 +667,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SPI_S8M1_LE&#160;&#160;&#160;UCSYNC + UCCKPH</td>
+          <td class="memname">#define SPI_S8M1_LE&#160;&#160;&#160;((UCSYNC + UCCKPH) &lt;&lt; 8) + UCSSEL__SMCLK</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -759,7 +683,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SPI_S8M2_LE&#160;&#160;&#160;UCSYNC + UCCKPL</td>
+          <td class="memname">#define SPI_S8M2_LE&#160;&#160;&#160;((UCSYNC + UCCKPL) &lt;&lt; 8) + UCSSEL__SMCLK</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -775,7 +699,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SPI_S8M3_BE&#160;&#160;&#160;UCSYNC + UCCKPH + UCCKPL + UCMSB</td>
+          <td class="memname">#define SPI_S8M3_BE&#160;&#160;&#160;((UCSYNC + UCCKPH + UCCKPL + UCMSB) &lt;&lt; 8 ) + UCSSEL__SMCLK</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -791,7 +715,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SPI_S8M3_LE&#160;&#160;&#160;UCSYNC + UCCKPH + UCCKPL</td>
+          <td class="memname">#define SPI_S8M3_LE&#160;&#160;&#160;((UCSYNC + UCCKPH + UCCKPL) &lt;&lt; 8) + UCSSEL__SMCLK</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -814,7 +738,7 @@ Functions</h2></td></tr>
 
 <p>USCI TX Status code. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00100">100</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00103">103</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -823,7 +747,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define UART_7N1&#160;&#160;&#160;UCSSEL1 + UC7BIT</td>
+          <td class="memname">#define UART_7N1&#160;&#160;&#160;(UC7BIT &lt;&lt; 8) + UCSSEL__SMCLK</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -839,7 +763,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define UART_8N1&#160;&#160;&#160;UCSSEL1</td>
+          <td class="memname">#define UART_8N1&#160;&#160;&#160;UCSSEL__SMCLK</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -882,7 +806,7 @@ Functions</h2></td></tr>
 
 <p>Baud rate frequency to divisor macro (uses <a class="el" href="timing_8h.html">timing.h</a>) </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00091">91</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00094">94</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -898,7 +822,7 @@ Functions</h2></td></tr>
 
 <p>USCI A0 shared buffer index. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00094">94</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00097">97</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -962,7 +886,7 @@ Functions</h2></td></tr>
 
 <p>USCI A1 shared buffer index. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00095">95</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00098">98</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -1042,7 +966,7 @@ Functions</h2></td></tr>
 
 <p>USCI B0 shared buffer index. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00096">96</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00099">99</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -1106,7 +1030,7 @@ Functions</h2></td></tr>
 
 <p>USCI B1 shared buffer index. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00097">97</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00100">100</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -1154,7 +1078,7 @@ Functions</h2></td></tr>
 
 <p>USCI Clock Rate [use SMCLK to source our UART (from <a class="el" href="timing_8h.html">timing.h</a>)]. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00090">90</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00093">93</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -1186,7 +1110,7 @@ Functions</h2></td></tr>
 
 <p>USCI busy error return code. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00104">104</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00107">107</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -1202,7 +1126,7 @@ Functions</h2></td></tr>
 
 <p>USCI configuration error return code. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00103">103</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00106">106</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -1234,7 +1158,7 @@ Functions</h2></td></tr>
 
 <p>TX/RX success return code. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00105">105</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00108">108</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -1250,7 +1174,7 @@ Functions</h2></td></tr>
 
 <p>USCI B0 Active Definition. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00203">203</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00206">206</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -1282,7 +1206,7 @@ Functions</h2></td></tr>
 
 <p>USCI B1 Active Definition. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00242">242</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00245">245</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -1358,7 +1282,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="comm_8c_source.html#l00675">675</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00691">691</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -1403,7 +1327,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="comm_8c_source.html#l00938">938</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00961">961</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
 
 </div>
 </div>
@@ -1431,7 +1355,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The number of valid bytes following the rxPtr. </dd></dl>
 
-<p>Definition at line <a class="el" href="comm_8c_source.html#l00733">733</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00749">749</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
 
 </div>
 </div>
@@ -1466,7 +1390,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="comm_8c_source.html#l00746">746</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00762">762</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
 
 </div>
 </div>
@@ -1494,7 +1418,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The number of valid bytes following the rxPtr. </dd></dl>
 
-<p>Definition at line <a class="el" href="comm_8c_source.html#l00996">996</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+<p>Definition at line <a class="el" href="comm_8c_source.html#l01019">1019</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
 
 </div>
 </div>
@@ -1529,7 +1453,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="comm_8c_source.html#l01009">1009</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+<p>Definition at line <a class="el" href="comm_8c_source.html#l01032">1032</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
 
 </div>
 </div>
@@ -1579,7 +1503,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section user"><dt>Side Effects:</dt><dd>Sets the RX pointer to that registered w/ commID </dd></dl>
 
-<p>Definition at line <a class="el" href="comm_8c_source.html#l00714">714</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00730">730</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
 
 </div>
 </div>
@@ -1607,7 +1531,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section user"><dt>Side Effects:</dt><dd>Sets the RX pointer to that registered w/ commID </dd></dl>
 
-<p>Definition at line <a class="el" href="comm_8c_source.html#l00977">977</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+<p>Definition at line <a class="el" href="comm_8c_source.html#l01000">1000</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
 
 </div>
 </div>
@@ -1645,7 +1569,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="comm_8c_source.html#l00759">759</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00775">775</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
 
 </div>
 </div>
@@ -1683,7 +1607,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="comm_8c_source.html#l01022">1022</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+<p>Definition at line <a class="el" href="comm_8c_source.html#l01045">1045</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
 
 </div>
 </div>
@@ -1729,7 +1653,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section user"><dt>Side Effects:</dt><dd>Reset the UCB0 RX size and data pointer </dd></dl>
 
-<p>Definition at line <a class="el" href="comm_8c_source.html#l00813">813</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00829">829</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1777,7 +1701,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The byte shifted in from the SPI </dd></dl>
 
-<p>Definition at line <a class="el" href="comm_8c_source.html#l00841">841</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00857">857</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1838,7 +1762,7 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="comm_8c_source.html#l00783">783</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00799">799</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1938,7 +1862,7 @@ Here is the call graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Feb 12 2013 15:18:59 for MSP430 eUSCI Driver Library by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Feb 15 2013 17:22:12 for MSP430 eUSCI Driver Library by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

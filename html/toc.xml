@@ -59,10 +59,6 @@
         </topic>
         <topic label="ADDR_MASK" href="comm_8h.html#a15b16c1073c60f0be255caf0a60251be"/>
         <topic label="DEF_CTLW1" href="comm_8h.html#a4db69953ccb058b5b643a374172f6c35"/>
-        <topic label="I2C_10SMR" href="comm_8h.html#ab7b9b4203bba304ff2b3d89fe1e2806c"/>
-        <topic label="I2C_10SMT" href="comm_8h.html#a8e28d7af4190033e38fc6345c48e4578"/>
-        <topic label="I2C_7SMR" href="comm_8h.html#a50746dcbf062f976fba0abaeb370fe2d"/>
-        <topic label="I2C_7SMT" href="comm_8h.html#a401163f36cc49b11931b5d5823e6c965"/>
         <topic label="I2C_MODE" href="comm_8h.html#a5cd01756030509b764d43a2b8c94fce8"/>
         <topic label="MAX_DEVS" href="comm_8h.html#a00cb63c6de93dec9cb1ea7136e5d8f0a"/>
         <topic label="MODE_MASK" href="comm_8h.html#aba2b187200eec47c5fc32655e296783d"/>
@@ -135,9 +131,7 @@
         <topic label="spiB1Swap" href="comm_8h.html#a88cf7f351cfa6db251ed28176a2250bc"/>
         <topic label="spiB1Write" href="comm_8h.html#aa59490b39fe62594d3e10e4be14f32a8"/>
       </topic>
-      <topic label="comm_hal_5342.h" href="comm__hal__5342_8h.html">
-        <topic label="COMM_HAL_5342_H_" href="comm__hal__5342_8h.html#afbdfe21906df17dcd9a05543dd1f9caa"/>
-      </topic>
+      <topic label="comm_hal_5342.h" href="comm__hal__5342_8h.html"/>
       <topic label="comm_hal_5510.h" href="comm__hal__5510_8h.html"/>
       <topic label="comm_hal_5739.h" href="comm__hal__5739_8h.html"/>
       <topic label="msp_fr_exp_hal.h" href="msp__fr__exp__hal_8h.html">
