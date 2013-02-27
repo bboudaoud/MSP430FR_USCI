@@ -2,4 +2,6 @@
 <area shape="rect" id="node3" href="$comm_8h.html#acac01b5fff8d81782043a7510da979dc" title="Transmit method for USCI B0 SPI operation." alt="" coords="134,5,221,32"/>
 <area shape="rect" id="node5" href="$comm_8h.html#ad8e558a330d8319d9e422473dcc6d5f6" title="Receive method for USCI B0 SPI operation." alt="" coords="135,56,220,83"/>
 <area shape="rect" id="node7" href="$comm_8h.html#aeeab84d98e251811b3da247add841c45" title="Byte Swap method for USCI B0 SPI operation." alt="" coords="134,107,221,133"/>
+<area shape="rect" id="node9" href="$comm_8h.html#a87398037b35846765dbfbb4b402f74ec" title="Transmit method for USCI B0 I2C operation." alt="" coords="134,157,221,184"/>
+<area shape="rect" id="node11" href="$comm_8h.html#a116aa2e3cb7699e88e2091183d482738" title="Receive method for USCI B0 I2C operation." alt="" coords="135,208,220,235"/>
 </map>

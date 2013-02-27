@@ -1,0 +1,6 @@
+<map id="confUCA0" name="confUCA0">
+<area shape="rect" id="node3" href="$comm_8h.html#a62eb3fb5e7928a31ade57b8fa39a6871" title="Transmit method for USCI A0 UART operation." alt="" coords="133,5,224,32"/>
+<area shape="rect" id="node5" href="$comm_8h.html#a288d4b5f1394b0a21bfa9d847ef6dc91" title="Transmit method for USCI A0 SPI operation." alt="" coords="135,56,222,83"/>
+<area shape="rect" id="node7" href="$comm_8h.html#adbeb19ea57618e30d2d7f6580a825e3a" title="Receive method for USCI A0 SPI operation." alt="" coords="136,107,221,133"/>
+<area shape="rect" id="node9" href="$comm_8h.html#ab6d34982b27c9b3d67a0b6997d89c041" title="Byte Swap method for USCI A0 SPI operation." alt="" coords="135,157,222,184"/>
+</map>

@@ -12,13 +12,13 @@
 // USCI Library Conditional Compilation Macros
 // NOTE: Only define at most 1 config for each USCI module, otherwise a Multiple Serial Endpoint error will be created on compilation
 #define USE_UCA0_UART			///< USCI A0 UART Mode Conditional Compilation Flag
-//#define USE_UCA0_SPI			///< USCI A0 SPI Mode Conditional Compilation Flag
+#define USE_UCA0_SPI			///< USCI A0 SPI Mode Conditional Compilation Flag
 #define USE_UCA1_UART			///< USCI A1 UART Mode Conditional Compilation Flag
-//#define USE_UCA1_SPI			///< USCI A1 SPI Mode Conditional Compilation Flag
+#define USE_UCA1_SPI			///< USCI A1 SPI Mode Conditional Compilation Flag
 #define USE_UCB0_SPI			///< USCI B0 SPI Mode Conditional Compilation Flag
-//#define USE_UCB0_I2C			///< USCI B0 I2C Mode Conditional Compilation Flag
+#define USE_UCB0_I2C			///< USCI B0 I2C Mode Conditional Compilation Flag
 #define USE_UCB1_SPI			///< USCI B1 SPI Mode Conditional Compilation Flag
-//#define USE_UCB1_I2C			///< USCI B1 I2C Mode Conditional Compilation Flag
+#define USE_UCB1_I2C			///< USCI B1 I2C Mode Conditional Compilation Flag
 
 /// USCI Configuration Data Structure
 typedef struct uconf

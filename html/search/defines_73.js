@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['smclk_5ffreq',['SMCLK_FREQ',['../timing_8h.html#ac8c1536e4214841885bd4163a42ce2bd',1,'timing.h']]],
+  ['smclk_5ffreq',['SMCLK_FREQ',['../comm_8h.html#ac8c1536e4214841885bd4163a42ce2bd',1,'SMCLK_FREQ():&#160;comm.h'],['../timing_8h.html#ac8c1536e4214841885bd4163a42ce2bd',1,'SMCLK_FREQ():&#160;timing.h']]],
   ['spi_5f28m2_5fbe',['SPI_28M2_BE',['../comm_8h.html#a6a6625925ccfe5b141887e63328b5454',1,'comm.h']]],
   ['spi_5f8m0_5fbe',['SPI_8M0_BE',['../comm_8h.html#ac199e90e5f5979b61bbe4dde0cc20316',1,'comm.h']]],
   ['spi_5f8m0_5fle',['SPI_8M0_LE',['../comm_8h.html#ae725781f08c71c578b16db33c301e501',1,'comm.h']]],

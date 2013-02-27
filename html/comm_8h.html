@@ -90,16 +90,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">comm.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;msp430fr5739.h&quot;</code><br/>
-<code>#include &quot;comm_hal.h&quot;</code><br/>
-<code>#include &quot;<a class="el" href="timing_8h_source.html">timing.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="useful_8h_source.html">useful.h</a>&quot;</code><br/>
+<div class="textblock"><code>#include &quot;<a class="el" href="useful_8h_source.html">useful.h</a>&quot;</code><br/>
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for comm.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="comm_8h__incl.png" border="0" usemap="#comm_8h" alt=""/></div>
 <map name="comm_8h" id="comm_8h">
-<area shape="rect" id="node7" href="timing_8h.html" title="timing.h" alt="" coords="140,80,208,107"/><area shape="rect" id="node10" href="useful_8h.html" title="useful.h" alt="" coords="233,80,300,107"/></map>
+<area shape="rect" id="node3" href="useful_8h.html" title="useful.h" alt="" coords="7,80,73,107"/></map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
@@ -119,12 +116,39 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:a9c74c0fe4ecec8f2710b4317ea47bfd7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a9c74c0fe4ecec8f2710b4317ea47bfd7">DCO_FREQ</a>&#160;&#160;&#160;8000000</td></tr>
+<tr class="separator:a9c74c0fe4ecec8f2710b4317ea47bfd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a027de6fabf836f218c14bccf96002fe5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a027de6fabf836f218c14bccf96002fe5">MCLK_FREQ</a>&#160;&#160;&#160;8000000</td></tr>
+<tr class="separator:a027de6fabf836f218c14bccf96002fe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8c1536e4214841885bd4163a42ce2bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#ac8c1536e4214841885bd4163a42ce2bd">SMCLK_FREQ</a>&#160;&#160;&#160;8000000</td></tr>
+<tr class="separator:ac8c1536e4214841885bd4163a42ce2bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00cb63c6de93dec9cb1ea7136e5d8f0a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a00cb63c6de93dec9cb1ea7136e5d8f0a">MAX_DEVS</a>&#160;&#160;&#160;8</td></tr>
 <tr class="memdesc:a00cb63c6de93dec9cb1ea7136e5d8f0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of devices to be registered.  <a href="#a00cb63c6de93dec9cb1ea7136e5d8f0a">More...</a><br/></td></tr>
 <tr class="separator:a00cb63c6de93dec9cb1ea7136e5d8f0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a636b67e6bb995040843ba994eb2304a4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a636b67e6bb995040843ba994eb2304a4">USE_UCA0_UART</a></td></tr>
+<tr class="memdesc:a636b67e6bb995040843ba994eb2304a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">USCI A0 UART Mode Conditional Compilation Flag.  <a href="#a636b67e6bb995040843ba994eb2304a4">More...</a><br/></td></tr>
+<tr class="separator:a636b67e6bb995040843ba994eb2304a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a117332140b7ba615d7c0bddec6ef9d93"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a117332140b7ba615d7c0bddec6ef9d93">USE_UCA0_SPI</a></td></tr>
+<tr class="memdesc:a117332140b7ba615d7c0bddec6ef9d93"><td class="mdescLeft">&#160;</td><td class="mdescRight">USCI A0 SPI Mode Conditional Compilation Flag.  <a href="#a117332140b7ba615d7c0bddec6ef9d93">More...</a><br/></td></tr>
+<tr class="separator:a117332140b7ba615d7c0bddec6ef9d93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a051fe852ccacd12fa7435771a233fbae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a051fe852ccacd12fa7435771a233fbae">USE_UCA1_UART</a></td></tr>
+<tr class="memdesc:a051fe852ccacd12fa7435771a233fbae"><td class="mdescLeft">&#160;</td><td class="mdescRight">USCI A1 UART Mode Conditional Compilation Flag.  <a href="#a051fe852ccacd12fa7435771a233fbae">More...</a><br/></td></tr>
+<tr class="separator:a051fe852ccacd12fa7435771a233fbae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52a868c9ec7e40d9ce2adbe94142e79f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a52a868c9ec7e40d9ce2adbe94142e79f">USE_UCA1_SPI</a></td></tr>
+<tr class="memdesc:a52a868c9ec7e40d9ce2adbe94142e79f"><td class="mdescLeft">&#160;</td><td class="mdescRight">USCI A1 SPI Mode Conditional Compilation Flag.  <a href="#a52a868c9ec7e40d9ce2adbe94142e79f">More...</a><br/></td></tr>
+<tr class="separator:a52a868c9ec7e40d9ce2adbe94142e79f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abdae60a87d34c0f54242d42010cd4968"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#abdae60a87d34c0f54242d42010cd4968">USE_UCB0_SPI</a></td></tr>
 <tr class="memdesc:abdae60a87d34c0f54242d42010cd4968"><td class="mdescLeft">&#160;</td><td class="mdescRight">USCI B0 SPI Mode Conditional Compilation Flag.  <a href="#abdae60a87d34c0f54242d42010cd4968">More...</a><br/></td></tr>
 <tr class="separator:abdae60a87d34c0f54242d42010cd4968"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adce83d31654c2f128433697009da4af3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#adce83d31654c2f128433697009da4af3">USE_UCB0_I2C</a></td></tr>
+<tr class="memdesc:adce83d31654c2f128433697009da4af3"><td class="mdescLeft">&#160;</td><td class="mdescRight">USCI B0 I2C Mode Conditional Compilation Flag.  <a href="#adce83d31654c2f128433697009da4af3">More...</a><br/></td></tr>
+<tr class="separator:adce83d31654c2f128433697009da4af3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69d72996a8ccd3db1d698dd995a0252f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a69d72996a8ccd3db1d698dd995a0252f">USE_UCB1_SPI</a></td></tr>
+<tr class="memdesc:a69d72996a8ccd3db1d698dd995a0252f"><td class="mdescLeft">&#160;</td><td class="mdescRight">USCI B1 SPI Mode Conditional Compilation Flag.  <a href="#a69d72996a8ccd3db1d698dd995a0252f">More...</a><br/></td></tr>
+<tr class="separator:a69d72996a8ccd3db1d698dd995a0252f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56ab5adf8697d3875fec9a66b9e43bdc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a56ab5adf8697d3875fec9a66b9e43bdc">USE_UCB1_I2C</a></td></tr>
+<tr class="memdesc:a56ab5adf8697d3875fec9a66b9e43bdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">USCI B1 I2C Mode Conditional Compilation Flag.  <a href="#a56ab5adf8697d3875fec9a66b9e43bdc">More...</a><br/></td></tr>
+<tr class="separator:a56ab5adf8697d3875fec9a66b9e43bdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a629262909e8ec7c398fb37c53ed1f6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a7a629262909e8ec7c398fb37c53ed1f6">USCI_MASK</a>&#160;&#160;&#160;0xC000</td></tr>
 <tr class="memdesc:a7a629262909e8ec7c398fb37c53ed1f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">USCI device name (UCXX) mask for resource address code.  <a href="#a7a629262909e8ec7c398fb37c53ed1f6">More...</a><br/></td></tr>
 <tr class="separator:a7a629262909e8ec7c398fb37c53ed1f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -134,8 +158,8 @@ Macros</h2></td></tr>
 <tr class="memitem:ab4604eeaaf4bfc8f325ad0f212557025"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#ab4604eeaaf4bfc8f325ad0f212557025">UMODE_MASK</a>&#160;&#160;&#160;0xF000</td></tr>
 <tr class="memdesc:ab4604eeaaf4bfc8f325ad0f212557025"><td class="mdescLeft">&#160;</td><td class="mdescRight">USCI name/mode mask for resource address code.  <a href="#ab4604eeaaf4bfc8f325ad0f212557025">More...</a><br/></td></tr>
 <tr class="separator:ab4604eeaaf4bfc8f325ad0f212557025"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15b16c1073c60f0be255caf0a60251be"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a15b16c1073c60f0be255caf0a60251be">ADDR_MASK</a>&#160;&#160;&#160;0x0FFF</td></tr>
-<tr class="memdesc:a15b16c1073c60f0be255caf0a60251be"><td class="mdescLeft">&#160;</td><td class="mdescRight">USCI address mask for resource address code.  <a href="#a15b16c1073c60f0be255caf0a60251be">More...</a><br/></td></tr>
+<tr class="memitem:a15b16c1073c60f0be255caf0a60251be"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a15b16c1073c60f0be255caf0a60251be">ADDR_MASK</a>&#160;&#160;&#160;0x03FF</td></tr>
+<tr class="memdesc:a15b16c1073c60f0be255caf0a60251be"><td class="mdescLeft">&#160;</td><td class="mdescRight">USCI address mask for resource address code (max 10 bits)  <a href="#a15b16c1073c60f0be255caf0a60251be">More...</a><br/></td></tr>
 <tr class="separator:a15b16c1073c60f0be255caf0a60251be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3f7b8765174ed6547c23feab6ab139e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#ab3f7b8765174ed6547c23feab6ab139e">UCA0_RCODE</a>&#160;&#160;&#160;0x0000</td></tr>
 <tr class="memdesc:ab3f7b8765174ed6547c23feab6ab139e"><td class="mdescLeft">&#160;</td><td class="mdescRight">USCI A0 resource code.  <a href="#ab3f7b8765174ed6547c23feab6ab139e">More...</a><br/></td></tr>
@@ -275,9 +299,27 @@ Macros</h2></td></tr>
 <tr class="memitem:a3af6499f63ba36eb97d700b5fe285d73"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a3af6499f63ba36eb97d700b5fe285d73">USCI_SUCCESS</a>&#160;&#160;&#160;1</td></tr>
 <tr class="memdesc:a3af6499f63ba36eb97d700b5fe285d73"><td class="mdescLeft">&#160;</td><td class="mdescRight">TX/RX success return code.  <a href="#a3af6499f63ba36eb97d700b5fe285d73">More...</a><br/></td></tr>
 <tr class="separator:a3af6499f63ba36eb97d700b5fe285d73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a69e0f4c57763aa4a8d76e4c9b83f1f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a8a69e0f4c57763aa4a8d76e4c9b83f1f">USE_UCA0</a></td></tr>
+<tr class="memdesc:a8a69e0f4c57763aa4a8d76e4c9b83f1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">UCA0 Active Definition.  <a href="#a8a69e0f4c57763aa4a8d76e4c9b83f1f">More...</a><br/></td></tr>
+<tr class="separator:a8a69e0f4c57763aa4a8d76e4c9b83f1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a69e0f4c57763aa4a8d76e4c9b83f1f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a8a69e0f4c57763aa4a8d76e4c9b83f1f">USE_UCA0</a></td></tr>
+<tr class="memdesc:a8a69e0f4c57763aa4a8d76e4c9b83f1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">UCA0 Active Definition.  <a href="#a8a69e0f4c57763aa4a8d76e4c9b83f1f">More...</a><br/></td></tr>
+<tr class="separator:a8a69e0f4c57763aa4a8d76e4c9b83f1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e829682baa5663a1eea5c6e28ca2db1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a6e829682baa5663a1eea5c6e28ca2db1">USE_UCA1</a></td></tr>
+<tr class="memdesc:a6e829682baa5663a1eea5c6e28ca2db1"><td class="mdescLeft">&#160;</td><td class="mdescRight">USCI A1 Active Definition.  <a href="#a6e829682baa5663a1eea5c6e28ca2db1">More...</a><br/></td></tr>
+<tr class="separator:a6e829682baa5663a1eea5c6e28ca2db1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e829682baa5663a1eea5c6e28ca2db1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a6e829682baa5663a1eea5c6e28ca2db1">USE_UCA1</a></td></tr>
+<tr class="memdesc:a6e829682baa5663a1eea5c6e28ca2db1"><td class="mdescLeft">&#160;</td><td class="mdescRight">USCI A1 Active Definition.  <a href="#a6e829682baa5663a1eea5c6e28ca2db1">More...</a><br/></td></tr>
+<tr class="separator:a6e829682baa5663a1eea5c6e28ca2db1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13e62c0ac5141775e17324bd780c0ae0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a13e62c0ac5141775e17324bd780c0ae0">USE_UCB0</a></td></tr>
 <tr class="memdesc:a13e62c0ac5141775e17324bd780c0ae0"><td class="mdescLeft">&#160;</td><td class="mdescRight">USCI B0 Active Definition.  <a href="#a13e62c0ac5141775e17324bd780c0ae0">More...</a><br/></td></tr>
 <tr class="separator:a13e62c0ac5141775e17324bd780c0ae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13e62c0ac5141775e17324bd780c0ae0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a13e62c0ac5141775e17324bd780c0ae0">USE_UCB0</a></td></tr>
+<tr class="memdesc:a13e62c0ac5141775e17324bd780c0ae0"><td class="mdescLeft">&#160;</td><td class="mdescRight">USCI B0 Active Definition.  <a href="#a13e62c0ac5141775e17324bd780c0ae0">More...</a><br/></td></tr>
+<tr class="separator:a13e62c0ac5141775e17324bd780c0ae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9990f1022272b6f1c22d73c30012fab5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a9990f1022272b6f1c22d73c30012fab5">USE_UCB1</a></td></tr>
+<tr class="memdesc:a9990f1022272b6f1c22d73c30012fab5"><td class="mdescLeft">&#160;</td><td class="mdescRight">USCI B1 Active Definition.  <a href="#a9990f1022272b6f1c22d73c30012fab5">More...</a><br/></td></tr>
+<tr class="separator:a9990f1022272b6f1c22d73c30012fab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9990f1022272b6f1c22d73c30012fab5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a9990f1022272b6f1c22d73c30012fab5">USE_UCB1</a></td></tr>
 <tr class="memdesc:a9990f1022272b6f1c22d73c30012fab5"><td class="mdescLeft">&#160;</td><td class="mdescRight">USCI B1 Active Definition.  <a href="#a9990f1022272b6f1c22d73c30012fab5">More...</a><br/></td></tr>
 <tr class="separator:a9990f1022272b6f1c22d73c30012fab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -294,16 +336,74 @@ Functions</h2></td></tr>
 <tr class="memdesc:af70da4f96e4931b9e26a6bbac4fce4bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers an application for use of a USCI module.  <a href="#af70da4f96e4931b9e26a6bbac4fce4bf">More...</a><br/></td></tr>
 <tr class="separator:af70da4f96e4931b9e26a6bbac4fce4bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada62fa438c3ebff1a9ffc3fc9ab70928"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#ada62fa438c3ebff1a9ffc3fc9ab70928">confUCA0</a> (unsigned int commID)</td></tr>
+<tr class="memdesc:ada62fa438c3ebff1a9ffc3fc9ab70928"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures USCI A0 for operation.  <a href="#ada62fa438c3ebff1a9ffc3fc9ab70928">More...</a><br/></td></tr>
 <tr class="separator:ada62fa438c3ebff1a9ffc3fc9ab70928"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4dfad55f1691c971928cf185a338f84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#af4dfad55f1691c971928cf185a338f84">resetUCA0</a> (unsigned int commID)</td></tr>
+<tr class="memdesc:af4dfad55f1691c971928cf185a338f84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets USCI A0 without writing over control regs.  <a href="#af4dfad55f1691c971928cf185a338f84">More...</a><br/></td></tr>
+<tr class="separator:af4dfad55f1691c971928cf185a338f84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74008ee44a0da1e4513aeef868e79598"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a74008ee44a0da1e4513aeef868e79598">getUCA0RxSize</a> (void)</td></tr>
+<tr class="memdesc:a74008ee44a0da1e4513aeef868e79598"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get method for USCI A0 RX buffer size.  <a href="#a74008ee44a0da1e4513aeef868e79598">More...</a><br/></td></tr>
+<tr class="separator:a74008ee44a0da1e4513aeef868e79598"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55dc91d5bee97a54b187edc2e51bd257"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a55dc91d5bee97a54b187edc2e51bd257">getUCA0Stat</a> (void)</td></tr>
+<tr class="memdesc:a55dc91d5bee97a54b187edc2e51bd257"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get method for USCI A0 status.  <a href="#a55dc91d5bee97a54b187edc2e51bd257">More...</a><br/></td></tr>
+<tr class="separator:a55dc91d5bee97a54b187edc2e51bd257"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b28cb69041b705a1b1d9d8fe8719b9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a4b28cb69041b705a1b1d9d8fe8719b9c">setUCA0Baud</a> (unsigned int baudDiv, unsigned int commID)</td></tr>
+<tr class="memdesc:a4b28cb69041b705a1b1d9d8fe8719b9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set method for USCI A0 Baud Rate Divisor.  <a href="#a4b28cb69041b705a1b1d9d8fe8719b9c">More...</a><br/></td></tr>
+<tr class="separator:a4b28cb69041b705a1b1d9d8fe8719b9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62eb3fb5e7928a31ade57b8fa39a6871"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a62eb3fb5e7928a31ade57b8fa39a6871">uartA0Write</a> (unsigned char *data, unsigned int len, unsigned int commID)</td></tr>
+<tr class="memdesc:a62eb3fb5e7928a31ade57b8fa39a6871"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmit method for USCI A0 UART operation.  <a href="#a62eb3fb5e7928a31ade57b8fa39a6871">More...</a><br/></td></tr>
+<tr class="separator:a62eb3fb5e7928a31ade57b8fa39a6871"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae20f83fb584bad11928bc4f5a1b87b92"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#ae20f83fb584bad11928bc4f5a1b87b92">uartA0Read</a> (unsigned int len, unsigned int commID)</td></tr>
+<tr class="memdesc:ae20f83fb584bad11928bc4f5a1b87b92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive method for USCI A0 UART operation.  <a href="#ae20f83fb584bad11928bc4f5a1b87b92">More...</a><br/></td></tr>
+<tr class="separator:ae20f83fb584bad11928bc4f5a1b87b92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a288d4b5f1394b0a21bfa9d847ef6dc91"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a288d4b5f1394b0a21bfa9d847ef6dc91">spiA0Write</a> (unsigned char *data, unsigned int len, unsigned int commID)</td></tr>
+<tr class="memdesc:a288d4b5f1394b0a21bfa9d847ef6dc91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmit method for USCI A0 SPI operation.  <a href="#a288d4b5f1394b0a21bfa9d847ef6dc91">More...</a><br/></td></tr>
+<tr class="separator:a288d4b5f1394b0a21bfa9d847ef6dc91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbeb19ea57618e30d2d7f6580a825e3a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#adbeb19ea57618e30d2d7f6580a825e3a">spiA0Read</a> (unsigned int len, unsigned int commID)</td></tr>
+<tr class="memdesc:adbeb19ea57618e30d2d7f6580a825e3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive method for USCI A0 SPI operation.  <a href="#adbeb19ea57618e30d2d7f6580a825e3a">More...</a><br/></td></tr>
+<tr class="separator:adbeb19ea57618e30d2d7f6580a825e3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6d34982b27c9b3d67a0b6997d89c041"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#ab6d34982b27c9b3d67a0b6997d89c041">spiA0Swap</a> (unsigned char byte, unsigned int commID)</td></tr>
+<tr class="memdesc:ab6d34982b27c9b3d67a0b6997d89c041"><td class="mdescLeft">&#160;</td><td class="mdescRight">Byte Swap method for USCI A0 SPI operation.  <a href="#ab6d34982b27c9b3d67a0b6997d89c041">More...</a><br/></td></tr>
+<tr class="separator:ab6d34982b27c9b3d67a0b6997d89c041"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17ecbfeb05f97346ef2d54fe5bbc1e97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a17ecbfeb05f97346ef2d54fe5bbc1e97">confUCA1</a> (unsigned int commID)</td></tr>
+<tr class="memdesc:a17ecbfeb05f97346ef2d54fe5bbc1e97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures USCI A1 for operation.  <a href="#a17ecbfeb05f97346ef2d54fe5bbc1e97">More...</a><br/></td></tr>
+<tr class="separator:a17ecbfeb05f97346ef2d54fe5bbc1e97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f859ee35cfe7fa16282760eaf1edbbd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a8f859ee35cfe7fa16282760eaf1edbbd">resetUCA1</a> (unsigned int commID)</td></tr>
+<tr class="memdesc:a8f859ee35cfe7fa16282760eaf1edbbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets USCI A1 without writing over control regs.  <a href="#a8f859ee35cfe7fa16282760eaf1edbbd">More...</a><br/></td></tr>
+<tr class="separator:a8f859ee35cfe7fa16282760eaf1edbbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad88b050eb02144947a00b55209d7764f"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#ad88b050eb02144947a00b55209d7764f">getUCA1RxSize</a> (void)</td></tr>
+<tr class="memdesc:ad88b050eb02144947a00b55209d7764f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get method for USCI A1 RX buffer size.  <a href="#ad88b050eb02144947a00b55209d7764f">More...</a><br/></td></tr>
+<tr class="separator:ad88b050eb02144947a00b55209d7764f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a768a2f25b49c90a358fd50b6479bb8e6"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a768a2f25b49c90a358fd50b6479bb8e6">getUCA1Stat</a> (void)</td></tr>
+<tr class="memdesc:a768a2f25b49c90a358fd50b6479bb8e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get method for USCI A1 status.  <a href="#a768a2f25b49c90a358fd50b6479bb8e6">More...</a><br/></td></tr>
+<tr class="separator:a768a2f25b49c90a358fd50b6479bb8e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af76e1f766b877d1897ffe7a3720fcdda"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#af76e1f766b877d1897ffe7a3720fcdda">setUCA1Baud</a> (unsigned int baudDiv, unsigned int commID)</td></tr>
+<tr class="memdesc:af76e1f766b877d1897ffe7a3720fcdda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set method for USCI A1 Baud Rate Divisor.  <a href="#af76e1f766b877d1897ffe7a3720fcdda">More...</a><br/></td></tr>
+<tr class="separator:af76e1f766b877d1897ffe7a3720fcdda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5124b9038b90012541eef6658b521728"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a5124b9038b90012541eef6658b521728">uartA1Write</a> (unsigned char *data, unsigned int len, unsigned int commID)</td></tr>
+<tr class="memdesc:a5124b9038b90012541eef6658b521728"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmit method for USCI A1 UART operation.  <a href="#a5124b9038b90012541eef6658b521728">More...</a><br/></td></tr>
+<tr class="separator:a5124b9038b90012541eef6658b521728"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43f3d1eee987206a2737b51e4930d3ff"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a43f3d1eee987206a2737b51e4930d3ff">uartA1Read</a> (unsigned int len, unsigned int commID)</td></tr>
+<tr class="memdesc:a43f3d1eee987206a2737b51e4930d3ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive method for USCI A1 UART operation.  <a href="#a43f3d1eee987206a2737b51e4930d3ff">More...</a><br/></td></tr>
+<tr class="separator:a43f3d1eee987206a2737b51e4930d3ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae66a9418cd3306fb9b66e97a5633b8ca"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#ae66a9418cd3306fb9b66e97a5633b8ca">spiA1Write</a> (unsigned char *data, unsigned int len, unsigned int commID)</td></tr>
+<tr class="memdesc:ae66a9418cd3306fb9b66e97a5633b8ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmit method for USCI A1 SPI operation.  <a href="#ae66a9418cd3306fb9b66e97a5633b8ca">More...</a><br/></td></tr>
+<tr class="separator:ae66a9418cd3306fb9b66e97a5633b8ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3fc586aa0d1d1d79675dd838b867845"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#ae3fc586aa0d1d1d79675dd838b867845">spiA1Read</a> (unsigned int len, unsigned int commID)</td></tr>
+<tr class="memdesc:ae3fc586aa0d1d1d79675dd838b867845"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive method for USCI A1 SPI operation.  <a href="#ae3fc586aa0d1d1d79675dd838b867845">More...</a><br/></td></tr>
+<tr class="separator:ae3fc586aa0d1d1d79675dd838b867845"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e8bddca1cf84c0b37b1b363cc8054bc"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a9e8bddca1cf84c0b37b1b363cc8054bc">spiA1Swap</a> (unsigned char byte, unsigned int commID)</td></tr>
+<tr class="memdesc:a9e8bddca1cf84c0b37b1b363cc8054bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Byte Swap method for USCI A1 SPI operation.  <a href="#a9e8bddca1cf84c0b37b1b363cc8054bc">More...</a><br/></td></tr>
+<tr class="separator:a9e8bddca1cf84c0b37b1b363cc8054bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f101e86fed045bdeccb60f91eaa02fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a4f101e86fed045bdeccb60f91eaa02fd">confUCB0</a> (unsigned int commID)</td></tr>
 <tr class="memdesc:a4f101e86fed045bdeccb60f91eaa02fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures USCI B0 for operation.  <a href="#a4f101e86fed045bdeccb60f91eaa02fd">More...</a><br/></td></tr>
 <tr class="separator:a4f101e86fed045bdeccb60f91eaa02fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85941a258add379ddb8f307f0e4d994c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a85941a258add379ddb8f307f0e4d994c">resetUCB0</a> (unsigned int commID)</td></tr>
 <tr class="memdesc:a85941a258add379ddb8f307f0e4d994c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets USCI B0 without writing over control regs.  <a href="#a85941a258add379ddb8f307f0e4d994c">More...</a><br/></td></tr>
 <tr class="separator:a85941a258add379ddb8f307f0e4d994c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef6ae4feeca32dc15b5d08adf1da9d97"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#aef6ae4feeca32dc15b5d08adf1da9d97">getUCB0RxSize</a> (unsigned int commID)</td></tr>
-<tr class="memdesc:aef6ae4feeca32dc15b5d08adf1da9d97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get method for USCI B0 RX buffer size.  <a href="#aef6ae4feeca32dc15b5d08adf1da9d97">More...</a><br/></td></tr>
-<tr class="separator:aef6ae4feeca32dc15b5d08adf1da9d97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11f534b1734766f29b74cbfe17a2ef07"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a11f534b1734766f29b74cbfe17a2ef07">getUCB0RxSize</a> (void)</td></tr>
+<tr class="memdesc:a11f534b1734766f29b74cbfe17a2ef07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get method for USCI B0 RX buffer size.  <a href="#a11f534b1734766f29b74cbfe17a2ef07">More...</a><br/></td></tr>
+<tr class="separator:a11f534b1734766f29b74cbfe17a2ef07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30cd6ac2ee3f3ebb409b63fcdcabf28d"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a30cd6ac2ee3f3ebb409b63fcdcabf28d">getUCB0Stat</a> (void)</td></tr>
 <tr class="memdesc:a30cd6ac2ee3f3ebb409b63fcdcabf28d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get method for USCI B0 status.  <a href="#a30cd6ac2ee3f3ebb409b63fcdcabf28d">More...</a><br/></td></tr>
 <tr class="separator:a30cd6ac2ee3f3ebb409b63fcdcabf28d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -319,15 +419,24 @@ Functions</h2></td></tr>
 <tr class="memitem:aeeab84d98e251811b3da247add841c45"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#aeeab84d98e251811b3da247add841c45">spiB0Swap</a> (unsigned char byte, unsigned int commID)</td></tr>
 <tr class="memdesc:aeeab84d98e251811b3da247add841c45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Byte Swap method for USCI B0 SPI operation.  <a href="#aeeab84d98e251811b3da247add841c45">More...</a><br/></td></tr>
 <tr class="separator:aeeab84d98e251811b3da247add841c45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87398037b35846765dbfbb4b402f74ec"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a87398037b35846765dbfbb4b402f74ec">i2cB0Write</a> (unsigned char *data, unsigned int len, unsigned int commID)</td></tr>
+<tr class="memdesc:a87398037b35846765dbfbb4b402f74ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmit method for USCI B0 I2C operation.  <a href="#a87398037b35846765dbfbb4b402f74ec">More...</a><br/></td></tr>
+<tr class="separator:a87398037b35846765dbfbb4b402f74ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a116aa2e3cb7699e88e2091183d482738"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a116aa2e3cb7699e88e2091183d482738">i2cB0Read</a> (unsigned int len, unsigned int commID)</td></tr>
+<tr class="memdesc:a116aa2e3cb7699e88e2091183d482738"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive method for USCI B0 I2C operation.  <a href="#a116aa2e3cb7699e88e2091183d482738">More...</a><br/></td></tr>
+<tr class="separator:a116aa2e3cb7699e88e2091183d482738"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a5604e36dd75a27c1ba2e6e7b79b89d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a6a5604e36dd75a27c1ba2e6e7b79b89d">i2cB0SlavePresent</a> (unsigned int commID)</td></tr>
+<tr class="memdesc:a6a5604e36dd75a27c1ba2e6e7b79b89d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ping (slave present) Method for USCI B0 I2C Operation.  <a href="#a6a5604e36dd75a27c1ba2e6e7b79b89d">More...</a><br/></td></tr>
+<tr class="separator:a6a5604e36dd75a27c1ba2e6e7b79b89d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f7f68ec9a8b50cfdb98163787157ee2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a8f7f68ec9a8b50cfdb98163787157ee2">confUCB1</a> (unsigned int commID)</td></tr>
-<tr class="memdesc:a8f7f68ec9a8b50cfdb98163787157ee2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures USCI B1 for operation.  <a href="#a8f7f68ec9a8b50cfdb98163787157ee2">More...</a><br/></td></tr>
+<tr class="memdesc:a8f7f68ec9a8b50cfdb98163787157ee2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Muleiple endpoint config detection.  <a href="#a8f7f68ec9a8b50cfdb98163787157ee2">More...</a><br/></td></tr>
 <tr class="separator:a8f7f68ec9a8b50cfdb98163787157ee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ab99af5ba8791b79989645dd081b948"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a0ab99af5ba8791b79989645dd081b948">resetUCB1</a> (unsigned int commID)</td></tr>
 <tr class="memdesc:a0ab99af5ba8791b79989645dd081b948"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets USCI B1 without writing over control regs.  <a href="#a0ab99af5ba8791b79989645dd081b948">More...</a><br/></td></tr>
 <tr class="separator:a0ab99af5ba8791b79989645dd081b948"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68f07019c887ed6c3b4e844bebdd6a47"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a68f07019c887ed6c3b4e844bebdd6a47">getUCB1RxSize</a> (unsigned int commID)</td></tr>
-<tr class="memdesc:a68f07019c887ed6c3b4e844bebdd6a47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get method for USCI B1 RX buffer size.  <a href="#a68f07019c887ed6c3b4e844bebdd6a47">More...</a><br/></td></tr>
-<tr class="separator:a68f07019c887ed6c3b4e844bebdd6a47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39ad3afcbf036aa7babb845dd3657569"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a39ad3afcbf036aa7babb845dd3657569">getUCB1RxSize</a> (void)</td></tr>
+<tr class="memdesc:a39ad3afcbf036aa7babb845dd3657569"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get method for USCI B1 RX buffer size.  <a href="#a39ad3afcbf036aa7babb845dd3657569">More...</a><br/></td></tr>
+<tr class="separator:a39ad3afcbf036aa7babb845dd3657569"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1eb0cd49631429c70b5b46c6438721a9"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a1eb0cd49631429c70b5b46c6438721a9">getUCB1Stat</a> (void)</td></tr>
 <tr class="memdesc:a1eb0cd49631429c70b5b46c6438721a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get method for USCI B1 status.  <a href="#a1eb0cd49631429c70b5b46c6438721a9">More...</a><br/></td></tr>
 <tr class="separator:a1eb0cd49631429c70b5b46c6438721a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -335,11 +444,23 @@ Functions</h2></td></tr>
 <tr class="memdesc:a1c3763dbda5f4fb2f1d63eb4223fec06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set method for USCI B1 Baud Rate Divisor.  <a href="#a1c3763dbda5f4fb2f1d63eb4223fec06">More...</a><br/></td></tr>
 <tr class="separator:a1c3763dbda5f4fb2f1d63eb4223fec06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa59490b39fe62594d3e10e4be14f32a8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#aa59490b39fe62594d3e10e4be14f32a8">spiB1Write</a> (unsigned char *data, unsigned int len, unsigned int commID)</td></tr>
+<tr class="memdesc:aa59490b39fe62594d3e10e4be14f32a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmit method for USCI B1 SPI operation.  <a href="#aa59490b39fe62594d3e10e4be14f32a8">More...</a><br/></td></tr>
 <tr class="separator:aa59490b39fe62594d3e10e4be14f32a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44e8e65abc5389d0bfff2709bb5ae15e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a44e8e65abc5389d0bfff2709bb5ae15e">spiB1Read</a> (unsigned int len, unsigned int commID)</td></tr>
+<tr class="memdesc:a44e8e65abc5389d0bfff2709bb5ae15e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive method for USCI B1 SPI operation.  <a href="#a44e8e65abc5389d0bfff2709bb5ae15e">More...</a><br/></td></tr>
 <tr class="separator:a44e8e65abc5389d0bfff2709bb5ae15e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88cf7f351cfa6db251ed28176a2250bc"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a88cf7f351cfa6db251ed28176a2250bc">spiB1Swap</a> (unsigned char byte, unsigned int commID)</td></tr>
+<tr class="memdesc:a88cf7f351cfa6db251ed28176a2250bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Byte Swap method for USCI B1 SPI operation.  <a href="#a88cf7f351cfa6db251ed28176a2250bc">More...</a><br/></td></tr>
 <tr class="separator:a88cf7f351cfa6db251ed28176a2250bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83bb0da5b0f0d248ec71f5bb404def4d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a83bb0da5b0f0d248ec71f5bb404def4d">i2cB1Write</a> (unsigned char *data, unsigned int len, unsigned int commID)</td></tr>
+<tr class="memdesc:a83bb0da5b0f0d248ec71f5bb404def4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmit method for USCI B1 I2C operation.  <a href="#a83bb0da5b0f0d248ec71f5bb404def4d">More...</a><br/></td></tr>
+<tr class="separator:a83bb0da5b0f0d248ec71f5bb404def4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7fb490e407067ec785319b795214b5d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#ac7fb490e407067ec785319b795214b5d">i2cB1Read</a> (unsigned int len, unsigned int commID)</td></tr>
+<tr class="memdesc:ac7fb490e407067ec785319b795214b5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive method for USCI B1 I2C operation.  <a href="#ac7fb490e407067ec785319b795214b5d">More...</a><br/></td></tr>
+<tr class="separator:ac7fb490e407067ec785319b795214b5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4350afcddddd44adc6dd23c739477438"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="comm_8h.html#a4350afcddddd44adc6dd23c739477438">i2cB1SlavePresent</a> (unsigned int commID)</td></tr>
+<tr class="memdesc:a4350afcddddd44adc6dd23c739477438"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ping (slave present) Method for USCI B1 I2C Operation.  <a href="#a4350afcddddd44adc6dd23c739477438">More...</a><br/></td></tr>
+<tr class="separator:a4350afcddddd44adc6dd23c739477438"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="a15b16c1073c60f0be255caf0a60251be"></a>
@@ -347,14 +468,28 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ADDR_MASK&#160;&#160;&#160;0x0FFF</td>
+          <td class="memname">#define ADDR_MASK&#160;&#160;&#160;0x03FF</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>USCI address mask for resource address code. </p>
+<p>USCI address mask for resource address code (max 10 bits) </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00039">39</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00040">40</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9c74c0fe4ecec8f2710b4317ea47bfd7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DCO_FREQ&#160;&#160;&#160;8000000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00006">6</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -370,7 +505,7 @@ Functions</h2></td></tr>
 
 <p>CTLW1: 200ns deglitch time. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00091">91</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00092">92</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -386,7 +521,7 @@ Functions</h2></td></tr>
 
 <p>I2C mode code. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00047">47</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00048">48</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -402,7 +537,21 @@ Functions</h2></td></tr>
 
 <p>Maximum number of devices to be registered. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00009">9</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00010">10</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a027de6fabf836f218c14bccf96002fe5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MCLK_FREQ&#160;&#160;&#160;8000000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00007">7</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -418,7 +567,7 @@ Functions</h2></td></tr>
 
 <p>USCI mode (UART/SPI/I2C) name mask for resource address code. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00037">37</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00038">38</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -434,7 +583,7 @@ Functions</h2></td></tr>
 
 <p>USCI OPEN Status code. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00102">102</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00103">103</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -450,7 +599,21 @@ Functions</h2></td></tr>
 
 <p>USCI RX Status code. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00104">104</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00105">105</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac8c1536e4214841885bd4163a42ce2bd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SMCLK_FREQ&#160;&#160;&#160;8000000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00008">8</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -466,7 +629,7 @@ Functions</h2></td></tr>
 
 <p>UCTLw0: 8 bit Mode 2 SPI Slave MSB first. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00079">79</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00080">80</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -482,7 +645,7 @@ Functions</h2></td></tr>
 
 <p>UCTLW0: 8 bit Mode 0 SPI Master MSB first w/ baud from SMCLK. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00067">67</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00068">68</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -498,7 +661,7 @@ Functions</h2></td></tr>
 
 <p>UCTLW0: 8 bit Mode 0 SPI Master LSB first w/ baud from SMCLK. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00066">66</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00067">67</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -514,7 +677,7 @@ Functions</h2></td></tr>
 
 <p>UCTLW0: 8 bit Mode 1 SPI Master MSB first w/ baud from SMCLK. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00069">69</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00070">70</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -530,7 +693,7 @@ Functions</h2></td></tr>
 
 <p>UCTLW0: 8 bit Mode 1 SPI Master LSB first w/ baud from SMCLK. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00068">68</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00069">69</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -546,7 +709,7 @@ Functions</h2></td></tr>
 
 <p>UCTLw0: 8 bit Mode 2 SPI Master MSB first w/ baud from SMCLK. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00071">71</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00072">72</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -562,7 +725,7 @@ Functions</h2></td></tr>
 
 <p>UCTLW0: 8 bit Mode 2 SPI Master LSB first w/ baud from SMCLK. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00070">70</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00071">71</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -578,7 +741,7 @@ Functions</h2></td></tr>
 
 <p>UCTLW0: 8 bit Mode 3 SPI Master MSB first w/ baud from SMCLK. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00073">73</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00074">74</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -594,7 +757,7 @@ Functions</h2></td></tr>
 
 <p>UCTLW0: 8 Bit Mode 3 SPI Master LSB first w/ baud from SMCLK. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00072">72</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00073">73</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -610,7 +773,7 @@ Functions</h2></td></tr>
 
 <p>SPI mode code. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00046">46</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00047">47</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -626,7 +789,7 @@ Functions</h2></td></tr>
 
 <p>UCTLW0: 8 bit Mode 0 SPI Slave MSB first. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00075">75</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00076">76</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -642,7 +805,7 @@ Functions</h2></td></tr>
 
 <p>UCTLW0: 8 bit Mode 0 SPI Slave LSB first. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00074">74</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00075">75</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -658,7 +821,7 @@ Functions</h2></td></tr>
 
 <p>UCTLW0: 8 bit Mode 1 SPI Slave MSB first. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00077">77</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00078">78</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -674,7 +837,7 @@ Functions</h2></td></tr>
 
 <p>UCTLW0: 8 bit Mode 1 SPI Slave LSB first. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00076">76</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00077">77</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -690,7 +853,7 @@ Functions</h2></td></tr>
 
 <p>UCTLW0: 8 bit Mode 2 SPI Slave LSB first. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00078">78</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00079">79</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -706,7 +869,7 @@ Functions</h2></td></tr>
 
 <p>UCTLW0: 8 bit Mode 3 SPI Slave MSB first. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00081">81</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00082">82</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -722,7 +885,7 @@ Functions</h2></td></tr>
 
 <p>UCTLW0: 8 bit Mode 3 SPI Slave LSB first. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00080">80</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00081">81</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -738,7 +901,7 @@ Functions</h2></td></tr>
 
 <p>USCI TX Status code. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00103">103</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00104">104</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -754,7 +917,7 @@ Functions</h2></td></tr>
 
 <p>UCTLW0: 7 bit UART (no parity, 1 stop bit) w/ baud from SMCLK. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00064">64</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00065">65</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -770,7 +933,7 @@ Functions</h2></td></tr>
 
 <p>UCTLW0: 8 bit UART (no parity, 1 stop bit) w/ baud from SMCLK. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00063">63</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00064">64</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -786,7 +949,7 @@ Functions</h2></td></tr>
 
 <p>UART mode code. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00045">45</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00046">46</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -806,7 +969,7 @@ Functions</h2></td></tr>
 
 <p>Baud rate frequency to divisor macro (uses <a class="el" href="timing_8h.html">timing.h</a>) </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00094">94</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00095">95</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -822,7 +985,7 @@ Functions</h2></td></tr>
 
 <p>USCI A0 shared buffer index. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00097">97</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00098">98</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -838,7 +1001,7 @@ Functions</h2></td></tr>
 
 <p>USCI A0 resource code. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00041">41</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00042">42</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -854,7 +1017,7 @@ Functions</h2></td></tr>
 
 <p>Combined UCA0 SPI Mode Resource Code. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00050">50</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00051">51</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -870,7 +1033,7 @@ Functions</h2></td></tr>
 
 <p>Combined UCA0 UART Mode Resource Code. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00049">49</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00050">50</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -886,7 +1049,7 @@ Functions</h2></td></tr>
 
 <p>USCI A1 shared buffer index. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00098">98</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00099">99</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -902,7 +1065,7 @@ Functions</h2></td></tr>
 
 <p>USCI A1 resource code. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00042">42</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00043">43</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -918,7 +1081,7 @@ Functions</h2></td></tr>
 
 <p>Combined UCA1 SPI Mode Resource Code. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00052">52</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00053">53</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -934,7 +1097,7 @@ Functions</h2></td></tr>
 
 <p>Combined UCA1 UART Mode Resource Code. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00051">51</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00052">52</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -950,7 +1113,7 @@ Functions</h2></td></tr>
 
 <p>Combined UCB0 I2C Mode Resource Code. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00054">54</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00055">55</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -966,7 +1129,7 @@ Functions</h2></td></tr>
 
 <p>USCI B0 shared buffer index. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00099">99</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00100">100</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -982,7 +1145,7 @@ Functions</h2></td></tr>
 
 <p>USCI B0 resource code. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00043">43</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00044">44</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -998,7 +1161,7 @@ Functions</h2></td></tr>
 
 <p>Combined UCB0 SPI Mode Resource Code. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00053">53</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00054">54</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -1014,7 +1177,7 @@ Functions</h2></td></tr>
 
 <p>Combined UCB1 I2C Mode Resource Code. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00056">56</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00057">57</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -1030,7 +1193,7 @@ Functions</h2></td></tr>
 
 <p>USCI B1 shared buffer index. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00100">100</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00101">101</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -1046,7 +1209,7 @@ Functions</h2></td></tr>
 
 <p>USCI B1 resource code. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00044">44</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00045">45</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -1062,7 +1225,7 @@ Functions</h2></td></tr>
 
 <p>Combined UCB1 SPI Mode Resource Code. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00055">55</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00056">56</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -1078,7 +1241,7 @@ Functions</h2></td></tr>
 
 <p>USCI Clock Rate [use SMCLK to source our UART (from <a class="el" href="timing_8h.html">timing.h</a>)]. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00093">93</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00094">94</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -1094,7 +1257,7 @@ Functions</h2></td></tr>
 
 <p>USCI name/mode mask for resource address code. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00038">38</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00039">39</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -1110,7 +1273,7 @@ Functions</h2></td></tr>
 
 <p>USCI busy error return code. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00107">107</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00108">108</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -1126,7 +1289,7 @@ Functions</h2></td></tr>
 
 <p>USCI configuration error return code. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00106">106</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00107">107</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -1142,7 +1305,7 @@ Functions</h2></td></tr>
 
 <p>USCI device name (UCXX) mask for resource address code. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00036">36</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00037">37</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -1158,7 +1321,137 @@ Functions</h2></td></tr>
 
 <p>TX/RX success return code. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00108">108</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00109">109</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8a69e0f4c57763aa4a8d76e4c9b83f1f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USE_UCA0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>UCA0 Active Definition. </p>
+<p>USCI A0 Active Definition. </p>
+
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00141">141</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8a69e0f4c57763aa4a8d76e4c9b83f1f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USE_UCA0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>UCA0 Active Definition. </p>
+<p>USCI A0 Active Definition. </p>
+
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00141">141</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a117332140b7ba615d7c0bddec6ef9d93"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USE_UCA0_SPI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>USCI A0 SPI Mode Conditional Compilation Flag. </p>
+
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00015">15</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a636b67e6bb995040843ba994eb2304a4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USE_UCA0_UART</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>USCI A0 UART Mode Conditional Compilation Flag. </p>
+
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00014">14</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6e829682baa5663a1eea5c6e28ca2db1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USE_UCA1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>USCI A1 Active Definition. </p>
+
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00175">175</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6e829682baa5663a1eea5c6e28ca2db1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USE_UCA1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>USCI A1 Active Definition. </p>
+
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00175">175</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a52a868c9ec7e40d9ce2adbe94142e79f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USE_UCA1_SPI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>USCI A1 SPI Mode Conditional Compilation Flag. </p>
+
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00017">17</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a051fe852ccacd12fa7435771a233fbae"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USE_UCA1_UART</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>USCI A1 UART Mode Conditional Compilation Flag. </p>
+
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00016">16</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -1173,8 +1466,42 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>USCI B0 Active Definition. </p>
+<p>USCI B0 Active Definition </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00206">206</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00211">211</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a13e62c0ac5141775e17324bd780c0ae0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USE_UCB0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>USCI B0 Active Definition. </p>
+<p>USCI B0 Active Definition </p>
+
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00211">211</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adce83d31654c2f128433697009da4af3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USE_UCB0_I2C</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>USCI B0 I2C Mode Conditional Compilation Flag. </p>
+
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00019">19</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -1190,7 +1517,7 @@ Functions</h2></td></tr>
 
 <p>USCI B0 SPI Mode Conditional Compilation Flag. </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00017">17</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00018">18</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -1205,8 +1532,58 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>USCI B1 Active Definition. </p>
+<p>USCI B1 Active Definition </p>
 
-<p>Definition at line <a class="el" href="comm_8h_source.html#l00245">245</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00247">247</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9990f1022272b6f1c22d73c30012fab5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USE_UCB1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>USCI B1 Active Definition. </p>
+<p>USCI B1 Active Definition </p>
+
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00247">247</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a56ab5adf8697d3875fec9a66b9e43bdc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USE_UCB1_I2C</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>USCI B1 I2C Mode Conditional Compilation Flag. </p>
+
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00021">21</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a69d72996a8ccd3db1d698dd995a0252f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USE_UCB1_SPI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>USCI B1 SPI Mode Conditional Compilation Flag. </p>
+
+<p>Definition at line <a class="el" href="comm_8h_source.html#l00020">20</a> of file <a class="el" href="comm_8h_source.html">comm.h</a>.</p>
 
 </div>
 </div>
@@ -1229,9 +1606,6 @@ Functions</h2></td></tr>
 <a class="anchor" id="ada62fa438c3ebff1a9ffc3fc9ab70928"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void confUCA0 </td>
@@ -1241,21 +1615,71 @@ Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
+
+<p>Configures USCI A0 for operation. </p>
+<p>Write control registers and clear system variables for the USCI A0 module, which can be used as either a UART or SPI.</p>
+<p>NOTE: This config function is already called before any read/write function call and therefore should (in almost all cases) never be called by the user.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commID</td><td>The communication ID for the registered app </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00054">54</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="comm_8h_ada62fa438c3ebff1a9ffc3fc9ab70928_icgraph.png" border="0" usemap="#comm_8h_ada62fa438c3ebff1a9ffc3fc9ab70928_icgraph" alt=""/></div>
+<map name="comm_8h_ada62fa438c3ebff1a9ffc3fc9ab70928_icgraph" id="comm_8h_ada62fa438c3ebff1a9ffc3fc9ab70928_icgraph">
+<area shape="rect" id="node3" href="comm_8h.html#a62eb3fb5e7928a31ade57b8fa39a6871" title="Transmit method for USCI A0 UART operation." alt="" coords="133,5,224,32"/><area shape="rect" id="node5" href="comm_8h.html#a288d4b5f1394b0a21bfa9d847ef6dc91" title="Transmit method for USCI A0 SPI operation." alt="" coords="135,56,222,83"/><area shape="rect" id="node7" href="comm_8h.html#adbeb19ea57618e30d2d7f6580a825e3a" title="Receive method for USCI A0 SPI operation." alt="" coords="136,107,221,133"/><area shape="rect" id="node9" href="comm_8h.html#ab6d34982b27c9b3d67a0b6997d89c041" title="Byte Swap method for USCI A0 SPI operation." alt="" coords="135,157,222,184"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a17ecbfeb05f97346ef2d54fe5bbc1e97"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void confUCA1 </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>commID</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Configures USCI A1 for operation. </p>
+<p>Write control registers and clear system variables for the USCI A1 module, which can be used as either a UART or SPI.</p>
+<p>NOTE: This config function is already called before any read/write function call and therefore should (in almost all cases) never be called by the user.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commID</td><td>The communication ID for the registered app </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00371">371</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="comm_8h_a17ecbfeb05f97346ef2d54fe5bbc1e97_icgraph.png" border="0" usemap="#comm_8h_a17ecbfeb05f97346ef2d54fe5bbc1e97_icgraph" alt=""/></div>
+<map name="comm_8h_a17ecbfeb05f97346ef2d54fe5bbc1e97_icgraph" id="comm_8h_a17ecbfeb05f97346ef2d54fe5bbc1e97_icgraph">
+<area shape="rect" id="node3" href="comm_8h.html#a5124b9038b90012541eef6658b521728" title="Transmit method for USCI A1 UART operation." alt="" coords="133,5,224,32"/><area shape="rect" id="node5" href="comm_8h.html#ae66a9418cd3306fb9b66e97a5633b8ca" title="Transmit method for USCI A1 SPI operation." alt="" coords="135,56,222,83"/><area shape="rect" id="node7" href="comm_8h.html#ae3fc586aa0d1d1d79675dd838b867845" title="Receive method for USCI A1 SPI operation." alt="" coords="136,107,221,133"/><area shape="rect" id="node9" href="comm_8h.html#a9e8bddca1cf84c0b37b1b363cc8054bc" title="Byte Swap method for USCI A1 SPI operation." alt="" coords="135,157,222,184"/></map>
+</div>
+</p>
 
 </div>
 </div>
 <a class="anchor" id="a4f101e86fed045bdeccb60f91eaa02fd"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void confUCB0 </td>
@@ -1265,11 +1689,6 @@ Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Configures USCI B0 for operation. </p>
@@ -1282,14 +1701,14 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="comm_8c_source.html#l00691">691</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00685">685</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="comm_8h_a4f101e86fed045bdeccb60f91eaa02fd_icgraph.png" border="0" usemap="#comm_8h_a4f101e86fed045bdeccb60f91eaa02fd_icgraph" alt=""/></div>
 <map name="comm_8h_a4f101e86fed045bdeccb60f91eaa02fd_icgraph" id="comm_8h_a4f101e86fed045bdeccb60f91eaa02fd_icgraph">
-<area shape="rect" id="node3" href="comm_8h.html#acac01b5fff8d81782043a7510da979dc" title="Transmit method for USCI B0 SPI operation." alt="" coords="134,5,221,32"/><area shape="rect" id="node5" href="comm_8h.html#ad8e558a330d8319d9e422473dcc6d5f6" title="Receive method for USCI B0 SPI operation." alt="" coords="135,56,220,83"/><area shape="rect" id="node7" href="comm_8h.html#aeeab84d98e251811b3da247add841c45" title="Byte Swap method for USCI B0 SPI operation." alt="" coords="134,107,221,133"/></map>
+<area shape="rect" id="node3" href="comm_8h.html#acac01b5fff8d81782043a7510da979dc" title="Transmit method for USCI B0 SPI operation." alt="" coords="134,5,221,32"/><area shape="rect" id="node5" href="comm_8h.html#ad8e558a330d8319d9e422473dcc6d5f6" title="Receive method for USCI B0 SPI operation." alt="" coords="135,56,220,83"/><area shape="rect" id="node7" href="comm_8h.html#aeeab84d98e251811b3da247add841c45" title="Byte Swap method for USCI B0 SPI operation." alt="" coords="134,107,221,133"/><area shape="rect" id="node9" href="comm_8h.html#a87398037b35846765dbfbb4b402f74ec" title="Transmit method for USCI B0 I2C operation." alt="" coords="134,157,221,184"/><area shape="rect" id="node11" href="comm_8h.html#a116aa2e3cb7699e88e2091183d482738" title="Receive method for USCI B0 I2C operation." alt="" coords="135,208,220,235"/></map>
 </div>
 </p>
 
@@ -1298,9 +1717,6 @@ Here is the caller graph for this function:</div>
 <a class="anchor" id="a8f7f68ec9a8b50cfdb98163787157ee2"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void confUCB1 </td>
@@ -1310,14 +1726,10 @@ Here is the caller graph for this function:</div>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Configures USCI B1 for operation. </p>
+<p>Muleiple endpoint config detection. </p>
+<p>Muleiple endpoint config detection.</p>
 <p>Write control registers and clear system variables for the USCI B0 module, which can be used as either a UART or SPI.</p>
 <p>NOTE: This config function is already called before any read/write function call and therefore should (in almost all cases) never be called by the user.</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -1327,19 +1739,130 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="comm_8c_source.html#l00961">961</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+<p>Definition at line <a class="el" href="comm_8c_source.html#l01027">1027</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="comm_8h_a8f7f68ec9a8b50cfdb98163787157ee2_icgraph.png" border="0" usemap="#comm_8h_a8f7f68ec9a8b50cfdb98163787157ee2_icgraph" alt=""/></div>
+<map name="comm_8h_a8f7f68ec9a8b50cfdb98163787157ee2_icgraph" id="comm_8h_a8f7f68ec9a8b50cfdb98163787157ee2_icgraph">
+<area shape="rect" id="node3" href="comm_8h.html#aa59490b39fe62594d3e10e4be14f32a8" title="Transmit method for USCI B1 SPI operation." alt="" coords="134,5,221,32"/><area shape="rect" id="node5" href="comm_8h.html#a44e8e65abc5389d0bfff2709bb5ae15e" title="Receive method for USCI B1 SPI operation." alt="" coords="135,56,220,83"/><area shape="rect" id="node7" href="comm_8h.html#a88cf7f351cfa6db251ed28176a2250bc" title="Byte Swap method for USCI B1 SPI operation." alt="" coords="134,107,221,133"/><area shape="rect" id="node9" href="comm_8h.html#a83bb0da5b0f0d248ec71f5bb404def4d" title="Transmit method for USCI B1 I2C operation." alt="" coords="134,157,221,184"/><area shape="rect" id="node11" href="comm_8h.html#ac7fb490e407067ec785319b795214b5d" title="Receive method for USCI B1 I2C operation." alt="" coords="135,208,220,235"/></map>
+</div>
+</p>
 
 </div>
 </div>
-<a class="anchor" id="aef6ae4feeca32dc15b5d08adf1da9d97"></a>
+<a class="anchor" id="a74008ee44a0da1e4513aeef868e79598"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int getUCA0RxSize </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get method for USCI A0 RX buffer size. </p>
+<p>Returns the number of bytes which have been written to the RX pointer (since the last read performed).</p>
+<dl class="section return"><dt>Returns</dt><dd>The number of valid bytes following the rxPtr. </dd></dl>
+
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00112">112</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a55dc91d5bee97a54b187edc2e51bd257"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char getUCA0Stat </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get method for USCI A0 status. </p>
+<p>Returns the status of the USCI module, either OPEN, TX, or RX</p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>Indicates the OPEN status </td></tr>
+    <tr><td class="paramname">1</td><td>Indicates the TX Status </td></tr>
+    <tr><td class="paramname">2</td><td>Indicates the RX Status </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00124">124</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad88b050eb02144947a00b55209d7764f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int getUCA1RxSize </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get method for USCI A1 RX buffer size. </p>
+<p>Returns the number of bytes which have been written to the RX pointer (since the last read performed).</p>
+<dl class="section return"><dt>Returns</dt><dd>The number of valid bytes following the rxPtr. </dd></dl>
+
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00429">429</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a768a2f25b49c90a358fd50b6479bb8e6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char getUCA1Stat </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get method for USCI A1 status. </p>
+<p>Returns the status of the USCI module, either OPEN, TX, or RX</p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>Indicates the OPEN status </td></tr>
+    <tr><td class="paramname">1</td><td>Indicates the TX Status </td></tr>
+    <tr><td class="paramname">2</td><td>Indicates the RX Status </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00441">441</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a11f534b1734766f29b74cbfe17a2ef07"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">unsigned int getUCB0RxSize </td>
           <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>commID</em></td><td>)</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1347,15 +1870,9 @@ Here is the caller graph for this function:</div>
 
 <p>Get method for USCI B0 RX buffer size. </p>
 <p>Returns the number of bytes which have been written to the RX pointer (since the last read performed).</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">commID</td><td>Comm ID of app. (not used) </td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Returns</dt><dd>The number of valid bytes following the rxPtr. </dd></dl>
 
-<p>Definition at line <a class="el" href="comm_8c_source.html#l00749">749</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00743">743</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
 
 </div>
 </div>
@@ -1375,12 +1892,6 @@ Here is the caller graph for this function:</div>
 
 <p>Get method for USCI B0 status. </p>
 <p>Returns the status of the USCI module, either OPEN, TX, or RX</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">commID</td><td>Comm ID of app. (not used) </td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">0</td><td>Indicates the OPEN status </td></tr>
@@ -1390,19 +1901,19 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="comm_8c_source.html#l00762">762</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00755">755</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a68f07019c887ed6c3b4e844bebdd6a47"></a>
+<a class="anchor" id="a39ad3afcbf036aa7babb845dd3657569"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">unsigned int getUCB1RxSize </td>
           <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>commID</em></td><td>)</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1410,15 +1921,9 @@ Here is the caller graph for this function:</div>
 
 <p>Get method for USCI B1 RX buffer size. </p>
 <p>Returns the number of bytes which have been written to the RX pointer (since the last read performed).</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">commID</td><td>Comm ID of app. (not used) </td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Returns</dt><dd>The number of valid bytes following the rxPtr. </dd></dl>
 
-<p>Definition at line <a class="el" href="comm_8c_source.html#l01019">1019</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+<p>Definition at line <a class="el" href="comm_8c_source.html#l01085">1085</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
 
 </div>
 </div>
@@ -1438,12 +1943,6 @@ Here is the caller graph for this function:</div>
 
 <p>Get method for USCI B1 status. </p>
 <p>Returns the status of the USCI module, either OPEN, TX, or RX</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">commID</td><td>Comm ID of app. (not used) </td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">0</td><td>Indicates the OPEN status </td></tr>
@@ -1453,7 +1952,311 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="comm_8c_source.html#l01032">1032</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+<p>Definition at line <a class="el" href="comm_8c_source.html#l01097">1097</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a116aa2e3cb7699e88e2091183d482738"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int i2cB0Read </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>commID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Receive method for USCI B0 I2C operation. </p>
+<p>This method performs a synchronous read by storing the bytes to be read in ucbB0ToRxSize and then performing len dummy write to the bus to fetch the data from a slave device. The RX size is cleared on this function call.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">len</td><td>The number of bytes to be read from the bus </td></tr>
+    <tr><td class="paramname">commID</td><td>Communication ID number of the application</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">-1</td><td>USCI B0 Module Busy </td></tr>
+    <tr><td class="paramname">1</td><td>Receive successfully started</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Side Effects:</dt><dd>Reset the UCB0 RX size and data pointer </dd></dl>
+
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00911">911</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="comm_8h_a116aa2e3cb7699e88e2091183d482738_cgraph.png" border="0" usemap="#comm_8h_a116aa2e3cb7699e88e2091183d482738_cgraph" alt=""/></div>
+<map name="comm_8h_a116aa2e3cb7699e88e2091183d482738_cgraph" id="comm_8h_a116aa2e3cb7699e88e2091183d482738_cgraph">
+<area shape="rect" id="node3" href="comm_8c.html#a4f101e86fed045bdeccb60f91eaa02fd" title="Configures USCI B0 for operation." alt="" coords="139,5,219,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6a5604e36dd75a27c1ba2e6e7b79b89d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int i2cB0SlavePresent </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>commID</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ping (slave present) Method for USCI B0 I2C Operation. </p>
+<p>This method tests for the presence of a slave at the address affiliated with the registered commID. This is accomplished by sending a start, then stop condition sequenitally on the bus, then reading the UCB0STAT register for a NACK condition.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commID</td><td>Communication ID number of the application</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">-1</td><td>USCI B0 Module Busy </td></tr>
+    <tr><td class="paramname">0</td><td>Slave not present </td></tr>
+    <tr><td class="paramname">1</td><td>Slave present</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Side Effects:</dt><dd>The USCI module will need to be reconfigured for the next operation (even if it uses the same slave address or commID) </dd></dl>
+
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00942">942</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a87398037b35846765dbfbb4b402f74ec"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int i2cB0Write </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>commID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transmit method for USCI B0 I2C operation. </p>
+<p>This method initializes a transmission of len bytes from the base of the *data pointer. Similarly to <a class="el" href="comm_8c.html#acac01b5fff8d81782043a7510da979dc" title="Transmit method for USCI B0 SPI operation.">spiB0Write()</a>, the transmission uses the USCI B0 TX ISR to complete, so 2 sequential calls may result in partial transmission.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*data</td><td>Pointer to data to be written </td></tr>
+    <tr><td class="paramname">len</td><td>Length (in bytes) of data to be written </td></tr>
+    <tr><td class="paramname">commID</td><td>Communication ID number of application</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">-1</td><td>USCI B0 Module busy </td></tr>
+    <tr><td class="paramname">1</td><td>Transmit successfully started </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00882">882</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="comm_8h_a87398037b35846765dbfbb4b402f74ec_cgraph.png" border="0" usemap="#comm_8h_a87398037b35846765dbfbb4b402f74ec_cgraph" alt=""/></div>
+<map name="comm_8h_a87398037b35846765dbfbb4b402f74ec_cgraph" id="comm_8h_a87398037b35846765dbfbb4b402f74ec_cgraph">
+<area shape="rect" id="node3" href="comm_8c.html#a4f101e86fed045bdeccb60f91eaa02fd" title="Configures USCI B0 for operation." alt="" coords="141,5,221,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac7fb490e407067ec785319b795214b5d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int i2cB1Read </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>commID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Receive method for USCI B1 I2C operation. </p>
+<p>This method performs a synchronous read by storing the bytes to be read in ucbB1ToRxSize and then performing len dummy write to the bus to fetch the data from a slave device. The RX size is cleared on this function call.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">len</td><td>The number of bytes to be read from the bus </td></tr>
+    <tr><td class="paramname">commID</td><td>Communication ID number of the application</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">-1</td><td>USCI B1 Module Busy </td></tr>
+    <tr><td class="paramname">1</td><td>Receive successfully started</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Side Effects:</dt><dd>Reset the UCB1 RX size and data pointer </dd></dl>
+
+<p>Definition at line <a class="el" href="comm_8c_source.html#l01251">1251</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="comm_8h_ac7fb490e407067ec785319b795214b5d_cgraph.png" border="0" usemap="#comm_8h_ac7fb490e407067ec785319b795214b5d_cgraph" alt=""/></div>
+<map name="comm_8h_ac7fb490e407067ec785319b795214b5d_cgraph" id="comm_8h_ac7fb490e407067ec785319b795214b5d_cgraph">
+<area shape="rect" id="node3" href="comm_8c.html#a8f7f68ec9a8b50cfdb98163787157ee2" title="Configures USCI B1 for operation." alt="" coords="139,5,219,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4350afcddddd44adc6dd23c739477438"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int i2cB1SlavePresent </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>commID</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ping (slave present) Method for USCI B1 I2C Operation. </p>
+<p>This method tests for the presence of a slave at the address affiliated with the registered commID. This is accomplished by sending a start, then stop condition sequenitally on the bus, then reading the UCB1STAT register for a NACK condition.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commID</td><td>Communication ID number of the application</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">-1</td><td>USCI B1 Module Busy </td></tr>
+    <tr><td class="paramname">0</td><td>Slave not present </td></tr>
+    <tr><td class="paramname">1</td><td>Slave present</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Side Effects:</dt><dd>The USCI module will need to be reconfigured for the next operation (even if it uses the same slave address or commID) </dd></dl>
+
+<p>Definition at line <a class="el" href="comm_8c_source.html#l01282">1282</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a83bb0da5b0f0d248ec71f5bb404def4d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int i2cB1Write </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>commID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transmit method for USCI B1 I2C operation. </p>
+<p>This method initializes a transmission of len bytes from the base of the *data pointer. Similarly to <a class="el" href="comm_8c.html#aa59490b39fe62594d3e10e4be14f32a8" title="Transmit method for USCI B1 SPI operation.">spiB1Write()</a>, the transmission uses the USCI B1 TX ISR to complete, so 2 sequential calls may result in partial transmission.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*data</td><td>Pointer to data to be written </td></tr>
+    <tr><td class="paramname">len</td><td>Length (in bytes) of data to be written </td></tr>
+    <tr><td class="paramname">commID</td><td>Communication ID number of application</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">-1</td><td>USCI B1 Module busy </td></tr>
+    <tr><td class="paramname">1</td><td>Transmit successfully started </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="comm_8c_source.html#l01222">1222</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="comm_8h_a83bb0da5b0f0d248ec71f5bb404def4d_cgraph.png" border="0" usemap="#comm_8h_a83bb0da5b0f0d248ec71f5bb404def4d_cgraph" alt=""/></div>
+<map name="comm_8h_a83bb0da5b0f0d248ec71f5bb404def4d_cgraph" id="comm_8h_a83bb0da5b0f0d248ec71f5bb404def4d_cgraph">
+<area shape="rect" id="node3" href="comm_8c.html#a8f7f68ec9a8b50cfdb98163787157ee2" title="Configures USCI B1 for operation." alt="" coords="141,5,221,32"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -1473,9 +2276,77 @@ Here is the caller graph for this function:</div>
 
 <p>Registers an application for use of a USCI module. </p>
 <p>Create a USCI "socket" by affiliating a unique comm ID with an endpoint configuration for TI's eUSCI module.</p>
-<p>conf The USCI configuration structure to be used (see <a class="el" href="comm_8h.html">comm.h</a>)  commID A positive (&gt; 0) value representing the registered app  -1 The maximum number of apps (MAX_DEVS) has been registered </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conf</td><td>The USCI configuration structure to be used (see <a class="el" href="comm_8h.html">comm.h</a>) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>commID A positive (&gt; 0) value representing the registered app </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">-1</td><td>The maximum number of apps (MAX_DEVS) has been registered </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Definition at line <a class="el" href="comm_8c_source.html#l00020">20</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00019">19</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af4dfad55f1691c971928cf185a338f84"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void resetUCA0 </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>commID</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resets USCI A0 without writing over control regs. </p>
+<p>This function is included to soft-reset the USCI A0 module management variables without clearing the current config.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commID</td><td>The comm ID of the registered app </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Side Effects:</dt><dd>Sets the RX pointer to that registered w/ commID </dd></dl>
+
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00094">94</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8f859ee35cfe7fa16282760eaf1edbbd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void resetUCA1 </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>commID</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resets USCI A1 without writing over control regs. </p>
+<p>This function is included to sof-reset the USCI A1 module management variables without clearing the current config.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commID</td><td>The comm ID of the registered app </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Side Effects:</dt><dd>Sets the RX pointer to that registered w/ commID </dd></dl>
+
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00411">411</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
 
 </div>
 </div>
@@ -1503,7 +2374,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section user"><dt>Side Effects:</dt><dd>Sets the RX pointer to that registered w/ commID </dd></dl>
 
-<p>Definition at line <a class="el" href="comm_8c_source.html#l00730">730</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00727">727</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
 
 </div>
 </div>
@@ -1531,7 +2402,83 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section user"><dt>Side Effects:</dt><dd>Sets the RX pointer to that registered w/ commID </dd></dl>
 
-<p>Definition at line <a class="el" href="comm_8c_source.html#l01000">1000</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+<p>Definition at line <a class="el" href="comm_8c_source.html#l01069">1069</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4b28cb69041b705a1b1d9d8fe8719b9c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setUCA0Baud </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>baudDiv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>commID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set method for USCI A0 Baud Rate Divisor. </p>
+<p>Sets the baud rate divisor of the USCI module, this divisor is generally performed relative to the SMCLK rate of the system.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">baudDiv</td><td>The new divisor to apply </td></tr>
+    <tr><td class="paramname">commID</td><td>The communications ID number of the application </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00137">137</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af76e1f766b877d1897ffe7a3720fcdda"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setUCA1Baud </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>baudDiv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>commID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set method for USCI A1 Baud Rate Divisor. </p>
+<p>Sets the baud rate divisor of the USCI module, this divisor is generally performed relative to the SMCLK rate of the system.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">baudDiv</td><td>The new divisor to apply </td></tr>
+    <tr><td class="paramname">commID</td><td>The communications ID number of the application </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00454">454</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
 
 </div>
 </div>
@@ -1569,7 +2516,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="comm_8c_source.html#l00775">775</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00768">768</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
 
 </div>
 </div>
@@ -1607,7 +2554,335 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="comm_8c_source.html#l01045">1045</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+<p>Definition at line <a class="el" href="comm_8c_source.html#l01110">1110</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adbeb19ea57618e30d2d7f6580a825e3a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int spiA0Read </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>commID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Receive method for USCI A0 SPI operation. </p>
+<p>This method performs a synchronous read by storing the bytes to be read in spiA0RxSize and then performing len dummy write to the bus to fetch the data from a slave device. The RX size is cleared on this function call.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">len</td><td>The number of bytes to be read from the bus </td></tr>
+    <tr><td class="paramname">commID</td><td>Communication ID number of the application</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">-1</td><td>USCI A0 Module Busy </td></tr>
+    <tr><td class="paramname">1</td><td>Receive successfully started</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Side Effects:</dt><dd>Reset the UCA0 RX size and data pointer </dd></dl>
+
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00253">253</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="comm_8h_adbeb19ea57618e30d2d7f6580a825e3a_cgraph.png" border="0" usemap="#comm_8h_adbeb19ea57618e30d2d7f6580a825e3a_cgraph" alt=""/></div>
+<map name="comm_8h_adbeb19ea57618e30d2d7f6580a825e3a_cgraph" id="comm_8h_adbeb19ea57618e30d2d7f6580a825e3a_cgraph">
+<area shape="rect" id="node3" href="comm_8c.html#ada62fa438c3ebff1a9ffc3fc9ab70928" title="Configures USCI A0 for operation." alt="" coords="139,5,219,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ab6d34982b27c9b3d67a0b6997d89c041"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char spiA0Swap </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>byte</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>commID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Byte Swap method for USCI A0 SPI operation. </p>
+<p>This blocking method allows the user to transmit a byte and receive the response simultaneously clocked back in. TX and RX buffer sizes/content are unaffected.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">byte</td><td>The byte to be sent via SPI </td></tr>
+    <tr><td class="paramname">commID</td><td>Communication ID number of the application</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The byte shifted in from the SPI </dd></dl>
+
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00280">280</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="comm_8h_ab6d34982b27c9b3d67a0b6997d89c041_cgraph.png" border="0" usemap="#comm_8h_ab6d34982b27c9b3d67a0b6997d89c041_cgraph" alt=""/></div>
+<map name="comm_8h_ab6d34982b27c9b3d67a0b6997d89c041_cgraph" id="comm_8h_ab6d34982b27c9b3d67a0b6997d89c041_cgraph">
+<area shape="rect" id="node3" href="comm_8c.html#ada62fa438c3ebff1a9ffc3fc9ab70928" title="Configures USCI A0 for operation." alt="" coords="141,5,221,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a288d4b5f1394b0a21bfa9d847ef6dc91"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int spiA0Write </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>commID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transmit method for USCI A0 SPI operation. </p>
+<p>This method initializes a transmission of len bytes from the base of the *data pointer. Similarly to <a class="el" href="comm_8c.html#a62eb3fb5e7928a31ade57b8fa39a6871" title="Transmit method for USCI A0 UART operation.">uartA0Write()</a>, the transmission uses the USCI A0 TX ISR to complete, so 2 sequential calls may result in partial transmission.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*data</td><td>Pointer to data to be written </td></tr>
+    <tr><td class="paramname">len</td><td>Length (in bytes) of data to be written </td></tr>
+    <tr><td class="paramname">commID</td><td>Communication ID number of application</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">-1</td><td>USCI A0 Module busy </td></tr>
+    <tr><td class="paramname">1</td><td>Transmit successfully started </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00223">223</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="comm_8h_a288d4b5f1394b0a21bfa9d847ef6dc91_cgraph.png" border="0" usemap="#comm_8h_a288d4b5f1394b0a21bfa9d847ef6dc91_cgraph" alt=""/></div>
+<map name="comm_8h_a288d4b5f1394b0a21bfa9d847ef6dc91_cgraph" id="comm_8h_a288d4b5f1394b0a21bfa9d847ef6dc91_cgraph">
+<area shape="rect" id="node3" href="comm_8c.html#ada62fa438c3ebff1a9ffc3fc9ab70928" title="Configures USCI A0 for operation." alt="" coords="141,5,221,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae3fc586aa0d1d1d79675dd838b867845"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int spiA1Read </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>commID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Receive method for USCI A1 SPI operation. </p>
+<p>This method performs a synchronous read by storing the bytes to be read in spiA1RxSize and then performing len dummy write to the bus to fetch the data from a slave device. The RX size is cleared on this function call.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">len</td><td>The number of bytes to be read from the bus </td></tr>
+    <tr><td class="paramname">commID</td><td>Communication ID number of the application</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">-1</td><td>USCI A1 Module Busy </td></tr>
+    <tr><td class="paramname">1</td><td>Receive successfully started</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Side Effects:</dt><dd>Reset the UCA1 RX size and data pointer </dd></dl>
+
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00569">569</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="comm_8h_ae3fc586aa0d1d1d79675dd838b867845_cgraph.png" border="0" usemap="#comm_8h_ae3fc586aa0d1d1d79675dd838b867845_cgraph" alt=""/></div>
+<map name="comm_8h_ae3fc586aa0d1d1d79675dd838b867845_cgraph" id="comm_8h_ae3fc586aa0d1d1d79675dd838b867845_cgraph">
+<area shape="rect" id="node3" href="comm_8c.html#a17ecbfeb05f97346ef2d54fe5bbc1e97" title="Configures USCI A1 for operation." alt="" coords="139,5,219,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9e8bddca1cf84c0b37b1b363cc8054bc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char spiA1Swap </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>byte</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>commID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Byte Swap method for USCI A1 SPI operation. </p>
+<p>This blocking method allows the user to transmit a byte and receive the response simultaneously clocked back in. TX and RX buffer sizes/content are unaffected.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">byte</td><td>The byte to be sent via SPI </td></tr>
+    <tr><td class="paramname">commID</td><td>Communication ID number of the application</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The byte shifted in from the SPI </dd></dl>
+
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00597">597</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="comm_8h_a9e8bddca1cf84c0b37b1b363cc8054bc_cgraph.png" border="0" usemap="#comm_8h_a9e8bddca1cf84c0b37b1b363cc8054bc_cgraph" alt=""/></div>
+<map name="comm_8h_a9e8bddca1cf84c0b37b1b363cc8054bc_cgraph" id="comm_8h_a9e8bddca1cf84c0b37b1b363cc8054bc_cgraph">
+<area shape="rect" id="node3" href="comm_8c.html#a17ecbfeb05f97346ef2d54fe5bbc1e97" title="Configures USCI A1 for operation." alt="" coords="141,5,221,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae66a9418cd3306fb9b66e97a5633b8ca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int spiA1Write </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>commID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transmit method for USCI A1 SPI operation. </p>
+<p>This method initializes a transmission of len bytes from the base of the *data pointer. Similarly to <a class="el" href="comm_8c.html#a5124b9038b90012541eef6658b521728" title="Transmit method for USCI A1 UART operation.">uartA1Write()</a>, the transmission uses the USCI A1 TX ISR to complete, so 2 sequential calls may result in partial transmission.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*data</td><td>Pointer to data to be written </td></tr>
+    <tr><td class="paramname">len</td><td>Length (in bytes) of data to be written </td></tr>
+    <tr><td class="paramname">commID</td><td>Communication ID number of application</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">-1</td><td>USCI A1 Module busy </td></tr>
+    <tr><td class="paramname">1</td><td>Transmit successfully started </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00539">539</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="comm_8h_ae66a9418cd3306fb9b66e97a5633b8ca_cgraph.png" border="0" usemap="#comm_8h_ae66a9418cd3306fb9b66e97a5633b8ca_cgraph" alt=""/></div>
+<map name="comm_8h_ae66a9418cd3306fb9b66e97a5633b8ca_cgraph" id="comm_8h_ae66a9418cd3306fb9b66e97a5633b8ca_cgraph">
+<area shape="rect" id="node3" href="comm_8c.html#a17ecbfeb05f97346ef2d54fe5bbc1e97" title="Configures USCI A1 for operation." alt="" coords="141,5,221,32"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -1636,7 +2911,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Receive method for USCI B0 SPI operation. </p>
-<p>This method performs a synchronous read by storing the bytes to be read in spiB0RxSize and then performing len dummy write to the bus to fetch the data from a slave device. The RX size is cleared on this function call.</p>
+<p>This method performs a synchronous read by storing the bytes to be read in ucbB0ToRxSize and then performing len dummy write to the bus to fetch the data from a slave device. The RX size is cleared on this function call.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">len</td><td>The number of bytes to be read from the bus </td></tr>
@@ -1653,7 +2928,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section user"><dt>Side Effects:</dt><dd>Reset the UCB0 RX size and data pointer </dd></dl>
 
-<p>Definition at line <a class="el" href="comm_8c_source.html#l00829">829</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00822">822</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1701,7 +2976,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The byte shifted in from the SPI </dd></dl>
 
-<p>Definition at line <a class="el" href="comm_8c_source.html#l00857">857</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00851">851</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1745,7 +3020,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Transmit method for USCI B0 SPI operation. </p>
-<p>This method initializes a transmission of len bytes from the base of the *data pointer. Similarly to uartB0Write(), the transmission uses the USCI B0 TX ISR to complete, so 2 sequential calls may result in partial transmission.</p>
+<p>This method initializes a transmission of len bytes from the base of the *data pointer. The transmission uses the USCI B0 TX ISR, so 2 sequential calls may result in partial transmission.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">*data</td><td>Pointer to data to be written </td></tr>
@@ -1762,7 +3037,7 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="comm_8c_source.html#l00799">799</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00792">792</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1799,6 +3074,35 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Receive method for USCI B1 SPI operation. </p>
+<p>This method performs a synchronous read by storing the bytes to be read in ucb1ToRxSize and then performing len dummy write to the bus to fetch the data from a slave device. The RX size is cleared on this function call.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">len</td><td>The number of bytes to be read from the bus </td></tr>
+    <tr><td class="paramname">commID</td><td>Communication ID number of the application</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">-1</td><td>USCI B1 Module Busy </td></tr>
+    <tr><td class="paramname">1</td><td>Receive successfully started </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Side Effects:</dt><dd>Reset the UCB0 RX size and data pointer </dd></dl>
+
+<p>Definition at line <a class="el" href="comm_8c_source.html#l01163">1163</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="comm_8h_a44e8e65abc5389d0bfff2709bb5ae15e_cgraph.png" border="0" usemap="#comm_8h_a44e8e65abc5389d0bfff2709bb5ae15e_cgraph" alt=""/></div>
+<map name="comm_8h_a44e8e65abc5389d0bfff2709bb5ae15e_cgraph" id="comm_8h_a44e8e65abc5389d0bfff2709bb5ae15e_cgraph">
+<area shape="rect" id="node3" href="comm_8c.html#a8f7f68ec9a8b50cfdb98163787157ee2" title="Configures USCI B1 for operation." alt="" coords="139,5,219,32"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a88cf7f351cfa6db251ed28176a2250bc"></a>
@@ -1824,6 +3128,28 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Byte Swap method for USCI B1 SPI operation. </p>
+<p>This blocking method allows the user to transmit a byte and receive the response simultaneously clocked back in. TX and RX buffer sizes/content are unaffected.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">byte</td><td>The byte to be sent via SPI </td></tr>
+    <tr><td class="paramname">commID</td><td>Communication ID number of the application</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The byte shifted in from the SPI </dd></dl>
+
+<p>Definition at line <a class="el" href="comm_8c_source.html#l01192">1192</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="comm_8h_a88cf7f351cfa6db251ed28176a2250bc_cgraph.png" border="0" usemap="#comm_8h_a88cf7f351cfa6db251ed28176a2250bc_cgraph" alt=""/></div>
+<map name="comm_8h_a88cf7f351cfa6db251ed28176a2250bc_cgraph" id="comm_8h_a88cf7f351cfa6db251ed28176a2250bc_cgraph">
+<area shape="rect" id="node3" href="comm_8c.html#a8f7f68ec9a8b50cfdb98163787157ee2" title="Configures USCI B1 for operation." alt="" coords="141,5,221,32"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -1857,12 +3183,247 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Transmit method for USCI B1 SPI operation. </p>
+<p>This method initializes a transmission of len bytes from the base of the *data pointer. Similarly to uartB0Write(), the transmission uses the USCI B1 TX ISR to complete, so 2 sequential calls may result in partial transmission.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*data</td><td>Pointer to data to be written </td></tr>
+    <tr><td class="paramname">len</td><td>Length (in bytes) of data to be written </td></tr>
+    <tr><td class="paramname">commID</td><td>Communication ID number of application</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">-1</td><td>USCI B1 Module busy </td></tr>
+    <tr><td class="paramname">1</td><td>Transmit successfully started </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="comm_8c_source.html#l01134">1134</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="comm_8h_aa59490b39fe62594d3e10e4be14f32a8_cgraph.png" border="0" usemap="#comm_8h_aa59490b39fe62594d3e10e4be14f32a8_cgraph" alt=""/></div>
+<map name="comm_8h_aa59490b39fe62594d3e10e4be14f32a8_cgraph" id="comm_8h_aa59490b39fe62594d3e10e4be14f32a8_cgraph">
+<area shape="rect" id="node3" href="comm_8c.html#a8f7f68ec9a8b50cfdb98163787157ee2" title="Configures USCI B1 for operation." alt="" coords="141,5,221,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae20f83fb584bad11928bc4f5a1b87b92"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int uartA0Read </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>commID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Receive method for USCI A0 UART operation. </p>
+<p>This method spoofs an asynchronous read by providing the min of the bytes available and the requested length. It decrements the buffer size appropriately and returns bytes "read".</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">len</td><td>The number of bytes to be read from the buffer </td></tr>
+    <tr><td class="paramname">commID</td><td>The comm ID of the application </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The number of bytes available to read in the buffer. If the buffer is empty this value will be 0. </dd></dl>
+<dl class="section user"><dt>Side Effects:</dt><dd>The uca0RxSize variable is decremented by the min of itself and the requested amount of bytes (len). </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd>This function does not make a call to <a class="el" href="comm_8h.html#ada62fa438c3ebff1a9ffc3fc9ab70928" title="Configures USCI A0 for operation.">confUCA0</a> or check it the state of the USCI module as it does not interact with the hardware module. </dd></dl>
+
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00195">195</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a62eb3fb5e7928a31ade57b8fa39a6871"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int uartA0Write </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>commID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transmit method for USCI A0 UART operation. </p>
+<p>This method initializes the transmission of len bytes from the base of the *data pointer. The actual transmission itself is finished a variable length of time from the write (based upon len's value) in the TX ISR. Thus calling <a class="el" href="comm_8c.html#a62eb3fb5e7928a31ade57b8fa39a6871" title="Transmit method for USCI A0 UART operation.">uartA0Write()</a> twice in quick succession will likely result in partial transmission of the first data.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*data</td><td>Pointer to data to be written </td></tr>
+    <tr><td class="paramname">len</td><td>Length (in bytes) of data to be written </td></tr>
+    <tr><td class="paramname">commID</td><td>Communication ID number of application</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">-2</td><td>Incorrect resource code </td></tr>
+    <tr><td class="paramname">-1</td><td>USCI A0 module busy </td></tr>
+    <tr><td class="paramname">1</td><td>Transmit successfully started </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00163">163</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="comm_8h_a62eb3fb5e7928a31ade57b8fa39a6871_cgraph.png" border="0" usemap="#comm_8h_a62eb3fb5e7928a31ade57b8fa39a6871_cgraph" alt=""/></div>
+<map name="comm_8h_a62eb3fb5e7928a31ade57b8fa39a6871_cgraph" id="comm_8h_a62eb3fb5e7928a31ade57b8fa39a6871_cgraph">
+<area shape="rect" id="node3" href="comm_8c.html#ada62fa438c3ebff1a9ffc3fc9ab70928" title="Configures USCI A0 for operation." alt="" coords="144,5,224,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a43f3d1eee987206a2737b51e4930d3ff"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int uartA1Read </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>commID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Receive method for USCI A1 UART operation. </p>
+<p>This method spoofs an asynchronous read by providing the min of the bytes available and the requested length. It decrements the buffer size appropriately and returns bytes "read".</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">len</td><td>The number of bytes to be read from the buffer </td></tr>
+    <tr><td class="paramname">commID</td><td>The comm ID of the application </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The number of bytes available to read in the buffer. If the buffer is empty this value will be 0. </dd></dl>
+<dl class="section user"><dt>Side Effects:</dt><dd>The ucA1RxSize variable is decremented by the min of itself and the requested amount of bytes (len). </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd>This function does not make a call to <a class="el" href="comm_8h.html#ada62fa438c3ebff1a9ffc3fc9ab70928" title="Configures USCI A0 for operation.">confUCA0</a> or check it the state of the USCI module as it does not interact with the hardware module. </dd></dl>
+
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00512">512</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5124b9038b90012541eef6658b521728"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int uartA1Write </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>commID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transmit method for USCI A1 UART operation. </p>
+<p>This method initializes the transmission of len bytes from the base of the *data pointer. The actual transmission itself is finished a variable length of time from the write (based upon len's value) in the TX ISR. Thus calling <a class="el" href="comm_8c.html#a5124b9038b90012541eef6658b521728" title="Transmit method for USCI A1 UART operation.">uartA1Write()</a> twice in quick succession will likely result in partial transmission of the first data.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*data</td><td>Pointer to data to be written </td></tr>
+    <tr><td class="paramname">len</td><td>Length (in bytes) of data to be written </td></tr>
+    <tr><td class="paramname">commID</td><td>Communication ID number of application</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">-2</td><td>Incorrect resource code </td></tr>
+    <tr><td class="paramname">-1</td><td>USCI A1 module busy </td></tr>
+    <tr><td class="paramname">1</td><td>Transmit successfully started </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="comm_8c_source.html#l00480">480</a> of file <a class="el" href="comm_8c_source.html">comm.c</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="comm_8h_a5124b9038b90012541eef6658b521728_cgraph.png" border="0" usemap="#comm_8h_a5124b9038b90012541eef6658b521728_cgraph" alt=""/></div>
+<map name="comm_8h_a5124b9038b90012541eef6658b521728_cgraph" id="comm_8h_a5124b9038b90012541eef6658b521728_cgraph">
+<area shape="rect" id="node3" href="comm_8c.html#a17ecbfeb05f97346ef2d54fe5bbc1e97" title="Configures USCI A1 for operation." alt="" coords="144,5,224,32"/></map>
+</div>
+</p>
+
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Feb 15 2013 17:22:12 for MSP430 eUSCI Driver Library by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Feb 27 2013 14:45:28 for MSP430 eUSCI Driver Library by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

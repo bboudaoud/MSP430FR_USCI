@@ -18,33 +18,74 @@
   <topic label="Files">
     <topic label="File List" href="files.html">
       <topic label="comm.c" href="comm_8c.html">
+        <topic label="confUCA0" href="comm_8c.html#ada62fa438c3ebff1a9ffc3fc9ab70928"/>
+        <topic label="confUCA1" href="comm_8c.html#a17ecbfeb05f97346ef2d54fe5bbc1e97"/>
         <topic label="confUCB0" href="comm_8c.html#a4f101e86fed045bdeccb60f91eaa02fd"/>
         <topic label="confUCB1" href="comm_8c.html#a8f7f68ec9a8b50cfdb98163787157ee2"/>
-        <topic label="getUCB0RxSize" href="comm_8c.html#aef6ae4feeca32dc15b5d08adf1da9d97"/>
+        <topic label="getUCA0RxSize" href="comm_8c.html#a74008ee44a0da1e4513aeef868e79598"/>
+        <topic label="getUCA0Stat" href="comm_8c.html#a55dc91d5bee97a54b187edc2e51bd257"/>
+        <topic label="getUCA1RxSize" href="comm_8c.html#ad88b050eb02144947a00b55209d7764f"/>
+        <topic label="getUCA1Stat" href="comm_8c.html#a768a2f25b49c90a358fd50b6479bb8e6"/>
+        <topic label="getUCB0RxSize" href="comm_8c.html#a11f534b1734766f29b74cbfe17a2ef07"/>
         <topic label="getUCB0Stat" href="comm_8c.html#a30cd6ac2ee3f3ebb409b63fcdcabf28d"/>
-        <topic label="getUCB1RxSize" href="comm_8c.html#a68f07019c887ed6c3b4e844bebdd6a47"/>
+        <topic label="getUCB1RxSize" href="comm_8c.html#a39ad3afcbf036aa7babb845dd3657569"/>
         <topic label="getUCB1Stat" href="comm_8c.html#a1eb0cd49631429c70b5b46c6438721a9"/>
+        <topic label="i2cB0Read" href="comm_8c.html#a116aa2e3cb7699e88e2091183d482738"/>
+        <topic label="i2cB0SlavePresent" href="comm_8c.html#afcefd6c724fe68e01e77d4f91426d195"/>
+        <topic label="i2cB0Write" href="comm_8c.html#a87398037b35846765dbfbb4b402f74ec"/>
+        <topic label="i2cB1Read" href="comm_8c.html#ac7fb490e407067ec785319b795214b5d"/>
+        <topic label="i2cB1SlavePresent" href="comm_8c.html#a52f0d3efcfaba8d5e21aaee3d7029125"/>
+        <topic label="i2cB1Write" href="comm_8c.html#a83bb0da5b0f0d248ec71f5bb404def4d"/>
         <topic label="registerComm" href="comm_8c.html#af70da4f96e4931b9e26a6bbac4fce4bf"/>
+        <topic label="resetUCA0" href="comm_8c.html#af4dfad55f1691c971928cf185a338f84"/>
+        <topic label="resetUCA1" href="comm_8c.html#a8f859ee35cfe7fa16282760eaf1edbbd"/>
         <topic label="resetUCB0" href="comm_8c.html#a85941a258add379ddb8f307f0e4d994c"/>
         <topic label="resetUCB1" href="comm_8c.html#a0ab99af5ba8791b79989645dd081b948"/>
+        <topic label="setUCA0Baud" href="comm_8c.html#a4b28cb69041b705a1b1d9d8fe8719b9c"/>
+        <topic label="setUCA1Baud" href="comm_8c.html#af76e1f766b877d1897ffe7a3720fcdda"/>
         <topic label="setUCB0Baud" href="comm_8c.html#a3e827eea726cc3abb1cb310b459a0781"/>
         <topic label="setUCB1Baud" href="comm_8c.html#a1c3763dbda5f4fb2f1d63eb4223fec06"/>
+        <topic label="spiA0Read" href="comm_8c.html#adbeb19ea57618e30d2d7f6580a825e3a"/>
+        <topic label="spiA0Swap" href="comm_8c.html#ab6d34982b27c9b3d67a0b6997d89c041"/>
+        <topic label="spiA0Write" href="comm_8c.html#a288d4b5f1394b0a21bfa9d847ef6dc91"/>
+        <topic label="spiA1Read" href="comm_8c.html#ae3fc586aa0d1d1d79675dd838b867845"/>
+        <topic label="spiA1Swap" href="comm_8c.html#a9e8bddca1cf84c0b37b1b363cc8054bc"/>
+        <topic label="spiA1Write" href="comm_8c.html#ae66a9418cd3306fb9b66e97a5633b8ca"/>
         <topic label="spiB0Read" href="comm_8c.html#ad8e558a330d8319d9e422473dcc6d5f6"/>
         <topic label="spiB0Swap" href="comm_8c.html#aeeab84d98e251811b3da247add841c45"/>
         <topic label="spiB0Write" href="comm_8c.html#acac01b5fff8d81782043a7510da979dc"/>
+        <topic label="spiB1Read" href="comm_8c.html#a44e8e65abc5389d0bfff2709bb5ae15e"/>
+        <topic label="spiB1Swap" href="comm_8c.html#a88cf7f351cfa6db251ed28176a2250bc"/>
+        <topic label="spiB1Write" href="comm_8c.html#aa59490b39fe62594d3e10e4be14f32a8"/>
+        <topic label="uartA0Read" href="comm_8c.html#ae20f83fb584bad11928bc4f5a1b87b92"/>
+        <topic label="uartA0Write" href="comm_8c.html#a62eb3fb5e7928a31ade57b8fa39a6871"/>
+        <topic label="uartA1Read" href="comm_8c.html#a43f3d1eee987206a2737b51e4930d3ff"/>
+        <topic label="uartA1Write" href="comm_8c.html#a5124b9038b90012541eef6658b521728"/>
+        <topic label="usciA0Isr" href="comm_8c.html#ad5f7e758a631206f24d89514965c21a9"/>
+        <topic label="usciA1Isr" href="comm_8c.html#addcb37d64aa7b0a78862fd81b5a88b83"/>
         <topic label="usciB0Isr" href="comm_8c.html#a48dc2c984ee7a4e4a2b7a6a9e4c290cf"/>
         <topic label="usciB1Isr" href="comm_8c.html#a0e2fa9d6027c9cb2f0dc7cba78bd93db"/>
         <topic label="dev" href="comm_8c.html#a03bdcd65a2fb660df0a574f7019cb152"/>
         <topic label="devConf" href="comm_8c.html#aef5ac597de460882e417744d99336fa8"/>
         <topic label="devIndex" href="comm_8c.html#a509f58c8f2dbbf31573b955b69406e8f"/>
-        <topic label="spiB0RxSize" href="comm_8c.html#aedd1ea622eebd327b2723a99f358240b"/>
-        <topic label="spiB1RxSize" href="comm_8c.html#a51cfaa388356a0f5f60e1959907a9b93"/>
+        <topic label="spiA0RxSize" href="comm_8c.html#aca7f31b244b046ef767f3eca515febdb"/>
+        <topic label="spiA1RxSize" href="comm_8c.html#ae14fbec9390d8052ae35255b34814d45"/>
+        <topic label="uca0RxPtr" href="comm_8c.html#a72d66b522894a513ecb95b40a12fa896"/>
+        <topic label="uca0RxSize" href="comm_8c.html#abc51fecbd18961feefee1dbc96d4be9b"/>
+        <topic label="uca0TxPtr" href="comm_8c.html#a9171a4543c7d4b5e9daa97a87847660f"/>
+        <topic label="uca0TxSize" href="comm_8c.html#a11277135aa4aec7a2e4556113bf49388"/>
+        <topic label="uca1RxPtr" href="comm_8c.html#a47223be4e780c65d35cda4223b753df3"/>
+        <topic label="uca1RxSize" href="comm_8c.html#a636a1030f538aae70cbdc8e3d9cc7c94"/>
+        <topic label="uca1TxPtr" href="comm_8c.html#a878689adf3dfbd2fd9621b39f4acbe38"/>
+        <topic label="uca1TxSize" href="comm_8c.html#a6017bff32adca2a138746c4ac9761dc4"/>
         <topic label="ucb0RxPtr" href="comm_8c.html#aad396a72d7ebb199113693a6a56a5370"/>
         <topic label="ucb0RxSize" href="comm_8c.html#adf332f3fc19f58b33e54041d77a1a0f7"/>
+        <topic label="ucb0ToRxSize" href="comm_8c.html#a05c1e128706603421c345ff9112a3e8c"/>
         <topic label="ucb0TxPtr" href="comm_8c.html#a4e9bfcb7edd71cf747bea85d28042b06"/>
         <topic label="ucb0TxSize" href="comm_8c.html#a31581bcdb90f4102e0c2e37ab4f9375a"/>
         <topic label="ucb1RxPtr" href="comm_8c.html#ae31407716e9aa4d925fd293836c5b9f4"/>
         <topic label="ucb1RxSize" href="comm_8c.html#ad59958616f09d6a8656e83a3938801a2"/>
+        <topic label="ucb1ToRxSize" href="comm_8c.html#aff29afd477f4d29acd7029cfc7c718b9"/>
         <topic label="ucb1TxPtr" href="comm_8c.html#a0c3a36fe641bcfdb3bbffef0fcf0e93c"/>
         <topic label="ucb1TxSize" href="comm_8c.html#a1bce055b6a859ac530718c8611930fd1"/>
         <topic label="usciStat" href="comm_8c.html#a11ca7e9fb55a52a97d21aacb02f1a8b6"/>
@@ -58,12 +99,15 @@
           <topic label="usciCtlW1" href="structuconf.html#ac96d09ac55adbf2cfcce03cd2e5e32aa"/>
         </topic>
         <topic label="ADDR_MASK" href="comm_8h.html#a15b16c1073c60f0be255caf0a60251be"/>
+        <topic label="DCO_FREQ" href="comm_8h.html#a9c74c0fe4ecec8f2710b4317ea47bfd7"/>
         <topic label="DEF_CTLW1" href="comm_8h.html#a4db69953ccb058b5b643a374172f6c35"/>
         <topic label="I2C_MODE" href="comm_8h.html#a5cd01756030509b764d43a2b8c94fce8"/>
         <topic label="MAX_DEVS" href="comm_8h.html#a00cb63c6de93dec9cb1ea7136e5d8f0a"/>
+        <topic label="MCLK_FREQ" href="comm_8h.html#a027de6fabf836f218c14bccf96002fe5"/>
         <topic label="MODE_MASK" href="comm_8h.html#aba2b187200eec47c5fc32655e296783d"/>
         <topic label="OPEN" href="comm_8h.html#a1354b70ac6803a06beebe84f61b5f95b"/>
         <topic label="RX" href="comm_8h.html#a5070712bba21161ad840408134ee229f"/>
+        <topic label="SMCLK_FREQ" href="comm_8h.html#ac8c1536e4214841885bd4163a42ce2bd"/>
         <topic label="SPI_28M2_BE" href="comm_8h.html#a6a6625925ccfe5b141887e63328b5454"/>
         <topic label="SPI_8M0_BE" href="comm_8h.html#ac199e90e5f5979b61bbe4dde0cc20316"/>
         <topic label="SPI_8M0_LE" href="comm_8h.html#ae725781f08c71c578b16db33c301e501"/>
@@ -108,28 +152,66 @@
         <topic label="USCI_CONF_ERROR" href="comm_8h.html#a67b2e69715059d9860682dc719b94bd8"/>
         <topic label="USCI_MASK" href="comm_8h.html#a7a629262909e8ec7c398fb37c53ed1f6"/>
         <topic label="USCI_SUCCESS" href="comm_8h.html#a3af6499f63ba36eb97d700b5fe285d73"/>
+        <topic label="USE_UCA0" href="comm_8h.html#a8a69e0f4c57763aa4a8d76e4c9b83f1f"/>
+        <topic label="USE_UCA0" href="comm_8h.html#a8a69e0f4c57763aa4a8d76e4c9b83f1f"/>
+        <topic label="USE_UCA0_SPI" href="comm_8h.html#a117332140b7ba615d7c0bddec6ef9d93"/>
+        <topic label="USE_UCA0_UART" href="comm_8h.html#a636b67e6bb995040843ba994eb2304a4"/>
+        <topic label="USE_UCA1" href="comm_8h.html#a6e829682baa5663a1eea5c6e28ca2db1"/>
+        <topic label="USE_UCA1" href="comm_8h.html#a6e829682baa5663a1eea5c6e28ca2db1"/>
+        <topic label="USE_UCA1_SPI" href="comm_8h.html#a52a868c9ec7e40d9ce2adbe94142e79f"/>
+        <topic label="USE_UCA1_UART" href="comm_8h.html#a051fe852ccacd12fa7435771a233fbae"/>
         <topic label="USE_UCB0" href="comm_8h.html#a13e62c0ac5141775e17324bd780c0ae0"/>
+        <topic label="USE_UCB0" href="comm_8h.html#a13e62c0ac5141775e17324bd780c0ae0"/>
+        <topic label="USE_UCB0_I2C" href="comm_8h.html#adce83d31654c2f128433697009da4af3"/>
         <topic label="USE_UCB0_SPI" href="comm_8h.html#abdae60a87d34c0f54242d42010cd4968"/>
         <topic label="USE_UCB1" href="comm_8h.html#a9990f1022272b6f1c22d73c30012fab5"/>
+        <topic label="USE_UCB1" href="comm_8h.html#a9990f1022272b6f1c22d73c30012fab5"/>
+        <topic label="USE_UCB1_I2C" href="comm_8h.html#a56ab5adf8697d3875fec9a66b9e43bdc"/>
+        <topic label="USE_UCB1_SPI" href="comm_8h.html#a69d72996a8ccd3db1d698dd995a0252f"/>
         <topic label="usciConfig" href="comm_8h.html#a2158d6ecf91a32911461bef627c5cd2d"/>
         <topic label="confUCA0" href="comm_8h.html#ada62fa438c3ebff1a9ffc3fc9ab70928"/>
+        <topic label="confUCA1" href="comm_8h.html#a17ecbfeb05f97346ef2d54fe5bbc1e97"/>
         <topic label="confUCB0" href="comm_8h.html#a4f101e86fed045bdeccb60f91eaa02fd"/>
         <topic label="confUCB1" href="comm_8h.html#a8f7f68ec9a8b50cfdb98163787157ee2"/>
-        <topic label="getUCB0RxSize" href="comm_8h.html#aef6ae4feeca32dc15b5d08adf1da9d97"/>
+        <topic label="getUCA0RxSize" href="comm_8h.html#a74008ee44a0da1e4513aeef868e79598"/>
+        <topic label="getUCA0Stat" href="comm_8h.html#a55dc91d5bee97a54b187edc2e51bd257"/>
+        <topic label="getUCA1RxSize" href="comm_8h.html#ad88b050eb02144947a00b55209d7764f"/>
+        <topic label="getUCA1Stat" href="comm_8h.html#a768a2f25b49c90a358fd50b6479bb8e6"/>
+        <topic label="getUCB0RxSize" href="comm_8h.html#a11f534b1734766f29b74cbfe17a2ef07"/>
         <topic label="getUCB0Stat" href="comm_8h.html#a30cd6ac2ee3f3ebb409b63fcdcabf28d"/>
-        <topic label="getUCB1RxSize" href="comm_8h.html#a68f07019c887ed6c3b4e844bebdd6a47"/>
+        <topic label="getUCB1RxSize" href="comm_8h.html#a39ad3afcbf036aa7babb845dd3657569"/>
         <topic label="getUCB1Stat" href="comm_8h.html#a1eb0cd49631429c70b5b46c6438721a9"/>
+        <topic label="i2cB0Read" href="comm_8h.html#a116aa2e3cb7699e88e2091183d482738"/>
+        <topic label="i2cB0SlavePresent" href="comm_8h.html#a6a5604e36dd75a27c1ba2e6e7b79b89d"/>
+        <topic label="i2cB0Write" href="comm_8h.html#a87398037b35846765dbfbb4b402f74ec"/>
+        <topic label="i2cB1Read" href="comm_8h.html#ac7fb490e407067ec785319b795214b5d"/>
+        <topic label="i2cB1SlavePresent" href="comm_8h.html#a4350afcddddd44adc6dd23c739477438"/>
+        <topic label="i2cB1Write" href="comm_8h.html#a83bb0da5b0f0d248ec71f5bb404def4d"/>
         <topic label="registerComm" href="comm_8h.html#af70da4f96e4931b9e26a6bbac4fce4bf"/>
+        <topic label="resetUCA0" href="comm_8h.html#af4dfad55f1691c971928cf185a338f84"/>
+        <topic label="resetUCA1" href="comm_8h.html#a8f859ee35cfe7fa16282760eaf1edbbd"/>
         <topic label="resetUCB0" href="comm_8h.html#a85941a258add379ddb8f307f0e4d994c"/>
         <topic label="resetUCB1" href="comm_8h.html#a0ab99af5ba8791b79989645dd081b948"/>
+        <topic label="setUCA0Baud" href="comm_8h.html#a4b28cb69041b705a1b1d9d8fe8719b9c"/>
+        <topic label="setUCA1Baud" href="comm_8h.html#af76e1f766b877d1897ffe7a3720fcdda"/>
         <topic label="setUCB0Baud" href="comm_8h.html#a3e827eea726cc3abb1cb310b459a0781"/>
         <topic label="setUCB1Baud" href="comm_8h.html#a1c3763dbda5f4fb2f1d63eb4223fec06"/>
+        <topic label="spiA0Read" href="comm_8h.html#adbeb19ea57618e30d2d7f6580a825e3a"/>
+        <topic label="spiA0Swap" href="comm_8h.html#ab6d34982b27c9b3d67a0b6997d89c041"/>
+        <topic label="spiA0Write" href="comm_8h.html#a288d4b5f1394b0a21bfa9d847ef6dc91"/>
+        <topic label="spiA1Read" href="comm_8h.html#ae3fc586aa0d1d1d79675dd838b867845"/>
+        <topic label="spiA1Swap" href="comm_8h.html#a9e8bddca1cf84c0b37b1b363cc8054bc"/>
+        <topic label="spiA1Write" href="comm_8h.html#ae66a9418cd3306fb9b66e97a5633b8ca"/>
         <topic label="spiB0Read" href="comm_8h.html#ad8e558a330d8319d9e422473dcc6d5f6"/>
         <topic label="spiB0Swap" href="comm_8h.html#aeeab84d98e251811b3da247add841c45"/>
         <topic label="spiB0Write" href="comm_8h.html#acac01b5fff8d81782043a7510da979dc"/>
         <topic label="spiB1Read" href="comm_8h.html#a44e8e65abc5389d0bfff2709bb5ae15e"/>
         <topic label="spiB1Swap" href="comm_8h.html#a88cf7f351cfa6db251ed28176a2250bc"/>
         <topic label="spiB1Write" href="comm_8h.html#aa59490b39fe62594d3e10e4be14f32a8"/>
+        <topic label="uartA0Read" href="comm_8h.html#ae20f83fb584bad11928bc4f5a1b87b92"/>
+        <topic label="uartA0Write" href="comm_8h.html#a62eb3fb5e7928a31ade57b8fa39a6871"/>
+        <topic label="uartA1Read" href="comm_8h.html#a43f3d1eee987206a2737b51e4930d3ff"/>
+        <topic label="uartA1Write" href="comm_8h.html#a5124b9038b90012541eef6658b521728"/>
       </topic>
       <topic label="comm_hal_5342.h" href="comm__hal__5342_8h.html"/>
       <topic label="comm_hal_5510.h" href="comm__hal__5510_8h.html"/>
@@ -182,7 +264,24 @@
       </topic>
     </topic>
     <topic label="Globals" href="globals.html">
-      <topic label="All" href="globals.html"/>
+      <topic label="All" href="globals.html">
+        <topic label="_" href="globals.html"/>
+        <topic label="a" href="globals_0x61.html"/>
+        <topic label="b" href="globals_0x62.html"/>
+        <topic label="c" href="globals_0x63.html"/>
+        <topic label="d" href="globals_0x64.html"/>
+        <topic label="e" href="globals_0x65.html"/>
+        <topic label="g" href="globals_0x67.html"/>
+        <topic label="i" href="globals_0x69.html"/>
+        <topic label="l" href="globals_0x6c.html"/>
+        <topic label="m" href="globals_0x6d.html"/>
+        <topic label="o" href="globals_0x6f.html"/>
+        <topic label="r" href="globals_0x72.html"/>
+        <topic label="s" href="globals_0x73.html"/>
+        <topic label="t" href="globals_0x74.html"/>
+        <topic label="u" href="globals_0x75.html"/>
+        <topic label="w" href="globals_0x77.html"/>
+      </topic>
       <topic label="Functions" href="globals_func.html"/>
       <topic label="Variables" href="globals_vars.html"/>
       <topic label="Typedefs" href="globals_type.html"/>

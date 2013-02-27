@@ -26,7 +26,16 @@ var searchData=
   ['usci_5fconf_5ferror',['USCI_CONF_ERROR',['../comm_8h.html#a67b2e69715059d9860682dc719b94bd8',1,'comm.h']]],
   ['usci_5fmask',['USCI_MASK',['../comm_8h.html#a7a629262909e8ec7c398fb37c53ed1f6',1,'comm.h']]],
   ['usci_5fsuccess',['USCI_SUCCESS',['../comm_8h.html#a3af6499f63ba36eb97d700b5fe285d73',1,'comm.h']]],
-  ['use_5fucb0',['USE_UCB0',['../comm_8h.html#a13e62c0ac5141775e17324bd780c0ae0',1,'comm.h']]],
+  ['use_5fuca0',['USE_UCA0',['../comm_8h.html#a8a69e0f4c57763aa4a8d76e4c9b83f1f',1,'USE_UCA0():&#160;comm.h'],['../comm_8h.html#a8a69e0f4c57763aa4a8d76e4c9b83f1f',1,'USE_UCA0():&#160;comm.h']]],
+  ['use_5fuca0_5fspi',['USE_UCA0_SPI',['../comm_8h.html#a117332140b7ba615d7c0bddec6ef9d93',1,'comm.h']]],
+  ['use_5fuca0_5fuart',['USE_UCA0_UART',['../comm_8h.html#a636b67e6bb995040843ba994eb2304a4',1,'comm.h']]],
+  ['use_5fuca1',['USE_UCA1',['../comm_8h.html#a6e829682baa5663a1eea5c6e28ca2db1',1,'USE_UCA1():&#160;comm.h'],['../comm_8h.html#a6e829682baa5663a1eea5c6e28ca2db1',1,'USE_UCA1():&#160;comm.h']]],
+  ['use_5fuca1_5fspi',['USE_UCA1_SPI',['../comm_8h.html#a52a868c9ec7e40d9ce2adbe94142e79f',1,'comm.h']]],
+  ['use_5fuca1_5fuart',['USE_UCA1_UART',['../comm_8h.html#a051fe852ccacd12fa7435771a233fbae',1,'comm.h']]],
+  ['use_5fucb0',['USE_UCB0',['../comm_8h.html#a13e62c0ac5141775e17324bd780c0ae0',1,'USE_UCB0():&#160;comm.h'],['../comm_8h.html#a13e62c0ac5141775e17324bd780c0ae0',1,'USE_UCB0():&#160;comm.h']]],
+  ['use_5fucb0_5fi2c',['USE_UCB0_I2C',['../comm_8h.html#adce83d31654c2f128433697009da4af3',1,'comm.h']]],
   ['use_5fucb0_5fspi',['USE_UCB0_SPI',['../comm_8h.html#abdae60a87d34c0f54242d42010cd4968',1,'comm.h']]],
-  ['use_5fucb1',['USE_UCB1',['../comm_8h.html#a9990f1022272b6f1c22d73c30012fab5',1,'comm.h']]]
+  ['use_5fucb1',['USE_UCB1',['../comm_8h.html#a9990f1022272b6f1c22d73c30012fab5',1,'USE_UCB1():&#160;comm.h'],['../comm_8h.html#a9990f1022272b6f1c22d73c30012fab5',1,'USE_UCB1():&#160;comm.h']]],
+  ['use_5fucb1_5fi2c',['USE_UCB1_I2C',['../comm_8h.html#a56ab5adf8697d3875fec9a66b9e43bdc',1,'comm.h']]],
+  ['use_5fucb1_5fspi',['USE_UCB1_SPI',['../comm_8h.html#a69d72996a8ccd3db1d698dd995a0252f',1,'comm.h']]]
 ];
