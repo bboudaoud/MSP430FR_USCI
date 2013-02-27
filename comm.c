@@ -1,10 +1,9 @@
 #include "comm.h"
-#include "comm_hal.h"
 
-usciConfig *dev[MAX_DEVS];					///< Device config buffer (indexed by comm ID always non-zero)
-unsigned int devIndex = 0;					///< Device config buffer index
-unsigned int devConf[4] = {0,0,0,0};				///< Currently applied configs buffer [A0, A1, B0, B1]
-unsigned char usciStat[4] = {OPEN, OPEN, OPEN, OPEN};		///< Store status (OPEN, TX, or RX) for [A0, A1, B0, B1]
+usciConfig *dev[MAX_DEVS];				///< Device config buffer (indexed by comm ID always non-zero)
+unsigned int devIndex = 0;				///< Device config buffer index
+unsigned int devConf[4] = {0,0,0,0};			///< Currently applied configs buffer [A0, A1, B0, B1]
+unsigned char usciStat[4] = {OPEN, OPEN, OPEN, OPEN};	///< Store status (OPEN, TX, or RX) for [A0, A1, B0, B1]
 
 /**************************************************************************//**
  * \brief Registers an application for use of a USCI module.
@@ -12,10 +11,10 @@ unsigned char usciStat[4] = {OPEN, OPEN, OPEN, OPEN};		///< Store status (OPEN, 
  * Create a USCI "socket" by affiliating a unique comm ID with an
  * endpoint configuration for TI's eUSCI module.
  *
- * \Param	conf	The USCI configuration structure to be used (see comm.h)
- * \Return	commID 	A positive (> 0) value representing the registered
+ * \param	conf	The USCI configuration structure to be used (see comm.h)
+ * \return	commID 	A positive (> 0) value representing the registered
  * 					app
- * \Retval 	-1	The maximum number of apps (MAX_DEVS) has been registered
+ * \retval 	-1	The maximum number of apps (MAX_DEVS) has been registered
  ******************************************************************************/
 int registerComm(usciConfig *conf)
 {
@@ -26,7 +25,7 @@ int registerComm(usciConfig *conf)
 
 /****************************************************************
  * USCI A0 Variable Declarations
- ******************************************************************************/
+ ***************************************************************/
 #ifdef USE_UCA0
 unsigned char *uca0TxPtr;			///< USCI A0 TX Data Pointer
 unsigned char *uca0RxPtr;			///< USCI A0 RX Data Pointer
@@ -39,7 +38,7 @@ unsigned int spiA0RxSize = 0;			///< USCI A0 To-RX Size (used for SPI RX)
 
 /**************************************************************
  * General Purpose USCI A0 Functions
- ******************************************************************************/
+ *************************************************************/
 // NOTE: This configuration is safe for use with single end-point UART and SPI config
 /**************************************************************************//**
  * \brief	Configures USCI A0 for operation
@@ -88,9 +87,9 @@ void confUCA0(unsigned int commID)
  *
  * This function is included to soft-reset the USCI A0 module
  * management variables without clearing the current config.
- *
+ * 
  * \param	commID	The comm ID of the registered app
- *\sideeffect	Sets the RX pointer to that registered w/ commID
+ * \sideeffect	Sets the RX pointer to that registered w/ commID
  ******************************************************************************/
 void resetUCA0(unsigned int commID){
 	uca0RxPtr = dev[commID]->rxPtr;
@@ -108,10 +107,9 @@ void resetUCA0(unsigned int commID){
  * Returns the number of bytes which have been written
  * to the RX pointer (since the last read performed).
  *
- * \param commID	Comm ID of app. (not used)
  * \return			The number of valid bytes following the rxPtr.
  ******************************************************************************/
-unsigned int getUCA0RxSize(unsigned int commID){
+unsigned int getUCA0RxSize(void){
 	return uca0RxSize;
 }
 /**************************************************************************//**
@@ -119,8 +117,7 @@ unsigned int getUCA0RxSize(unsigned int commID){
  *
  * Returns the status of the USCI module, either OPEN, TX, or RX
  *
- * \param commID	Comm ID of app. (not used)
- * \retval		0	Indicates the OPEN status
+ * \retval	0	Indicates the OPEN status
  * \retval 	1	Indicates the TX Status
  * \retval 	2	Indicates the RX Status
  ******************************************************************************/
@@ -144,7 +141,7 @@ void setUCA0Baud(unsigned int baudDiv, unsigned int commID){
 }
 /***************************************************************
 * UCA0 UART HANDLERS
- ******************************************************************************/
+ **************************************************************/
 #ifdef USE_UCA0_UART
 /**************************************************************************//**
  * \brief	Transmit method for USCI A0 UART operation
@@ -173,8 +170,8 @@ int uartA0Write(unsigned char *data, unsigned int len, unsigned int commID)
 	uca0TxPtr = data;
 	uca0TxSize = len-1;
 	// Write TXBUF (start of transmit) and set status
-	UCA0TXBUF = *uca0TxPtr;
 	usciStat[UCA0_INDEX] = TX;
+	UCA0TXBUF = *uca0TxPtr;
 
 	return 1;
 }
@@ -233,8 +230,8 @@ int spiA0Write(unsigned char *data, unsigned int len, unsigned int commID)
 	uca0TxPtr = data;
 	uca0TxSize = len-1;
 	// Start of TX
-	UCA0TXBUF = *uca0TxPtr;
 	usciStat[UCA0_INDEX] = TX;
+	UCA0TXBUF = *uca0TxPtr;
 
 	return 1;
 }
@@ -264,8 +261,8 @@ int spiA0Read(unsigned int len, unsigned int commID)
 	uca0RxPtr = dev[commID]->rxPtr;			// Reset the rx pointer
 	spiA0RxSize = len-1;
 	// Start of RX
-	UCA0TXBUF = 0xFF;				// Start TX
 	usciStat[UCA0_INDEX] = RX;
+	UCA0TXBUF = 0xFF;				// Start TX
 	return 1;
 }
 /**************************************************************************//**
@@ -287,7 +284,7 @@ unsigned char spiA0Swap(unsigned char byte, unsigned int commID)
 	confUCA0(commID);
 	
 	UCA0TXBUF = byte;
-	while(UCA0STATW & UCBUSY);			// Wait for TX complete
+	while(UCA0STAT & UCBUSY);			// Wait for TX complete
 	return UCA0RXBUF;				// Return RX contents
 }
 #endif //USE_UCA0_SPI
@@ -325,7 +322,7 @@ __interrupt void usciA0Isr(void)
 #ifdef USE_UCA0_SPI
 		if(usciStat[UCA0_INDEX] == RX){			// Check we are in RX mode for SPI
 #endif // USE_UCA0_SPI
-		if(UCA0STATW & UCRXERR) dummy = UCA0RXBUF;	// RX ERROR: Do a dummy read to clear interrupt flag
+		if(UCA0STAT & UCRXERR) dummy = UCA0RXBUF;	// RX ERROR: Do a dummy read to clear interrupt flag
 		else {						// Otherwise write the value to the RX pointer
 			*(uca0RxPtr++) = UCA0RXBUF;
 			uca0RxSize++;				// RX Size decrement in read function
@@ -339,7 +336,7 @@ __interrupt void usciA0Isr(void)
 		}
 #endif
 	}
-	UCA0IFG &= ~UCRXIFG;					// Clear RX interrupt flag from vector on end of RX
+	UCA0IFG &= ~UCRXIFG;	// Clear RX interrupt flag from vector on end of RX
 }
 #endif // USE_UCA0
 
@@ -427,18 +424,16 @@ void resetUCA1(unsigned int commID){
  * Returns the number of bytes which have been written
  * to the RX pointer (since the last read performed).
  *
- * \param 	commID	Comm ID of app. (not used)
  * \return	The number of valid bytes following the rxPtr.
  ******************************************************************************/
-unsigned int getUCA1RxSize(unsigned int commID){
+unsigned int getUCA1RxSize(void){
 	return uca1RxSize;
 }
 /**************************************************************************//**
  * \brief	Get method for USCI A1 status
  *
- *Returns the status of the USCI module, either OPEN, TX, or RX
+ * Returns the status of the USCI module, either OPEN, TX, or RX
  *
- * \param	commID	Comm ID of app. (not used)
  * \retval	0	Indicates the OPEN status
  * \retval 	1	Indicates the TX Status
  * \retval 	2	Indicates the RX Status
@@ -492,8 +487,8 @@ int uartA1Write(unsigned char *data, unsigned int len, unsigned int commID)
 	uca1TxPtr = data;
 	uca1TxSize = len-1;
 	// Write TXBUF (start of transmit) and set status
-	UCA1TXBUF = *uca1TxPtr;
 	usciStat[UCA1_INDEX] = TX;
+	UCA1TXBUF = *uca1TxPtr;
 
 	return 1;
 }
@@ -551,8 +546,8 @@ int spiA1Write(unsigned char *data, unsigned int len, unsigned int commID)
 	uca1TxPtr = data;
 	uca1TxSize = len-1;
 	// Start of TX
-	UCA1TXBUF = *uca1TxPtr;
 	usciStat[UCA1_INDEX] = TX;
+	UCA1TXBUF = *uca1TxPtr;
 
 	return 1;
 }
@@ -582,8 +577,8 @@ int spiA1Read(unsigned int len, unsigned int commID)
 	uca1RxPtr = dev[commID]->rxPtr;			// Reset RX pointer
 	spiA1RxSize = len-1;
 	// Start of RX
-	UCA1TXBUF = 0xFF;				// Start TX
 	usciStat[UCA1_INDEX] = RX;
+	UCA1TXBUF = 0xFF;				// Start TX
 	return 1;
 }
 
@@ -606,7 +601,7 @@ unsigned char spiA1Swap(unsigned char byte, unsigned int commID)
 	confUCA1(commID);
 	
 	UCA1TXBUF = byte;
-	while(UCA1STATW & UCBUSY);			// Wait for TX complete
+	while(UCA1STAT & UCBUSY);			// Wait for TX complete
 	return UCA1RXBUF;				// Return RX contents
 }
 #endif //USE_UCA1_SPI
@@ -645,7 +640,7 @@ __interrupt void usciA1Isr(void)
 #ifdef USE_UCA1_SPI
 		if(usciStat[UCA1_INDEX] == RX){			// Check we are in RX mode for SPI
 #endif // USE_UCA1_SPI
-		if(UCA1STATW & UCRXERR) dummy = UCA1RXBUF;	// RX ERROR: Do a dummy read to clear interrupt flag
+		if(UCA1STAT & UCRXERR) dummy = UCA1RXBUF;	// RX ERROR: Do a dummy read to clear interrupt flag
 		else {						// Otherwise write the value to the RX pointer
 			*(uca1RxPtr++) = UCA1RXBUF;
 			uca1RxSize++;				// RX Size decrement in read function
@@ -671,8 +666,7 @@ unsigned char *ucb0TxPtr;			///< USCI B0 TX Data Pointer
 unsigned char *ucb0RxPtr;			///< USCI B0 RX Data Pointer
 unsigned int ucb0TxSize = 0;			///< USCI B0 TX Size
 unsigned int ucb0RxSize = 0;			///< USCI B0 RX Size
-// Conditional SPI Receive size
-unsigned int spiB0RxSize = 0;			///< USCI B0 to-RX Size
+unsigned int ucb0ToRxSize = 0;			///< USCI B0 to-RX Size
 
 /**************************************************************
  * General Purpose USCI B0 Functions
@@ -707,9 +701,12 @@ void confUCB0(unsigned int commID)
 	// Clear buffer sizes
 	ucb0RxSize = 0;
 	ucb0TxSize = 0;
-#ifdef USE_UCB0_SPI
-	spiB0RxSize = 0;
-#endif //USE_UCB0_SPI
+	ucb0ToRxSize = 0;
+
+#ifdef USE_UCB0_I2C
+	UCB0I2CSA = (dev[commID]->rAddr) & ADDR_MASK;	// Set up the slave address
+	UCB0I2CIE = UCNACKIE;				// Set up slave NACK interrupt
+#endif //USE_UCB0_I2C
 
 	UCB0_IO_CONF(dev[commID]->rAddr & ADDR_MASK);	// Port set up
 	UCB0CTL1 &= ~UCSWRST;				// Resume operation
@@ -731,9 +728,7 @@ void resetUCB0(unsigned int commID){
 	ucb0RxPtr = dev[commID]->rxPtr;
 	ucb0RxSize = 0;
 	ucb0TxSize = 0;
-#ifdef USE_UCB0_SPI
-	spiB0RxSize = 0;
-#endif //USE_UCB0_SPI
+	ucb0ToRxSize = 0;
 	usciStat[UCB0_INDEX] = OPEN;
 	return;
 }
@@ -743,10 +738,9 @@ void resetUCB0(unsigned int commID){
  * Returns the number of bytes which have been written
  * to the RX pointer (since the last read performed).
  *
- * \param 	commID	Comm ID of app. (not used)
  * \return	The number of valid bytes following the rxPtr.
  ******************************************************************************/
-unsigned int getUCB0RxSize(unsigned int commID){
+unsigned int getUCB0RxSize(void){
 	return ucb0RxSize;
 }
 /**************************************************************************//**
@@ -754,7 +748,6 @@ unsigned int getUCB0RxSize(unsigned int commID){
  *
  * Returns the status of the USCI module, either OPEN, TX, or RX
  *
- * \param 	commID	Comm ID of app. (not used)
  * \retval	0	Indicates the OPEN status
  * \retval 	1	Indicates the TX Status
  * \retval 	2	Indicates the RX Status
@@ -786,8 +779,8 @@ void setUCB0Baud(unsigned int baudDiv, unsigned int commID){
  * \brief	Transmit method for USCI B0 SPI operation
  *
  * This method initializes a transmission of len bytes from the base of the
- * *data pointer. Similarly to uartB0Write(), the transmission uses the USCI B0
- * TX ISR to complete, so 2 sequential calls may result in partial transmission.
+ * *data pointer. The transmission uses the USCI B0 TX ISR, so 2 sequential calls 
+ * may result in partial transmission.
  *
  * \param	*data	Pointer to data to be written
  * \param	len		Length (in bytes) of data to be written
@@ -806,8 +799,8 @@ int spiB0Write(unsigned char *data, unsigned int len, unsigned int commID)
 	ucb0TxPtr = data;
 	ucb0TxSize = len-1;
 	// Start of TX
-	UCB0TXBUF = *ucb0TxPtr;
 	usciStat[UCB0_INDEX] = TX;
+	UCB0TXBUF = *ucb0TxPtr;
 
 	return 1;
 }
@@ -815,7 +808,7 @@ int spiB0Write(unsigned char *data, unsigned int len, unsigned int commID)
  * \brief	Receive method for USCI B0 SPI operation
  *
  * This method performs a synchronous read by storing the bytes to be read in
- * spiB0RxSize and then performing len dummy write to the bus to fetch the data
+ * ucbB0ToRxSize and then performing len dummy write to the bus to fetch the data
  * from a slave device. The RX size is cleared on this function call.
  *
  * \param	len	The number of bytes to be read from the bus
@@ -835,10 +828,11 @@ int spiB0Read(unsigned int len, unsigned int commID)
 	// Clear RX Size and copy length
 	ucb0RxSize = 0;					// Reset the rx size
 	ucb0RxPtr = dev[commID]->rxPtr;			// Reset the rx pointer
-	spiB0RxSize = len-1;
+	ucb0ToRxSize = len-1;
 	// Start of RX
-	UCB0TXBUF = 0xFF;				// Start TX
 	usciStat[UCB0_INDEX] = RX;
+	UCB0TXBUF = 0xFF;				// Start TX
+	
 	return 1;
 }
 
@@ -862,23 +856,107 @@ unsigned char spiB0Swap(unsigned char byte, unsigned int commID)
 	
 	ucb0TxSize = 0;
 	UCB0TXBUF = byte;
-	while(UCB0STATW & UCBUSY);			// Wait for TX complete
+	while(UCB0STAT & UCBUSY);			// Wait for TX complete
 	return UCB0RXBUF;				// Return RX contents
 }
 #endif //USE_UCB0_SPI
 /***********************************************************
  * UCB0 I2C HANDLERS
+ * \todo: NOT YET TESTED!!!!!!!!!
  ***********************************************************/
 #ifdef USE_UCB0_I2C
-//I2C Write
+/**************************************************************************//**
+ * \brief	Transmit method for USCI B0 I2C operation
+ *
+ * This method initializes a transmission of len bytes from the base of the
+ * *data pointer. Similarly to spiB0Write(), the transmission uses the USCI B0
+ * TX ISR to complete, so 2 sequential calls may result in partial transmission.
+ *
+ * \param	*data	Pointer to data to be written
+ * \param	len	Length (in bytes) of data to be written
+ * \param 	commID	Communication ID number of application
+ *
+ * \retval	-1	USCI B0 Module busy
+ * \retval	1	Transmit successfully started
+ *******************************************************************************/
 int i2cB0Write(unsigned char *data, unsigned int len, unsigned int commID)
 {
-	// Do this
-}
+	if(usciStat[UCB0_INDEX] != OPEN) return -1; 	// Check that the USCI is available
 
+	confUCB0(commID);
+
+	ucb0TxPtr = data;
+	ucb0TxSize = len;
+	// Start of TX
+	usciStat[UCB0_INDEX] = TX;
+	UCB0CTL1 |= UCTR + UCTXSTT;	// Generate start condition
+
+	return 1;
+}
+/**************************************************************************//**
+ * \brief	Receive method for USCI B0 I2C operation
+ *
+ * This method performs a synchronous read by storing the bytes to be read in
+ * ucbB0ToRxSize and then performing len dummy write to the bus to fetch the data
+ * from a slave device. The RX size is cleared on this function call.
+ *
+ * \param	len	The number of bytes to be read from the bus
+ * \param	commID	Communication ID number of the application
+ *
+ * \retval	-1	USCI B0 Module Busy
+ * \retval	1	Receive successfully started
+ *
+ * \sideeffect	Reset the UCB0 RX size and data pointer
+ ******************************************************************************/
 int i2cB0Read(unsigned int len, unsigned int commID)
 {
-	// Do this too
+	if(usciStat[UCB0_INDEX] != OPEN) return -1;	// Check that the USCI is available
+
+	confUCB0(commID);
+
+	ucb0RxSize = 0;
+	ucb0ToRxSize = len;
+	// Start of RX
+	usciStat[UCB0_INDEX] = RX;
+	UCB0CTL1 |= UCTXSTT;		// Generate start condition
+
+	return 1;
+}
+/**************************************************************************//**
+ * \brief	Ping (slave present) Method for USCI B0 I2C Operation
+ *
+ * This method tests for the presence of a slave at the address affiliated with
+ * the registered commID. This is accomplished by sending a start, then stop
+ * condition sequenitally on the bus, then reading the UCB0STAT register for
+ * a NACK condition.
+ *
+ * \param	commID	Communication ID number of the application
+ *
+ * \retval	-1	USCI B0 Module Busy
+ * \retval	0	Slave not present
+ * \retval	1	Slave present
+ *
+ * \sideeffect	The USCI module will need to be reconfigured for the next
+ * 		operation (even if it uses the same slave address or commID)
+ ******************************************************************************/
+unsigned char i2cB0SlavePresent(unsigned int commID)
+{
+	unsigned char retval;
+
+	if(usciStat[UCB0_INDEX] != OPEN) return -1;	// Check that USCI is available
+
+	UCB0IE &= ~(UCTXIE + UXRXIE + UCNACKIE);	// Clear NACK, RX, and TX interrupt conditions
+	UCB0I2CSA = dev[commID]->raddr & ADDR_MASK;	// Set slave address
+
+	__disable_interrupt();
+	UCB0CTL1 |= UCTR + UCTXSTT + UCTXSTP;		// TX w/ start and stop condition
+	while(UCB0CTL1 & UCTXSTP);			// Wait for stop condition
+	
+	retval = !(UCB0STAT & UCNACKIFG);
+	devConf[UCB0_INDEX] = 0;			// Clear dev conf slot for UCB1
+	__enable_interrupt();
+
+	return retval;
 }
 #endif //USE_UCB0_I2C
 /**********************************************************************//**
@@ -894,42 +972,31 @@ __interrupt void usciB0Isr(void)
 	unsigned int dummy = 0xFF;
 	// Transmit Interrupt Flag Set
 	if(UCB0IFG & UCTXIFG){
-#ifdef USE_UCB0_SPI
 		if(usciStat[UCB0_INDEX] == TX) {
-#endif
-		if(ucb0TxSize > 0){
-			UCB0TXBUF = *(++ucb0TxPtr);			// Transmit the next outgoing byte
-			ucb0TxSize--;
+			if(ucb0TxSize > 0){
+				UCB0TXBUF = *(++ucb0TxPtr);	// Transmit the next outgoing byte
+				ucb0TxSize--;
+			}
+			else{
+				usciStat[UCB0_INDEX] = OPEN; 	// Set status open if done with transmit
+				UCB0IFG &= ~UCTXIFG;		// Clear TX interrupt flag from vector on end of TX
+			}
 		}
-		else{
-			usciStat[UCB0_INDEX] = OPEN; 			// Set status open if done with transmit
-			UCB0IFG &= ~UCTXIFG;				// Clear TX interrupt flag from vector on end of TX
-		}
-#ifdef USE_UCB0_SPI
-		}
-#endif
 	}
 
 	// Receive Interrupt Flag Set
 	if(UCB0IFG & UCRXIFG){	// Check for interrupt flag and RX mode
-#ifdef USE_UCB0_SPI
 		if(usciStat[UCB0_INDEX] == RX){				// Check we are in RX mode for SPI
-#endif // USE_UCB0_SPI
-		if(UCB0STATW & UCRXERR) dummy = UCB0RXBUF;		// RX ERROR: Do a dummy read to clear interrupt flag
-		else {							// Otherwise write the value to the RX pointer
-			*(ucb0RxPtr++) = UCB0RXBUF;
-			ucb0RxSize++;					// RX Size decrement in read function
-#ifdef USE_UCB0_SPI
-			if(ucb0RxSize < spiB0RxSize) UCB0TXBUF = dummy; // Perform another dummy write
-			else
-#endif
-			usciStat[UCB0_INDEX] = OPEN;
+			if(UCB0STAT & UCRXERR) dummy = UCB0RXBUF;	// RX ERROR: Do a dummy read to clear interrupt flag
+			else {	// Otherwise write the value to the RX pointer
+				*(ucb0RxPtr++) = UCB0RXBUF;
+				ucb0RxSize++;	// RX Size decrement in read function
+				if(ucb0RxSize < ucb0ToRxSize) UCB0TXBUF = dummy; // Perform another dummy write
+				else usciStat[UCB0_INDEX] = OPEN;
+			}
 		}
-#ifdef USE_UCB0_SPI
-		}
-#endif
 	}
-	UCB0IFG &= ~UCRXIFG;						// Clear RX interrupt flag from vector on end of RX
+	UCB0IFG &= ~UCRXIFG; // Clear RX interrupt flag from vector on end of RX
 }
 #endif // USE_UCB0
 
@@ -941,8 +1008,7 @@ unsigned char *ucb1TxPtr;			///< USCI B1 TX Data Pointer
 unsigned char *ucb1RxPtr;			///< USCI B1 RX Data Pointer
 unsigned int ucb1TxSize = 0;			///< USCI B1 TX Size
 unsigned int ucb1RxSize = 0;			///< USCI B1 RX Size
-// Conditional SPI Receive size
-unsigned int spiB1RxSize = 0;			///< USCI B1 to-RX Size
+unsigned int ucb1ToRxSize = 0;			///< USCI B1 to-RX Size
 
 /**************************************************************
  * General Purpose USCI B1 Functions
@@ -977,9 +1043,12 @@ void confUCB1(unsigned int commID)
 	// Clear buffer sizes
 	ucb1RxSize = 0;
 	ucb1TxSize = 0;
-#ifdef USE_UCB1_SPI
-	spiB1RxSize = 0;
-#endif //USE_UCB1_SPI
+	ucb1ToRxSize = 0;
+
+#ifdef USE_UCB1_I2C
+	UCB1I2CSA = (dev[commID]->rAddr) & ADDR_MASK;	// Set up the slave address
+	UCB1IE |= UCNACKIE;				// Set up slave NACK interrupt
+#endif //USE_UCB1_I2C
 
 	UCB1_IO_CONF(dev[commID]->rAddr & ADDR_MASK);	// Port set up
 	UCB1CTL1 &= ~UCSWRST;				// Resume operation
@@ -1001,9 +1070,7 @@ void resetUCB1(unsigned int commID){
 	ucb1RxPtr = dev[commID]->rxPtr;
 	ucb1RxSize = 0;
 	ucb1TxSize = 0;
-#ifdef USE_UCB1_SPI
-	spiB1RxSize = 0;
-#endif //USE_UCB1_SPI
+	ucb1ToRxSize = 0;
 	usciStat[UCB1_INDEX] = OPEN;
 	return;
 }
@@ -1013,10 +1080,9 @@ void resetUCB1(unsigned int commID){
  * Returns the number of bytes which have been written
  * to the RX pointer (since the last read performed).
  *
- * \param commID	Comm ID of app. (not used)
  * \return			The number of valid bytes following the rxPtr.
  ******************************************************************************/
-unsigned int getUCB1RxSize(unsigned int commID){
+unsigned int getUCB1RxSize(void){
 	return ucb1RxSize;
 }
 /**************************************************************************//**
@@ -1024,7 +1090,6 @@ unsigned int getUCB1RxSize(unsigned int commID){
  *
  * Returns the status of the USCI module, either OPEN, TX, or RX
  *
- * \param 	commID	Comm ID of app. (not used)
  * \retval	0	Indicates the OPEN status
  * \retval 	1	Indicates the TX Status
  * \retval 	2	Indicates the RX Status
@@ -1076,8 +1141,8 @@ int spiB1Write(unsigned char *data, unsigned int len, unsigned int commID)
 	ucb1TxPtr = data;
 	ucb1TxSize = len-1;
 	// Start of TX
-	UCB1TXBUF = *ucb0TxPtr;
 	usciStat[UCB1_INDEX] = TX;
+	UCB1TXBUF = *ucb0TxPtr;
 
 	return 1;
 }
@@ -1085,30 +1150,30 @@ int spiB1Write(unsigned char *data, unsigned int len, unsigned int commID)
  * \brief	Receive method for USCI B1 SPI operation
  *
  * This method performs a synchronous read by storing the bytes to be read in
- * spiB1RxSize and then performing len dummy write to the bus to fetch the data
+ * ucb1ToRxSize and then performing len dummy write to the bus to fetch the data
  * from a slave device. The RX size is cleared on this function call.
  *
  * \param	len		The number of bytes to be read from the bus
  * \param	commID	Communication ID number of the application
  *
- * 	\retval	-1		USCI B1 Module Busy
- * 	\retval	1		Receive successfully started
- *
- * 	\sideeffect		Reset the UCB0 RX size and data pointer
+ * \retval	-1		USCI B1 Module Busy
+ * \retval	1		Receive successfully started
+ * \sideeffect		Reset the UCB0 RX size and data pointer
  ******************************************************************************/
-int spiB0Read(unsigned int len, unsigned int commID)
+int spiB1Read(unsigned int len, unsigned int commID)
 {
 	if(usciStat[UCB1_INDEX] != OPEN) return -1;	// Check that the USCI is available
 
 	confUCB1(commID);
 
 	// Clear RX Size and copy length
-	ucb1RxSize = 0;					// Reset the rx size
 	ucb1RxPtr = dev[commID]->rxPtr;			// Reset the rx pointer
-	spiB1RxSize = len-1;
+	ucb1RxSize = 0;					// Reset the rx size
+	ucb1ToRxSize = len-1;
 	// Start of RX
-	UCB1TXBUF = 0xFF;				// Start TX
 	usciStat[UCB1_INDEX] = RX;
+	UCB1TXBUF = 0xFF;				// Start TX
+	
 	return 1;
 }
 
@@ -1132,7 +1197,7 @@ unsigned char spiB1Swap(unsigned char byte, unsigned int commID)
 	
 	ucb1TxSize = 0;
 	UCB1TXBUF = byte;
-	while(UCB1STATW & UCBUSY);			// Wait for TX complete
+	while(UCB1STAT & UCBUSY);			// Wait for TX complete
 	return UCB1RXBUF;				// Return RX contents
 }
 #endif //USE_UCB1_SPI
@@ -1140,15 +1205,98 @@ unsigned char spiB1Swap(unsigned char byte, unsigned int commID)
  * UCB1 I2C HANDLERS
  ***********************************************************/
 #ifdef USE_UCB1_I2C
-//I2C Write
+/**************************************************************************//**
+ * \brief	Transmit method for USCI B1 I2C operation
+ *
+ * This method initializes a transmission of len bytes from the base of the
+ * *data pointer. Similarly to spiB1Write(), the transmission uses the USCI B1
+ * TX ISR to complete, so 2 sequential calls may result in partial transmission.
+ *
+ * \param	*data	Pointer to data to be written
+ * \param	len	Length (in bytes) of data to be written
+ * \param 	commID	Communication ID number of application
+ *
+ * \retval	-1	USCI B1 Module busy
+ * \retval	1	Transmit successfully started
+ *******************************************************************************/
 int i2cB1Write(unsigned char *data, unsigned int len, unsigned int commID)
 {
-	// Do this
-}
+	if(usciStat[UCB1_INDEX] != OPEN) return -1;
 
+	confUCB1(commID);
+
+	ucb1TxPtr = data;
+	ucb1RxSize = len;
+	// Start of TX
+	usciStat[UCB1_INDEX] = TX;
+	UCB1CTL1 |= UCTR + UCTXSTT;	// Generate start condition
+
+	return 1;
+}
+/**************************************************************************//**
+ * \brief	Receive method for USCI B1 I2C operation
+ *
+ * This method performs a synchronous read by storing the bytes to be read in
+ * ucbB1ToRxSize and then performing len dummy write to the bus to fetch the data
+ * from a slave device. The RX size is cleared on this function call.
+ *
+ * \param	len	The number of bytes to be read from the bus
+ * \param	commID	Communication ID number of the application
+ *
+ * \retval	-1	USCI B1 Module Busy
+ * \retval	1	Receive successfully started
+ *
+ * \sideeffect	Reset the UCB1 RX size and data pointer
+ ******************************************************************************/
 int i2cB1Read(unsigned int len, unsigned int commID)
 {
-	// Do this too
+	if(usciStat[UCB1_INDEX] != OPEN) return -1;
+
+	confUCB1(commID);
+
+	ucb1RxSize = 0;
+	ucb1ToRxSize = len;
+	// Start of RX
+	usciStat[UCB1_INDEX] = RX;
+	UCB1CTL1 |= UCTXSTT;		// Generate start condition
+
+	return 1;
+}
+/**************************************************************************//**
+ * \brief	Ping (slave present) Method for USCI B1 I2C Operation
+ *
+ * This method tests for the presence of a slave at the address affiliated with
+ * the registered commID. This is accomplished by sending a start, then stop
+ * condition sequenitally on the bus, then reading the UCB1STAT register for
+ * a NACK condition.
+ *
+ * \param	commID	Communication ID number of the application
+ *
+ * \retval	-1	USCI B1 Module Busy
+ * \retval	0	Slave not present
+ * \retval	1	Slave present
+ *
+ * \sideeffect	The USCI module will need to be reconfigured for the next
+ * 		operation (even if it uses the same slave address or commID)
+ ******************************************************************************/
+unsigned char i2cB1SlavePresent(unsigned int commID)
+{
+	unsigned char retval;
+
+	if(usciStat[UCB1_INDEX] != OPEN) return -1;	// Check that USCI is available
+
+	UCB1IE &= ~(UCTXIE + UXRXIE + UCNACKIE);	// Clear NACK, RX, and TX interrupt conditions
+	UCB1I2CSA = dev[commID]->rAddr & ADDR_MASK;	// Set slave address
+
+	__disable_interrupt();
+	UCB1CTL1 |= UCTR + UCTXSTT + UCTXSTP;		// TX w/ start and stop condition
+	while(UCB1CTL1 & UCTXSTP);			// Wait for stop condition
+	
+	retval = !(UCB1STAT & UCNACKIFG);
+	devConf[UCB1_INDEX] = 0;			// Clear dev conf slot for UCB1
+	__enable_interrupt();
+
+	return retval;
 }
 #endif //USE_UCB1_I2C
 /**********************************************************************//**
@@ -1164,42 +1312,31 @@ __interrupt void usciB1Isr(void)
 	unsigned int dummy = 0xFF;
 	// Transmit Interrupt Flag Set
 	if(UCB1IFG & UCTXIFG){
-#ifdef USE_UCB1_SPI
 		if(usciStat[UCB1_INDEX] == TX) {
-#endif
-		if(ucb1TxSize > 0){
-			UCB1TXBUF = *(++ucb1TxPtr);			// Transmit the next outgoing byte
-			ucb1TxSize--;
+			if(ucb1TxSize > 0){
+				UCB1TXBUF = *(++ucb1TxPtr);	// Transmit the next outgoing byte
+				ucb1TxSize--;
+			}
+			else{
+				usciStat[UCB1_INDEX] = OPEN; 	// Set status open if done with transmit
+				UCB1IFG &= ~UCTXIFG;		// Clear TX interrupt flag from vector on end of TX
+			}
 		}
-		else{
-			usciStat[UCB1_INDEX] = OPEN; 			// Set status open if done with transmit
-			UCB1IFG &= ~UCTXIFG;				// Clear TX interrupt flag from vector on end of TX
-		}
-#ifdef USE_UCB1_SPI
-		}
-#endif
 	}
 
 	// Receive Interrupt Flag Set
 	if(UCB1IFG & UCRXIFG){	// Check for interrupt flag and RX mode
-#ifdef USE_UCB1_SPI
 		if(usciStat[UCB1_INDEX] == RX)	{			// Check we are in RX mode for SPI
-#endif // USE_UCB0_SPI
-		if(UCB1STATW & UCRXERR) dummy = UCB1RXBUF;		// RX ERROR: Do a dummy read to clear interrupt flag
-		else {							// Otherwise write the value to the RX pointer
+			if(UCB1STAT & UCRXERR) dummy = UCB1RXBUF;	// RX ERROR: Do a dummy read to clear interrupt flag
+			else {	// Otherwise write the value to the RX pointer
 			*(ucb1RxPtr++) = UCB1RXBUF;
-			ucb1RxSize++;					// RX Size decrement in read function
-#ifdef USE_UCB1_SPI
-			if(ucb1RxSize < spiB1RxSize) UCB1TXBUF = dummy; // Perform another dummy write
+			ucb1RxSize++;	// RX Size decrement in read function
+			if(ucb1RxSize < ucb1ToRxSize) UCB1TXBUF = dummy;	// Perform another dummy write
 			else
-#endif
 			usciStat[UCB1_INDEX] = OPEN;
+			}
 		}
-#ifdef USE_UCB1_SPI
-		}
-#endif
 	}
-	UCB1IFG &= ~UCRXIFG;						// Clear RX interrupt flag from vector on end of RX
+	UCB1IFG &= ~UCRXIFG;	// Clear RX interrupt flag from vector on end of RX
 }
 #endif // USE_UCB1
-
