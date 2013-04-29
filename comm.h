@@ -103,6 +103,7 @@ typedef struct uconf
 #define OPEN			0			///< USCI OPEN Status code
 #define	TX			1			///< USCI TX Status code
 #define	RX			2			///< USCI RX Status code
+#define SWAP			3			///< USCI Byte Swap Status code
 // Read/Write Routine Return Codes
 #define USCI_CONF_ERROR		-2			///< USCI configuration error return code
 #define	USCI_BUSY_ERROR		-1			///< USCI busy error return code

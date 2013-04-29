@@ -282,9 +282,11 @@ unsigned char spiA0Swap(unsigned char byte, unsigned int commID)
 	if(usciStat[UCA0_INDEX] != OPEN) return -1;	// Check that USCI is available
 
 	confUCA0(commID);
-	
+
+	usciStat[UCA0_INDEX] = SWAP;			// Set status to swap (block other operation)	
 	UCA0TXBUF = byte;
 	while(UCA0STAT & UCBUSY);			// Wait for TX complete
+	usciStat[UCA0_INDEX] = OPEN;			// Set status to open (swap complete)
 	return UCA0RXBUF;				// Return RX contents
 }
 #endif //USE_UCA0_SPI
@@ -599,9 +601,11 @@ unsigned char spiA1Swap(unsigned char byte, unsigned int commID)
 	if(usciStat[UCA1_INDEX] != OPEN) return -1;	// Check that the USCI is available
 
 	confUCA1(commID);
-	
+
+	usciStat[UCA1_INDEX] = SWAP;			// Set status to swap (block other operation)
 	UCA1TXBUF = byte;
 	while(UCA1STAT & UCBUSY);			// Wait for TX complete
+	usciStat[UCA1_INDEX] = OPEN;			// Set status to open (swap complete)
 	return UCA1RXBUF;				// Return RX contents
 }
 #endif //USE_UCA1_SPI
@@ -854,9 +858,10 @@ unsigned char spiB0Swap(unsigned char byte, unsigned int commID)
 	
 	confUCB0(commID);
 	
-	ucb0TxSize = 0;
+	usciStat[UCB0_INDEX] = SWAP;			// Set status to swap (block other operation)
 	UCB0TXBUF = byte;
 	while(UCB0STAT & UCBUSY);			// Wait for TX complete
+	usciStat[UCB0_INDEX] = OPEN;			// Set status to open (swap complete)
 	return UCB0RXBUF;				// Return RX contents
 }
 #endif //USE_UCB0_SPI
@@ -982,6 +987,7 @@ __interrupt void usciB0Isr(void)
 				UCB0IFG &= ~UCTXIFG;		// Clear TX interrupt flag from vector on end of TX
 			}
 		}
+		else UCB0IFG &= ~UCTXIFG; // Clear the TX interrupt flag from vector on end of TX
 	}
 
 	// Receive Interrupt Flag Set
@@ -995,8 +1001,8 @@ __interrupt void usciB0Isr(void)
 				else usciStat[UCB0_INDEX] = OPEN;
 			}
 		}
+		else UCB0IFG &= ~UCRXIFG; // Clear RX interrupt flag from vector on end of RX
 	}
-	UCB0IFG &= ~UCRXIFG; // Clear RX interrupt flag from vector on end of RX
 }
 #endif // USE_UCB0
 
@@ -1195,9 +1201,10 @@ unsigned char spiB1Swap(unsigned char byte, unsigned int commID)
 	
 	confUCB1(commID);
 	
-	ucb1TxSize = 0;
+	usciStat[UCB1_INDEX] = SWAP;			// Set status to swap (block other operation)
 	UCB1TXBUF = byte;
 	while(UCB1STAT & UCBUSY);			// Wait for TX complete
+	usciStat[UCB1_INDEX] = OPEN;			// Set status to open (swap complete)
 	return UCB1RXBUF;				// Return RX contents
 }
 #endif //USE_UCB1_SPI
@@ -1322,6 +1329,7 @@ __interrupt void usciB1Isr(void)
 				UCB1IFG &= ~UCTXIFG;		// Clear TX interrupt flag from vector on end of TX
 			}
 		}
+		else UCB1IFG &= ~UCTXIFG;	// Clear TX interrupt flag from vector on end of TX
 	}
 
 	// Receive Interrupt Flag Set
@@ -1336,7 +1344,8 @@ __interrupt void usciB1Isr(void)
 			usciStat[UCB1_INDEX] = OPEN;
 			}
 		}
+		else UCB1IFG &= ~UCRXIFG;	// Clear RX interrupt flag from vector on end of RX
 	}
-	UCB1IFG &= ~UCRXIFG;	// Clear RX interrupt flag from vector on end of RX
+
 }
 #endif // USE_UCB1
