@@ -259,7 +259,7 @@ int spiA0Read(unsigned int len, unsigned int commID)
 	// Clear RX Size/Buff and copy length
 	uca0RxSize = 0;					// Reset the rx size
 	uca0RxPtr = dev[commID]->rxPtr;			// Reset the rx pointer
-	spiA0RxSize = len-1;
+	spiA0RxSize = len;
 	// Start of RX
 	usciStat[UCA0_INDEX] = RX;
 	UCA0TXBUF = 0xFF;				// Start TX
@@ -577,7 +577,7 @@ int spiA1Read(unsigned int len, unsigned int commID)
 	// Clear RX Size and copy length
 	uca1RxSize = 0;					// Reset RX size
 	uca1RxPtr = dev[commID]->rxPtr;			// Reset RX pointer
-	spiA1RxSize = len-1;
+	spiA1RxSize = len;
 	// Start of RX
 	usciStat[UCA1_INDEX] = RX;
 	UCA1TXBUF = 0xFF;				// Start TX
@@ -832,7 +832,7 @@ int spiB0Read(unsigned int len, unsigned int commID)
 	// Clear RX Size and copy length
 	ucb0RxSize = 0;					// Reset the rx size
 	ucb0RxPtr = dev[commID]->rxPtr;			// Reset the rx pointer
-	ucb0ToRxSize = len-1;
+	ucb0ToRxSize = len;
 	// Start of RX
 	usciStat[UCB0_INDEX] = RX;
 	UCB0TXBUF = 0xFF;				// Start TX
@@ -1175,7 +1175,7 @@ int spiB1Read(unsigned int len, unsigned int commID)
 	// Clear RX Size and copy length
 	ucb1RxPtr = dev[commID]->rxPtr;			// Reset the rx pointer
 	ucb1RxSize = 0;					// Reset the rx size
-	ucb1ToRxSize = len-1;
+	ucb1ToRxSize = len;
 	// Start of RX
 	usciStat[UCB1_INDEX] = RX;
 	UCB1TXBUF = 0xFF;				// Start TX
